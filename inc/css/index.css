@@ -165,24 +165,12 @@ section.featured-card a.learn-more{
 
 
 
-section.we-want-the-best .diamond img{
-    width: 1440px;
-    height: 1440px;
+.carousel {
+    width: 490px;
+    height: 490px;
     position: relative;
 }
-section.we-want-the-best .image-container{
-    /* animation: rotateCarousel 20s cubic-bezier(0.18, 0, 0.58, 1) infinite; */
-}
-section.we-want-the-best .diamond{
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    width: 1440px;
-    max-height: 637px;
-}
-
-section.we-want-the-best .image {
+.carousel-item {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -191,25 +179,28 @@ section.we-want-the-best .image {
     align-items: center;
     font-size: 24px;
     font-weight: bold;
+    transition: transform .5s ease-in-out;
 }
-@keyframes rotateCarousel {
-    0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(-90deg);
-    }
-    50% {
-        transform: rotate(-180deg);
-    }
-    75% {
-        transform: rotate(-270deg);
-    }
-    100% {
-        transform: rotate(-360deg);
-    }
+.left {
+    transform: translate(-260px, 0);
 }
-
+.right {
+    transform: translate(260px,0);
+}
+.top {
+    transform: translate(0,-260px);
+}
+.bottom {
+    transform: translate(0,260px);
+}
+img.carousel-item{
+  filter: grayscale(100%);
+  opacity: .3;
+}
+img.carousel-item.active{
+  filter: grayscale(0);
+  opacity: 1;
+}
 
 
 

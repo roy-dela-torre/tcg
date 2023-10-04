@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="carousel">
-        <img src="/assets/img/homepage/fleshblood.png" class="carousel-item left">
+        <img src="/assets/img/homepage/fleshblood.png" class="carousel-item left active">
         <img src="/assets/img/homepage/carletviolet.png" class="carousel-item right">
         <img src="/assets/img/homepage/yo-hi-uh.png" class="carousel-item top">
         <img src="/assets/img/homepage/magic.png" class="carousel-item bottom">
@@ -23,49 +23,9 @@
         height: 100vh;
         margin: 0;
     }
-    .carousel {
-        width: 490px;
-        height: 490px;
-        position: relative;
-        animation: rotateCarousel;
-    }
-    .carousel-item {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 24px;
-        font-weight: bold;
-    }
-    .left {
-        transform: translate(-260px,0);
-    }
-    .right {
-        transform: translate(260px,0);
-    }
-    .top {
-        transform: translate(0,-260px);
-    }
-    .bottom {
-      transform: translate(0,260px);
-    }
-    @keyframes rotateCarousel {
-        0% {
-            transform: rotate(0deg);
-        }
-        25% {
-            transform: rotate(-90deg);
-        }
-        50% {
-            transform: rotate(-180deg);
-        }
-        75% {
-            transform: rotate(-270deg);
-        }
-        100% {
-            transform: rotate(-360deg);
-        }
-    }
+
+    
 </style>
+<script>
+
+</script>
