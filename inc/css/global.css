@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Open+Sans:wght@700&family=Roboto+Condensed:wght@700&family=Roboto:wght@300&display=swap');
+/* font-family: 'Inter', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Condensed', sans-serif; */
+section h1{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 70px; /* 116.667% */
+    text-transform: uppercase;
+}
+section h2{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+section h3{
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+section a{
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+section p{
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+section .blue-btn{
+    padding: 20px 30px;
+    border-radius: 10px;
+    background: #00CBFF;
+    transition: 0.5s;
+}
+section .blue-btn:hover{
+    background: #FFFFFF;
+}
+section .wrapper{
+    max-width: 1530px;
+    margin: 0 auto;
+}
+section{
+    padding: 100px 0;
+}
+section img{
+    max-width: 100%;
+}
+
+
+@media (max-width:1700px) {
+    section .wrapper{
+        padding: 0 5%;
+    }
+}
+@media (max-width:1200px) {
+    section .wrapper{
+        padding: 0;
+    }
+    section{
+        padding: 70px 30px;
+    }
+}
+@media (max-width:767px) {
+    section{
+        padding: 50px 20px;
+    }
+}
