@@ -95,99 +95,155 @@ $homeUrl = get_home_url();
                 </div>
                 <div class="group-box p-0">
                     <div class="row">
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                             <div class="content">
                                 <img src="<?php echo $imgPath; ?>Codex of frailty - Out siders flesh and blood.png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist">
-                                <p class="name"></p>
-                                <p class="price"></p>
-                                <div class="group-button">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
+                                <div class="content-container">
+                                    <p class="name">Codex of frailty - Out siders flesh and blood</p>
+                                    <p class="price">₱ 1099.99</p>
+                                    <div class="group-button">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                    </div>
+                                    <div class="group-button-mobile d-block d-md-none">
+                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                             <div class="content">
                                 <img src="<?php echo $imgPath; ?>Teklo foundry heart - Arcane rising flesh and blood.png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist">
-                                <p class="name"></p>
-                                <p class="price"></p>
-                                <div class="group-button">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
+                                <div class="content-container">
+                                    <p class="name">Teklo foundry heart - Arcane rising flesh and blood</p>
+                                    <p class="price">₱ 1099.99</p>
+                                    <div class="group-button">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                    </div>
+                                    <div class="group-button-mobile d-block d-md-none">
+                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                             <div class="content">
                                 <img src="<?php echo $imgPath; ?>Pikachu VMAX (Secret) - SWSH04 Vivid Voltage (SWSH04).png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist">
-                                <p class="name"></p>
-                                <p class="price"></p>
-                                <div class="group-button">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
+                                <div class="content-container">
+                                    <p class="name">Pikachu VMAX (Secret) - SWSH04: Vivid Voltage (SWSH04)</p>
+                                    <p class="price">₱ 1099.99</p>
+                                    <div class="group-button">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                    </div>
+                                    <div class="group-button-mobile d-block d-md-none">
+                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                             <div class="content">
                                 <img src="<?php echo $imgPath; ?>blue-eyes white dragon -Duelist Saga (DUSA) YU-GI-oh.png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist">
-                                <p class="name"></p>
-                                <p class="price"></p>
-                                <div class="group-button">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
+                                <div class="content-container">
+                                    <p class="name">blue-eyes white dragon -Duelist Saga (DUSA) YU-GI-oh!</p>
+                                    <p class="price">₱ 1099.99</p>
+                                    <div class="group-button">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                    </div>
+                                    <div class="group-button-mobile d-block d-md-none">
+                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                             <div class="content">
                                 <img src="<?php echo $imgPath; ?>Summoned Skull - Legendary Collection 3 Yugi's World (LC03).png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist">
-                                <p class="name"></p>
-                                <p class="price"></p>
-                                <div class="group-button">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
+                                <div class="content-container">
+                                    <p class="name">Summoned Skull - Legendary Collection 3: Yugi's World (LC03)...</p>
+                                    <p class="price">₱ 1099.99</p>
+                                    <div class="group-button">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                    </div>
+                                    <div class="group-button-mobile d-block d-md-none">
+                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                             <div class="content">
                                 <img src="<?php echo $imgPath; ?>Charizard V (Full Art) - SWSH09 Brilliant Stars (SWSH09).png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist">
-                                <p class="name"></p>
-                                <p class="price"></p>
-                                <div class="group-button">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
+                                <div class="content-container">
+                                    <p class="name">Charizard V (Full Art) - SWSH09: Brilliant Stars (SWSH09)</p>
+                                    <p class="price">₱ 1099.99</p>
+                                    <div class="group-button">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                    </div>
+                                    <div class="group-button-mobile d-block d-md-none">
+                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                             <div class="content">
                                 <img src="<?php echo $imgPath; ?>Yuriko, the Tiger's Shadow - Commander 2018 (C18).png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist">
-                                <p class="name"></p>
-                                <p class="price"></p>
-                                <div class="group-button">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
-                                </div>
+                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
+                               <div class="content-container">
+                                <p class="name">Yuriko, the Tiger's Shadow - Commander 2018 (C18)</p>
+                                    <p class="price">₱ 1099.99</p>
+                                    <div class="group-button">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                    </div>
+                                    <div class="group-button-mobile d-block d-md-none">
+                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
+                                    </div>
+                               </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                             <div class="content">
                                 <img src="<?php echo $imgPath; ?>The One Ring - Universes Beyond.png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist">
-                                <p class="name"></p>
-                                <p class="price"></p>
-                                <div class="group-button">
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                    <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
+                                <div class="content-container">
+                                    <p class="name">The One Ring - Universes Beyond: The Lord of the Rings: Tales of...</p>
+                                    <p class="price">₱ 1099.99</p>
+                                    <div class="group-button">
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
+                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                                    </div>
+                                    <div class="group-button-mobile d-block d-md-none">
+                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
+                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +258,7 @@ $homeUrl = get_home_url();
 <section class="we-want-the-best overflow-hidden p-0">
     <div class="container-fluid">
         <div class="row align-items-center">
-            <div class="col-lg-7 ps-0">
+            <div class="col-xl-7 col-lg-9 ps-0">
                 <div class="content">
                     <div class="content-container">
                         <h2 class="text-uppercase text-white">we want the best for you</h2>
@@ -215,7 +271,7 @@ $homeUrl = get_home_url();
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 col-md-12">
+            <div class="col-xl-5 col-lg-12">
                 <div class="carousel">
                     <img src="<?php echo $imgPath; ?>fleshblood.png" class="carousel-diamon left active">
                     <img src="<?php echo $imgPath; ?>carletviolet.png" class="carousel-diamon right">
@@ -313,22 +369,16 @@ $homeUrl = get_home_url();
     <div class="container-fluid">
         <div class="wrapper">
             <div class="row">
-                <div class="col-lg-7 col-md-12">
+                <div class="col-xxl-8 col-xl-9 col-lg-12">
                     <div class="content">
                         <div class="content-container">
                             <h2 class="text-uppercase text-white">Have A Question?</h2>
                             <p class="text-white">Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. </p>
-                            <form action="">
-                                <input type="text" name="" id="" placeholder="Full Name">
-                                <input type="email" name="" id="" placeholder="email address">
-                                <input type="tel" name="" id="" placeholder="contact number">
-                                <textarea name="" id="" cols="10" rows="4" placeholder="Your Message..."></textarea>
-                                <input type="submit" value="submit">
-                            </form>
+                            <?php echo do_shortcode('[contact-form-7 id="40b3e57" title="Contact form 1"]')?>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-12">
+                <div class="col-xl-2 col-lg-12">
                     <div class="contact-details">
                         <h4 class="text-white text-uppercase">contact details:</h4>
                         <a href="tel:63+ 092123456789"><img src="<?php echo $imgPath; ?>telephone.png" alt=""> 63+ 092123456789</a>

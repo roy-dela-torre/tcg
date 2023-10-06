@@ -1,6 +1,7 @@
 @media (max-width:991px) {
     section.banner .row{
         gap: 50px 0;
+        flex-direction: column-reverse;
     }
     section.banner .image-container{
         display: flex;
@@ -13,10 +14,7 @@
     section.banner img{
         min-height: 500px;
     }
-    section.we-want-the-best .content{
-        position: relative;
-        z-index: 3;
-    }
+
     section.about-us .image-container{
         left: 0;
         display: flex;
@@ -25,6 +23,9 @@
     }
     section.have-question .content-container{
         margin: auto auto auto 30px;
+    }
+    section.have-question .content-container{
+        max-width:75%;
     }
 }
 @media (max-width:767px) {
@@ -35,6 +36,36 @@
     section.banner{
         padding: 70px 20px;
     }
+    section.featured-card .content{
+        flex-direction: row;
+    }
+    section.featured-card .group-button-mobile{
+        display: flex !important;
+        align-items: center;
+        max-width: 160px;
+        justify-content: space-between;
+        margin: 35px 0 20px;
+    }
+    section.featured-card .group-button-mobile img{
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+    section.featured-card .group-button{
+        display: none;
+    }
+    section.featured-card img.cards{
+        margin: 0 16px 0;
+    }
+    section.featured-card .content{
+        align-items: end;
+    }
+    section.featured-card .content-container{
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 }
 @media (max-width:575px) {
     section.featured-card img.cards{
@@ -44,5 +75,15 @@
     }
     section.featured-card{
         padding-top: 87px;
+    }
+    section.featured-card img.cards{
+        max-width: 126px;
+        min-height: auto;
+    }
+    section.featured-card .content{
+        align-items: center;
+    }
+    section.featured-card .group-button-mobile{
+        margin: 10px 0;
     }
 }

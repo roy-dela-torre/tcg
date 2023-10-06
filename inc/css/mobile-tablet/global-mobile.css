@@ -5,4 +5,17 @@
     section{
         padding: 50px 20px;
     }
+    footer .col-xxl>.row{
+        flex-direction: column;
+    }
+    footer .col-xxl>.row>div,footer h5,footer h4,footer a{
+        width: 100% !important;
+        text-align: center;
+    }
+    footer a{
+        max-width: fit-content;
+    }
+    footer .content.d-flex.flex-column{
+        align-items: center;
+    }
 }

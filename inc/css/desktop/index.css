@@ -99,6 +99,12 @@ section.featured-card nav.navbar.navbar-expand-xxl.bg-light a{
     font-weight: 700;
     padding: 40px 15px;
 }
+section.featured-card .navbar-toggler-icon{
+    background-image: url('../../../assets/img/homepage/filter.png');
+}
+section.featured-card .navbar-toggler:focus{
+    box-shadow: none;
+}
 section.featured-card a.dropdown-item:hover{
     background-color: #212121;
 }
@@ -112,7 +118,6 @@ section.featured-card{
 section.featured-card .content{
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 26px 18px;
     position: relative;
     border-radius: 10px;
@@ -124,7 +129,7 @@ section.featured-card img.cards{
     min-height: 321px;
     object-fit: contain;
     max-width: 221px;
-    margin-bottom: 17px;
+    margin: 0 auto 17px auto;
 }
 section.featured-card img.wishlist{
     width: 35px;
@@ -168,6 +173,21 @@ section.featured-card a.learn-more{
     margin: 0 auto;
     color: white;
 }
+section.featured-card p.price{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
 
 
 
@@ -355,7 +375,7 @@ section.have-question .content{
     align-items: center;
     justify-content: center;
 }
-section.have-question form{
+section.have-question form.wpcf7-form.init p{
     display: flex;
     flex-direction: column;
     gap: 20px 0;
@@ -364,6 +384,7 @@ section.have-question input:not([type="submit"]),section.have-question textarea{
     border-radius: 5px;
     background: #FFF;
     padding: 15px 20px;
+    width: 100%;
 }
 section.have-question input:not([type="submit"])::placeholder,section.have-question textarea::placeholder{
     color: #A5A5A5;
@@ -373,6 +394,10 @@ section.have-question input:not([type="submit"])::placeholder,section.have-quest
     font-weight: 300;
     line-height: normal;
     text-transform: capitalize;
+    border: none;
+}
+section.have-question textarea{
+    max-height: 83px;
 }
 section.have-question input[type="submit"]{
     border-radius: 10px;
@@ -427,7 +452,9 @@ section.have-question .contact-details a img{
 
 
 
-
+@media (max-width:1740px) {
+    
+}
 @media (max-width:1650px) {
     section.featured-card nav.navbar.navbar-expand-xxl.bg-light{
         width: 95%;
@@ -442,6 +469,33 @@ section.have-question .contact-details a img{
     }
     section.featured-card ul.dropdown-menu.row.show{
         left: -38px;
+    }
+    section.we-want-the-best .carousel-diamon{
+        width: 400px;
+        height: 400px;
+    }
+    section.we-want-the-best .left {
+        transform: translate(-220px, 0);
+    }
+    section.we-want-the-best .right {
+        transform: translate(220px,0);
+    }
+    section.we-want-the-best .top {
+        transform: translate(0,-220px);
+    }
+    section.we-want-the-best .bottom {
+        transform: translate(0,220px);
+    }
+}
+@media (max-width:1366px) {
+    section.featured-card ul.navbar-nav{
+        align-items: center;
+    }
+    section.featured-card ul.navbar-nav a{
+        width: fit-content;
+    }
+    section.have-question .content-container{
+        margin: auto auto auto 50px;
     }
 }
 @media (max-width:1200px) {
@@ -460,5 +514,15 @@ section.have-question .contact-details a img{
     }
     section.article .row>:last-child .image-container{
         max-width: 250px;
+    }
+    section.have-question .row{
+        gap: 50px 0;
+    }
+    section.we-want-the-best .content{
+        position: relative;
+        z-index: 3;
+    }
+    section.we-want-the-best .content{
+        margin-bottom: 0;
     }
 }

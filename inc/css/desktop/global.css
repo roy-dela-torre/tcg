@@ -80,6 +80,9 @@ section img{
     justify-content: space-between;
     margin: 0 auto;
 }
+.narbar .navbar-toggler-icon{
+    background-image: url('../../../assets/img/homepage/Burger Menu.png');
+}
 .narbar ul#menu-tcgnavmenu>li>a{
     color: #FFF;
     font-size: 18px;
@@ -119,9 +122,45 @@ section img{
     display: block;
     width: fit-content;
 }
-.narbar{}
-.narbar{}
-
+.narbar button{
+    background-color: transparent;
+    border: none;
+}
+.narbar form{
+    display: flex;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #FFF;
+}
+.narbar .input-group.d-flex{
+    flex-wrap: nowrap;
+}
+.narbar form input::placeholder{
+    color: #A5A5A5;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.narbar form input{
+    color: #A5A5A5;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: capitalize;
+    border: none;
+}
+.narbar .group{
+    display: flex;
+    gap: 0 30px;
+}
+.fa-magnifying-glass:before{
+    content: url('../../../assets/img/homepage/search.png') !important;
+}
 
 
 footer{
@@ -177,24 +216,42 @@ footer .bottom p,footer .bottom p a{
     line-height: normal;
     text-transform: uppercase;
 }
-footer .col>.row{
+footer .col-xxl>.row{
     gap: 10px 0;
 }
-footer{}
-footer{}
-footer{}
+footer .logo{
+    margin-bottom: 50px;
+}
+footer .wrapper{
+
+}
+footer .wrapper>.row{
+    gap: 24px 0;
+}
 
 
-@media (max-width:1700px) {
-    section .wrapper{
+@media (max-width:1600px) {
+    section .wrapper,footer .wrapper{
         padding: 0 5%;
     }
 }
+@media (max-width:1400px) {
+    .narbar ul#menu-tcgnavmenu{
+        width: 100%;
+        max-width: 100%;
+    }
+    .narbar .group{
+        margin-bottom: 30px;
+    }
+    .narbar .navbar-collapse{
+        padding-bottom: 30px;
+    }
+}
 @media (max-width:1200px) {
-    section .wrapper{
+    section .wrapper,footer .wrapper{
         padding: 0;
     }
-    section{
+    section,footer{
         padding: 70px 30px;
     }
 }

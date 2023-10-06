@@ -16,8 +16,8 @@ $(document).ready(function () {
                 rotationDegree -= 90;
                 $('section.banner .image-container').toggleClass('rotate');
                 $('section.banner .image-container img').attr('src', '<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/' + cardPath[currentImageIndex]);
-                $('.diamond img').attr('src', '<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/' + diamondImg[currentImageIndex]);
-                $('.diamond img').css('transform', `rotate(${rotationDegree}deg)`);
+                $('section.we-want-the-best .diamond img').attr('src', '<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/' + diamondImg[currentImageIndex]);
+                $('section.we-want-the-best .diamond img').css('transform', `rotate(${rotationDegree}deg)`);
                 bannerSection.css('background-image', 'url("<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/' + bannerImgPaths[currentImageIndex] + '")');
                 currentImageIndex = (currentImageIndex + 1) % bannerImgPaths.length;
                 bannerSection.fadeTo(1000, 1); 
@@ -25,16 +25,16 @@ $(document).ready(function () {
         }
         setInterval(changeBackgroundImage, 5000); 
         function rotateImagesCounterClockwise() {
-            $('.carousel-item').removeClass('active');
-            var topImageTransform = $('.top').css('transform');
-            var leftImageTransform = $('.left').css('transform');
-            var bottomImageTransform = $('.bottom').css('transform');
-            var rightImageTransform = $('.right').css('transform');
-            $('.left').css('transform', bottomImageTransform).addClass('active');
-            $('.bottom').css('transform', rightImageTransform);
-            $('.right').css('transform', topImageTransform);
-            $('.top').css('transform',leftImageTransform);
-            $('.carousel img').each(function() {
+            $('section.we-want-the-best .carousel-item').removeClass('active');
+            var topImageTransform = $('section.we-want-the-best .top').css('transform');
+            var leftImageTransform = $('section.we-want-the-best .left').css('transform');
+            var bottomImageTransform = $('section.we-want-the-best .bottom').css('transform');
+            var rightImageTransform = $('section.we-want-the-best .right').css('transform');
+            $('section.we-want-the-best .left').css('transform', bottomImageTransform).addClass('active');
+            $('section.we-want-the-best .bottom').css('transform', rightImageTransform);
+            $('section.we-want-the-best .right').css('transform', topImageTransform);
+            $('section.we-want-the-best .top').css('transform',leftImageTransform);
+            $('section.we-want-the-best .carousel img').each(function() {
             // Get the computed style for the image
             var computedStyle = window.getComputedStyle(this);
             
