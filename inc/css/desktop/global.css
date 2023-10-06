@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Open+Sans:wght@700&family=Roboto+Condensed:wght@700&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Open+Sans:wght@700&family=Roboto+Condensed:wght@700&family=Roboto:wght@300;700&display=swap');
 /* font-family: 'Inter', sans-serif;
 font-family: 'Open Sans', sans-serif;
 font-family: 'Roboto', sans-serif;
@@ -50,6 +50,7 @@ section .blue-btn{
     transition: 0.5s;
 }
 section .blue-btn:hover{
+    color: #00CBFF;
     background: #FFFFFF;
 }
 section .wrapper{
@@ -64,6 +65,75 @@ section img{
 }
 
 
+.narbar{
+    background: url('../../../assets/img/homepage/nav-bg.jpg')no-repeat center center/cover;
+}
+.narbar nav{
+    max-width: 1550px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: transparent !important;
+}
+.narbar ul#menu-tcgnavmenu{
+    max-width: 707px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.narbar ul#menu-tcgnavmenu>li>a{
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: block;
+}
+.narbar ul#menu-tcgnavmenu>li.active a{
+    color: #00CBFF;
+    border-bottom: 1px solid var(--00-cbff, #00CBFF);
+}
+.narbar .group-button{
+    max-width: 125px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 30px;
+}
+.narbar a.sale-with-us{
+    color: #00CBFF;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background: #FFF;
+    text-decoration: none;
+}
+.narbar{}
+.narbar{}
+
+
+
+footer{}
+footer{}
+footer{}
+footer{}
+footer{}
+footer{}
+footer{}
+footer{}
+footer{}
+footer{}
+
+
 @media (max-width:1700px) {
     section .wrapper{
         padding: 0 5%;
@@ -75,10 +145,5 @@ section img{
     }
     section{
         padding: 70px 30px;
-    }
-}
-@media (max-width:767px) {
-    section{
-        padding: 50px 20px;
     }
 }

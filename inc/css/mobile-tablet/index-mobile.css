@@ -1,0 +1,48 @@
+@media (max-width:991px) {
+    section.banner .row{
+        gap: 50px 0;
+    }
+    section.banner .image-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    section.banner .image-container img,section.banner .image-container.rotate img{
+        margin: 0;
+    }
+    section.banner img{
+        min-height: 500px;
+    }
+    section.we-want-the-best .content{
+        position: relative;
+        z-index: 3;
+    }
+    section.about-us .image-container{
+        left: 0;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    section.have-question .content-container{
+        margin: auto auto auto 30px;
+    }
+}
+@media (max-width:767px) {
+    section.featured-card nav.navbar.navbar-expand-xxl.bg-light{
+        width: 90%;
+        right: 5%;
+    }
+    section.banner{
+        padding: 70px 20px;
+    }
+}
+@media (max-width:575px) {
+    section.featured-card img.cards{
+        width: 100%;
+        min-height: auto;
+        max-width: 80%;
+    }
+    section.featured-card{
+        padding-top: 87px;
+    }
+}
