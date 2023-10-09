@@ -168,10 +168,11 @@ section.featured-card h2{
 section.featured-card .group-box{
     margin-bottom: 33px;
 }
-section.featured-card a.learn-more{
+section.featured-card button#view-more{
     width: fit-content;
     margin: 0 auto;
     color: white;
+    border: 1px solid #00CBFF;
 }
 section.featured-card p.price{
     color: #000;
@@ -313,7 +314,6 @@ section.article h2{
 }
 section.article img.feature-img{
     border-radius: 10px;
-    margin-bottom: 30px;
 }
 section.article .row>:not(:last-child) .content{
     max-width: 360px;
@@ -327,6 +327,10 @@ section.article .row>:last-child .image-container{
 }
 section.article .row>:last-child .image-container img{
     margin-bottom: 0;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    min-height: 191px;
 }
 section.article .row>:last-child .content{
     gap: 0 30px;
@@ -338,19 +342,17 @@ section.article .row>:last-child .content .content{
     max-width: 470px;
     width: 60%;
 }
-section.article .row>:last-child  img{
+section.article .row>:not(:last-child)  img{
     width: 100%;
     max-width: 100%;
-}
-section.article .row>:last-child a img{
-    width: 8px;
-    height: 16px;
-    object-fit: contain;
+    max-height: 177px;
+    object-fit: cover;
+    margin-bottom: 30px;
 }
 section.article .articles>.row{
     gap: 24px 0;
 }
-section.article a{
+section.article button.read-more{
     color: #0400C3;
     font-size: 18px;
     font-style: normal;
@@ -360,6 +362,15 @@ section.article a{
     display: flex;
     gap: 0 10px;
     align-items: center;
+    border: none;
+    background-color: transparent;
+    width: 106px;
+    white-space: pre;
+}
+section.article button.read-more img{
+    height: 16px;
+    width: 8px;
+    object-fit: contain;
 }
 
 
@@ -385,6 +396,7 @@ section.have-question input:not([type="submit"]),section.have-question textarea{
     background: #FFF;
     padding: 15px 20px;
     width: 100%;
+    border: none;
 }
 section.have-question input:not([type="submit"])::placeholder,section.have-question textarea::placeholder{
     color: #A5A5A5;
@@ -411,6 +423,8 @@ section.have-question input[type="submit"]{
     text-transform: uppercase;
     text-align: center;
     padding: 20px 30px;
+    width: 100%;
+    border: none;
 }
 section.have-question .content-container{
     max-width: 613px;
@@ -441,9 +455,23 @@ section.have-question .contact-details a img{
     height: 20px;
     object-fit: contain;
 }
-
-
-
+section.have-question .screen-reader-response>ul{
+    display: none;
+}
+section.have-question span.wpcf7-form-control-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}
+section.have-question span.wpcf7-not-valid-tip,section.have-question .wpcf7-response-output{
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 10px;
+}
 
 
 

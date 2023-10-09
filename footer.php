@@ -10,39 +10,45 @@
                     </div>
                 </div>
                 <div class="col-xxl col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <h5>Quick links</h5>
-                    <div class="row">
-                        <div class="col-6"><a href="http://" target="_blank" rel="noopener noreferrer">home</a></div>
-                        <div class="col-6"><a href="http://" target="_blank" rel="noopener noreferrer">About</a></div>
-                        <div class="col-6"><a href="http://" target="_blank" rel="noopener noreferrer">Articles</a></div>
-                        <div class="col-6"><a href="http://" target="_blank" rel="noopener noreferrer">Contact us</a></div>
-                        <div class="col-6"><a href="http://" target="_blank" rel="noopener noreferrer">faqs</a></div>
+                    <div class="quicklinks">
+                        <h5>Quick links</h5>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12"><a href="http://" target="_blank" rel="noopener noreferrer">home</a></div>
+                            <div class="col-md-6 col-sm-12"><a href="http://" target="_blank" rel="noopener noreferrer">About</a></div>
+                            <div class="col-md-6 col-sm-12"><a href="http://" target="_blank" rel="noopener noreferrer">Articles</a></div>
+                            <div class="col-md-6 col-sm-12"><a href="http://" target="_blank" rel="noopener noreferrer">Contact us</a></div>
+                            <div class="col-md-6 col-sm-12"><a href="http://" target="_blank" rel="noopener noreferrer">faqs</a></div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xxl col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <h5>trading Cards</h5>
-                    <div class="row">
-                        <div class="col-4"><a href="http://" target="_blank" rel="noopener noreferrer">flesh and blood</a></div>
-                        <div class="col-4"><a href="http://" target="_blank" rel="noopener noreferrer">pokémon</a></div>
-                        <div class="col-4"><a href="http://" target="_blank" rel="noopener noreferrer">Yu-Gi-Oh!</a></div>
-                        <div class="col-4"><a href="http://" target="_blank" rel="noopener noreferrer">Magic</a></div>
-                        <div class="col-4"><a href="http://" target="_blank" rel="noopener noreferrer">Digimon</a></div>
-                        <div class="col-4"><a href="http://" target="_blank" rel="noopener noreferrer">One peace</a></div>
-                        <div class="col-4"><a href="http://" target="_blank" rel="noopener noreferrer">Cardfight!! Vanguard</a></div>
-                        <div class="col-4"><a href="http://" target="_blank" rel="noopener noreferrer">more cards</a></div>
+                    <div class="trading-cards">
+                        <h5>trading Cards</h5>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6"><a href="http://" target="_blank" rel="noopener noreferrer">flesh and blood</a></div>
+                            <div class="col-md-4 col-sm-6"><a href="http://" target="_blank" rel="noopener noreferrer">pokémon</a></div>
+                            <div class="col-md-4 col-sm-6"><a href="http://" target="_blank" rel="noopener noreferrer">Yu-Gi-Oh!</a></div>
+                            <div class="col-md-4 col-sm-6"><a href="http://" target="_blank" rel="noopener noreferrer">Magic</a></div>
+                            <div class="col-md-4 col-sm-6"><a href="http://" target="_blank" rel="noopener noreferrer">Digimon</a></div>
+                            <div class="col-md-4 col-sm-6"><a href="http://" target="_blank" rel="noopener noreferrer">One peace</a></div>
+                            <div class="col-md-4 col-sm-6"><a href="http://" target="_blank" rel="noopener noreferrer">Cardfight!! Vanguard</a></div>
+                            <div class="col-md-4 col-sm-6"><a href="http://" target="_blank" rel="noopener noreferrer">more cards</a></div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xxl col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <h5>Policies</h5>
-                    <div class="row">
-                        <div class="col-6"><a href="http://" target="_blank" rel="noopener noreferrer">Terms and Condition</a></div>
-                        <div class="col-6"><a href="http://" target="_blank" rel="noopener noreferrer">Shipping Policy</a></div>
-                        <div class="col-6"><a href="http://" target="_blank" rel="noopener noreferrer">Refund Policy</a></div>
-                        <div class="col-6"><a href="http://" target="_blank" rel="noopener noreferrer">privacy policy</a></div>
+                    <div class="policies">
+                        <h5>Policies</h5>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12"><a href="http://" target="_blank" rel="noopener noreferrer">Terms and Condition</a></div>
+                            <div class="col-md-6 col-sm-12"><a href="http://" target="_blank" rel="noopener noreferrer">Shipping Policy</a></div>
+                            <div class="col-md-6 col-sm-12"><a href="http://" target="_blank" rel="noopener noreferrer">Refund Policy</a></div>
+                            <div class="col-md-6 col-sm-12"><a href="http://" target="_blank" rel="noopener noreferrer">privacy policy</a></div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xxl col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="content d-flex flex-column">
+                    <div class="content d-flex flex-column" id="interested-selling">
                         <h4>Interested in selling your cards?</h4>
                         <a href="http://" target="_blank" rel="noopener noreferrer" class="sale-with-us">sell with us</a>
                     </div>

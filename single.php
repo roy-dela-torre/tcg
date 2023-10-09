@@ -70,7 +70,7 @@ while (have_posts()) : the_post();
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $custom_args = array(
                           'paged'            => $paged,
-                          'post_type'        => 'our-service', //  post_type
+                          'post_type'        => 'post', //  post_type
                           'post__not_in' =>   array($blog_id),
                           'posts_per_page'   => 3,
                           'post_status' 	   => 'publish',

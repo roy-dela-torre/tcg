@@ -15,7 +15,7 @@ $homeUrl = get_home_url();
                 </div>
                 <div class="col-lg-5 col-md-12">
                     <div class="image-container">
-                        <img src="<?php echo $imgPath; ?>banner-uprising.png" alt="" class="animate__fadeIn">
+                        <img loading="lazy" src="<?php echo $imgPath; ?>banner-uprising.png" alt="" class="animate__fadeIn">
                     </div>
                 </div>
             </div>
@@ -60,26 +60,26 @@ $homeUrl = get_home_url();
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">More
                     </button>
                     <ul class="dropdown-menu row">
-                        <div class="col">
-                        <li><a class="dropdown-item  text-uppercase" href="#">BAKUGAN TCG</a></li>
-                        <li><a class="dropdown-item  text-uppercase" href="#">WORLD OF WARCRAFT TCG</a></li>
-                        <li><a class="dropdown-item  text-uppercase" href="#">DISNEY LORCANA</a></li>
-                        <li><a class="dropdown-item  text-uppercase" href="#">DRagon ball super ccg</a></li>
-                        <li><a class="dropdown-item  text-uppercase" href="#">DRagon ball Z tcg</a></li>
+                        <div class="col-md col-sm-6">
+                            <li><a class="dropdown-item  text-uppercase" href="#">BAKUGAN TCG</a></li>
+                            <li><a class="dropdown-item  text-uppercase" href="#">WORLD OF WARCRAFT TCG</a></li>
+                            <li><a class="dropdown-item  text-uppercase" href="#">DISNEY LORCANA</a></li>
+                            <li><a class="dropdown-item  text-uppercase" href="#">DRagon ball super ccg</a></li>
+                            <li><a class="dropdown-item  text-uppercase" href="#">DRagon ball Z tcg</a></li>
                         </div>
-                        <div class="col">
-                        <li><a class="dropdown-item  text-uppercase" href="#">dice master</a></li>
-                        <li><a class="dropdown-item  text-uppercase" href="#">dragoborne</a></li>
-                        <li><a class="dropdown-item  text-uppercase" href="#">meta x TCG</a></li>
-                        <li><a class="dropdown-item  text-uppercase" href="#">bakugan tcg</a></li>
-                        <li><a class="dropdown-item  text-uppercase" href="#">duel master</a></li>
+                        <div class="col-md col-sm-6">
+                            <li><a class="dropdown-item  text-uppercase" href="#">dice master</a></li>
+                            <li><a class="dropdown-item  text-uppercase" href="#">dragoborne</a></li>
+                            <li><a class="dropdown-item  text-uppercase" href="#">meta x TCG</a></li>
+                            <li><a class="dropdown-item  text-uppercase" href="#">bakugan tcg</a></li>
+                            <li><a class="dropdown-item  text-uppercase" href="#">duel master</a></li>
                         </div>
-                        <div class="col">
-                        <li><a class="dropdown-item  text-uppercase" href="#">final fantasy</a></li>
-                        <li><a class="dropdown-item  text-uppercase" href="#">zombie world order</a></li>
-                        <li><a class="dropdown-item  text-uppercase" href="#">metazoo</a></li>
-                        <li><a class="dropdown-item  text-uppercase" href="#">star wars: destiny</a></li>
-                        <li><a class="dropdown-item  text-uppercase" href="#">future card buddyfight</a></li>
+                        <div class="col-md col-sm-6">
+                            <li><a class="dropdown-item  text-uppercase" href="#">final fantasy</a></li>
+                            <li><a class="dropdown-item  text-uppercase" href="#">zombie world order</a></li>
+                            <li><a class="dropdown-item  text-uppercase" href="#">metazoo</a></li>
+                            <li><a class="dropdown-item  text-uppercase" href="#">star wars: destiny</a></li>
+                            <li><a class="dropdown-item  text-uppercase" href="#">future card buddyfight</a></li>
                         </div>
                     </ul>
                 </div>
@@ -95,161 +95,61 @@ $homeUrl = get_home_url();
                 </div>
                 <div class="group-box p-0">
                     <div class="row">
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="content">
-                                <img src="<?php echo $imgPath; ?>Codex of frailty - Out siders flesh and blood.png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
-                                <div class="content-container">
-                                    <p class="name">Codex of frailty - Out siders flesh and blood</p>
-                                    <p class="price">₱ 1099.99</p>
-                                    <div class="group-button">
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
+                        <?php
+                        $args = array(
+                            'post_type'        => 'product',
+                            'posts_per_page'   => -1,
+                            'post_status'      => 'publish',
+                            'order'            => 'DESC',
+                        );
+                        $counter = 1;
+                        $productLoop = new WP_Query($args);
+                        if ($productLoop->have_posts()):
+                            while ($productLoop->have_posts()) : $productLoop->the_post();
+                                $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                                $product = wc_get_product(get_the_ID());
+                                $short_description = $product->get_short_description();
+                                $product_id = get_the_ID();
+                                if ($product) {
+                                    if ($product->is_type('variable')) {
+                                        $min_variation_price = number_format($product->get_variation_price('min'),2);
+                                        $max_variation_price = number_format($product->get_variation_price('max'),2);
+                                        $price_range = '₱'.$min_variation_price . ' - ' . '₱'.$max_variation_price;
+                                        $price = $price_range;
+                                    } 
+                                    else {
+                                        $price = $product->get_price_html();
+                                    }
+                                } ?>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" <?php echo $counter>8 ? "style='display:none'" : "" ?>>
+                                <div class="content" id="product<?php echo $product_id?>id">
+                                    <img loading="lazy" src="<?php echo $featured_image_url; ?>" alt="<?php echo get_the_title(); ?>" class="cards">
+                                    <img loading="lazy" src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
+                                    <div class="add-to-wishlist">
+                                        <?php //echo do_shortcode('[wishlist]')?>
                                     </div>
-                                    <div class="group-button-mobile d-block d-md-none">
-                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="content">
-                                <img src="<?php echo $imgPath; ?>Teklo foundry heart - Arcane rising flesh and blood.png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
-                                <div class="content-container">
-                                    <p class="name">Teklo foundry heart - Arcane rising flesh and blood</p>
-                                    <p class="price">₱ 1099.99</p>
-                                    <div class="group-button">
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
-                                    </div>
-                                    <div class="group-button-mobile d-block d-md-none">
-                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="content">
-                                <img src="<?php echo $imgPath; ?>Pikachu VMAX (Secret) - SWSH04 Vivid Voltage (SWSH04).png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
-                                <div class="content-container">
-                                    <p class="name">Pikachu VMAX (Secret) - SWSH04: Vivid Voltage (SWSH04)</p>
-                                    <p class="price">₱ 1099.99</p>
-                                    <div class="group-button">
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
-                                    </div>
-                                    <div class="group-button-mobile d-block d-md-none">
-                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
+                                    <div class="content-container">
+                                        <p class="name"><?php echo get_the_title(); ?></p>
+                                        <p class="price"><?php echo $price; ?></p>
+                                        <div class="group-button">
+                                            <a href="<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
+                                            <a href="<?php echo esc_url(wc_get_cart_url()); ?>?add-to-cart=<?php echo esc_attr($product_id); ?>" class="blue-btn text-white" id="add-to-cart">Add to Cart</a>
+                                        </div>
+                                        <div class="group-button-mobile d-block d-md-none">
+                                            <img loading="lazy" src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
+                                            <img loading="lazy" src="<?php echo $imgPath; ?>view.png" alt="">
+                                            <a href="?add-to-cart<?php echo $product_id;?>"> 
+                                                <img loading="lazy" src="<?php echo $imgPath; ?>cart-blue.png" alt="">
+                                            </a> 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="content">
-                                <img src="<?php echo $imgPath; ?>blue-eyes white dragon -Duelist Saga (DUSA) YU-GI-oh.png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
-                                <div class="content-container">
-                                    <p class="name">blue-eyes white dragon -Duelist Saga (DUSA) YU-GI-oh!</p>
-                                    <p class="price">₱ 1099.99</p>
-                                    <div class="group-button">
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
-                                    </div>
-                                    <div class="group-button-mobile d-block d-md-none">
-                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="content">
-                                <img src="<?php echo $imgPath; ?>Summoned Skull - Legendary Collection 3 Yugi's World (LC03).png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
-                                <div class="content-container">
-                                    <p class="name">Summoned Skull - Legendary Collection 3: Yugi's World (LC03)...</p>
-                                    <p class="price">₱ 1099.99</p>
-                                    <div class="group-button">
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
-                                    </div>
-                                    <div class="group-button-mobile d-block d-md-none">
-                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="content">
-                                <img src="<?php echo $imgPath; ?>Charizard V (Full Art) - SWSH09 Brilliant Stars (SWSH09).png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
-                                <div class="content-container">
-                                    <p class="name">Charizard V (Full Art) - SWSH09: Brilliant Stars (SWSH09)</p>
-                                    <p class="price">₱ 1099.99</p>
-                                    <div class="group-button">
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
-                                    </div>
-                                    <div class="group-button-mobile d-block d-md-none">
-                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="content">
-                                <img src="<?php echo $imgPath; ?>Yuriko, the Tiger's Shadow - Commander 2018 (C18).png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
-                               <div class="content-container">
-                                <p class="name">Yuriko, the Tiger's Shadow - Commander 2018 (C18)</p>
-                                    <p class="price">₱ 1099.99</p>
-                                    <div class="group-button">
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
-                                    </div>
-                                    <div class="group-button-mobile d-block d-md-none">
-                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
-                                    </div>
-                               </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="content">
-                                <img src="<?php echo $imgPath; ?>The One Ring - Universes Beyond.png" alt="" class="cards">
-                                <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
-                                <div class="content-container">
-                                    <p class="name">The One Ring - Universes Beyond: The Lord of the Rings: Tales of...</p>
-                                    <p class="price">₱ 1099.99</p>
-                                    <div class="group-button">
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">add to cart</a>
-                                    </div>
-                                    <div class="group-button-mobile d-block d-md-none">
-                                        <img src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>view.png" alt="">
-                                        <img src="<?php echo $imgPath; ?>cart-blue.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <?php $counter +=1; endwhile;
+                        endif; wp_reset_postdata(); ?>
                     </div>
                 </div>
-                <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn learn-more">Learn more</a>
+                <button class="blue-btn learn-more" id="view-more">View More</button>
             </div>
         </div>
     </div>
@@ -263,20 +163,20 @@ $homeUrl = get_home_url();
                     <div class="content-container">
                         <h2 class="text-uppercase text-white">we want the best for you</h2>
                         <ul class="ps-0">
-                            <li class="text-white"><img src="<?php echo $imgPath; ?>card.png" alt=""><p><b>Korem ipsum</b>: Dolor sit amet consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p></li>
-                            <li class="text-white"><img src="<?php echo $imgPath; ?>like.png" alt=""><p><b>Korem ipsum</b>: Dolor sit amet consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p></li>
-                            <li class="text-white"><img src="<?php echo $imgPath; ?>award.png" alt=""><p><b>Korem ipsum</b>: Dolor sit amet consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p></li>
-                            <li class="text-white"><img src="<?php echo $imgPath; ?>person.png" alt=""><p><b>Korem ipsum</b>: Dolor sit amet consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p></li>
+                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>card.png" alt=""><p><b>Korem ipsum</b>: Dolor sit amet consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p></li>
+                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>like.png" alt=""><p><b>Korem ipsum</b>: Dolor sit amet consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p></li>
+                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>award.png" alt=""><p><b>Korem ipsum</b>: Dolor sit amet consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p></li>
+                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>person.png" alt=""><p><b>Korem ipsum</b>: Dolor sit amet consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-xl-5 col-lg-12">
                 <div class="carousel">
-                    <img src="<?php echo $imgPath; ?>fleshblood.png" class="carousel-diamon left active">
-                    <img src="<?php echo $imgPath; ?>carletviolet.png" class="carousel-diamon right">
-                    <img src="<?php echo $imgPath; ?>yo-hi-uh.png" class="carousel-diamon top">
-                    <img src="<?php echo $imgPath; ?>magic.png" class="carousel-diamon bottom">
+                    <img loading="lazy" src="<?php echo $imgPath; ?>fleshblood.png" class="carousel-diamon left active">
+                    <img loading="lazy" src="<?php echo $imgPath; ?>carletviolet.png" class="carousel-diamon right">
+                    <img loading="lazy" src="<?php echo $imgPath; ?>yo-hi-uh.png" class="carousel-diamon top">
+                    <img loading="lazy" src="<?php echo $imgPath; ?>magic.png" class="carousel-diamon bottom">
                 </div>
             </div>
         </div>
@@ -288,7 +188,7 @@ $homeUrl = get_home_url();
         <div class="row">
             <div class="col">
                 <div class="image-container">
-                    <img src="<?php echo $imgPath; ?>about.png" alt="">
+                    <img loading="lazy" src="<?php echo $imgPath; ?>about.png" alt="">
                 </div>
             </div>
             <div class="col-lg-9 col-md-12">
@@ -314,48 +214,48 @@ $homeUrl = get_home_url();
                 </div>
                 <div class="articles">
                     <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                            <div class="content">
-                                <img src="<?php echo $imgPath; ?>article1.jpg" alt="" class="feature-img">
-                                <p class="date">Sept 20,2023</p>
-                                <h3>Corem ipsum dolor sit amet conserat adipiscing elit</h3>
-                                <p class="description">Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis...</p>
-                                <a href="http://" target="_blank" rel="noopener noreferrer" class="read-more">read more <img src="<?php echo $imgPath; ?>read-more-left-arrow.png" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                            <div class="content">
-                                <img src="<?php echo $imgPath; ?>article2.jpg" alt="" class="feature-img">
-                                <p class="date">Sept 20,2023</p>
-                                <h3>Corem ipsum dolor sit amet conserat adipiscing elit</h3>
-                                <p class="description">Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis...</p>
-                                <a href="http://" target="_blank" rel="noopener noreferrer" class="read-more">read more <img src="<?php echo $imgPath; ?>read-more-left-arrow.png" alt=""></a>
-                            </div>
-                        </div>
+                        <?php $firstBlog = array('post_type' => 'post','posts_per_page' => 2,'post_status' => 'publish','order' => 'DESC');
+                        $results = new WP_Query($firstBlog);
+                        $excluded_posts = array();
+                        if ($results->have_posts()) :
+                            while ($results->have_posts()) : $results->the_post();
+                                $blog_id = get_the_ID();
+                                $excluded_posts[] = $blog_id; ?>
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <a href="<?php echo the_permalink();?>" target="_blank" rel="noopener noreferrer">
+                                        <div class="content">
+                                            <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($blog_id, 'medium'); ?>" alt="<?php echo get_the_title(); ?>" class="feature-img">
+                                            <p class="date"><?php echo get_the_date(); ?></p>
+                                            <h3><?php echo get_the_title(); ?></h3>
+                                            <p class="description"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
+                                            <button class="read-more">read more <img loading="lazy" src="<?php echo $imgPath; ?>read-more-left-arrow.png" alt=""></button>
+                                        </div>
+                                    </a>
+                                </div>
+                            <?php endwhile;
+                        endif; ?>
                         <div class="col-xl-6">
                             <div class="d-flex flex-column">
-                                <div class="content d-flex">
-                                    <div class="image-container">
-                                        <img src="<?php echo $imgPath; ?>article3.jpg" alt="" class="feature-img">
-                                    </div>
-                                    <div class="content">
-                                        <p class="date"></p>
-                                        <h3>Corem ipsum dolor sitamet conserat adipiscing Dolor elit</h3>
-                                        <p class="description">Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit... </p>
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="read-more">read more <img src="<?php echo $imgPath; ?>read-more-left-arrow.png" alt=""></a>
-                                    </div>
-                                </div>
-                                <div class="content d-flex">
-                                    <div class="image-container">
-                                        <img src="<?php echo $imgPath; ?>article4.jpg" alt="" class="feature-img">
-                                    </div>
-                                    <div class="content">
-                                        <p class="date"></p>
-                                        <h3>Corem ipsum dolor sitamet conserat adipiscing Dolor elit</h3>
-                                        <p class="description">Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit... </p>
-                                        <a href="http://" target="_blank" rel="noopener noreferrer" class="read-more">read more <img src="<?php echo $imgPath; ?>read-more-left-arrow.png" alt=""></a>
-                                    </div>
-                                </div>
+                            <?php $remainingBlogs = array('post_type' => 'post','posts_per_page' => 2,'post_status' => 'publish','order' => 'DESC','post__not_in' => $excluded_posts);
+                            $results = new WP_Query($remainingBlogs);
+                            if ($results->have_posts()) :
+                                while ($results->have_posts()) : $results->the_post();
+                                    $blog_id = get_the_ID(); ?>
+                                        <a href="<?php echo the_permalink();?>" target="_blank" rel="noopener noreferrer">
+                                            <div class="content d-flex">
+                                                <div class="image-container">
+                                                    <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($blog_id, 'medium'); ?>" alt="<?php echo get_the_title(); ?>" class="feature-img">
+                                                </div>
+                                                <div class="content">
+                                                    <p class="date"><?php echo get_the_date(); ?></p>
+                                                    <h3><?php echo get_the_title(); ?></h3>
+                                                    <p class="description"><?php echo wp_trim_words(get_the_excerpt(), 10); ?></p>
+                                                    <button class="read-more">read more <img loading="lazy" src="<?php echo $imgPath; ?>read-more-left-arrow.png" alt=""></button>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    <?php endwhile;
+                                endif; ?>
                             </div>
                         </div>
                     </div>
@@ -381,10 +281,10 @@ $homeUrl = get_home_url();
                 <div class="col-xl-2 col-lg-12">
                     <div class="contact-details">
                         <h4 class="text-white text-uppercase">contact details:</h4>
-                        <a href="tel:63+ 092123456789"><img src="<?php echo $imgPath; ?>telephone.png" alt=""> 63+ 092123456789</a>
-                        <a href="mailto:loremipsum@gmail.com"><img src="<?php echo $imgPath; ?>email.png" alt="">loremipsum@gmail.com</a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><img src="<?php echo $imgPath; ?>fb.png" alt="">lorem ipsum</a>
-                        <a href="http://" target="_blank" rel="noopener noreferrer"><img src="<?php echo $imgPath; ?>instagram.png" alt="">lorem ipsum</a>
+                        <a href="tel:63+ 092123456789"><img loading="lazy" src="<?php echo $imgPath; ?>telephone.png" alt=""> 63+ 092123456789</a>
+                        <a href="mailto:loremipsum@gmail.com"><img loading="lazy" src="<?php echo $imgPath; ?>email.png" alt="">loremipsum@gmail.com</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="<?php echo $imgPath; ?>fb.png" alt="">lorem ipsum</a>
+                        <a href="http://" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="<?php echo $imgPath; ?>instagram.png" alt="">lorem ipsum</a>
                     </div>
                 </div>
             </div>

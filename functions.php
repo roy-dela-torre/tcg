@@ -23,3 +23,5 @@ if ( ! function_exists( 'tcg' ) ) :
         $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
         return $excerpt;
     }
+
+    

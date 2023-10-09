@@ -35,6 +35,7 @@ section a{
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
+    color: unset;
 }
 section p{
     font-family: 'Inter', sans-serif;
@@ -50,7 +51,7 @@ section .blue-btn{
     transition: 0.5s;
 }
 section .blue-btn:hover{
-    color: #00CBFF;
+    color: #00CBFF !important;
     background: #FFFFFF;
 }
 section .wrapper{
@@ -168,7 +169,7 @@ footer{
     padding: 100px 0;
 }
 footer .wrapper{
-    max-width: 1530px;
+    max-width: 1554px;
     margin: 0 auto;
 }
 footer a{
@@ -222,11 +223,31 @@ footer .col-xxl>.row{
 footer .logo{
     margin-bottom: 50px;
 }
-footer .wrapper{
 
-}
 footer .wrapper>.row{
     gap: 24px 0;
+    justify-content: center;
+}
+footer .quicklinks{
+    max-width: 180px;
+}
+footer .trading-cards{
+    max-width: 402px;
+}
+footer .policies{
+    max-width: 320px;
+}
+footer .wrapper>.row>div:not(.bottom){
+    width: fit-content;
+    max-width: fit-content;
+    margin: 0 auto;
+}
+footer .wrapper>.row>div>div>.row{
+    gap: 10px 0;
+}
+
+footer div#interested-selling{
+    max-width: 240px;
 }
 
 
@@ -245,6 +266,12 @@ footer .wrapper>.row{
     }
     .narbar .navbar-collapse{
         padding-bottom: 30px;
+    }
+}
+@media (max-width:1366px) {
+    footer .wrapper>.row>div:first-child{
+        width: 100%;
+        max-width: 100%;
     }
 }
 @media (max-width:1200px) {

@@ -8,7 +8,7 @@
     <!-- <link rel="icon" href="<?php //echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/logo-icon.png" sizes="32x32" /> -->
 </head>
 <body <?php body_class(); ?>>
-<div class="narbar">
+<div class="narbar fixed-top">
   <nav class="navbar navbar-expand-xxl bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand pt-0 pb-0" href="<?php echo get_home_url(); ?>">

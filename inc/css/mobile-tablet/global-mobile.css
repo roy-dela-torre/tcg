@@ -1,4 +1,8 @@
 @media (max-width:991px) {
+    footer .wrapper>.row>div:not(.bottom):not(:first-child){
+        width: 50%;
+        max-width: 50%;
+    }
     
 }
 @media (max-width:767px) {
@@ -8,14 +12,30 @@
     footer .col-xxl>.row{
         flex-direction: column;
     }
-    footer .col-xxl>.row>div,footer h5,footer h4,footer a{
-        width: 100% !important;
-        text-align: center;
-    }
     footer a{
         max-width: fit-content;
     }
+    footer .wrapper>.row>div:not(.bottom) h5,footer .wrapper>.row>div:not(.bottom) h4{
+        text-align: left;
+    }
+}
+@media (max-width:575px) {
     footer .content.d-flex.flex-column{
         align-items: center;
+    }
+}
+@media (max-width:450px) {
+    footer .wrapper>.row>div:not(.bottom):not(:first-child),footer .wrapper>.row>div:not(.bottom):not(:first-child)>div{
+        width: 100%;
+        max-width: 100% !important;
+    }
+    footer .wrapper>.row>div:not(.bottom):not(:first-child) a,footer .wrapper>.row>div:not(.bottom):not(:first-child) h5,footer .wrapper>.row>div:not(.bottom):not(:first-child) h4{
+        text-align: center;
+        width: 100%;
+        display: block;
+        max-width: 100%;
+    }
+    footer .bottom hr{
+        margin-top: 25px;
     }
 }
