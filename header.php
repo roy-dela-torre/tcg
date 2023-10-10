@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo wp_title(); ?></title>
     <?php include 'stylesheet-manager.php';?>
-    <?php is_front_page() ? "" : wp_head()?>
+    <?php wp_head()?>
     <!-- <link rel="icon" href="<?php //echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/logo-icon.png" sizes="32x32" /> -->
 </head>
 <body <?php body_class(); ?>>
@@ -34,7 +34,7 @@
             </form>
             <div class="group-button">
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png" alt="">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist-white.png" alt="">
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png" alt="">
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/user.png" alt="">
             </div>
           </div>

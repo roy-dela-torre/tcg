@@ -62,5 +62,5 @@
     </div>
 </footer>
 <?php include('script-manager.php')?>
-<?php is_front_page() ? "" : wp_footer()?>
+<?php wp_footer()?>
 </html>

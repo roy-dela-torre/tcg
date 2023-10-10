@@ -42,10 +42,27 @@ $(document).ready(function () {
             $('section.we-want-the-best .top').css('transform',leftImageTransform);
             $('section.we-want-the-best .carousel img').each(function() {
             var computedStyle = window.getComputedStyle(this);
-            if (computedStyle.transform === 'matrix(1, 0, 0, 1, 0, -350)') {
-                $(this).addClass('active');
-            } else {
-                $(this).removeClass('active');
+            var windowWidth = window.innerWidth;
+            if (windowWidth > 1400) {
+                if (computedStyle.transform === 'matrix(1, 0, 0, 1, 0, -350)') {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+            }
+            else if (windowWidth < 1200) {
+                if (computedStyle.transform === 'matrix(1, 0, 0, 1, 0, -170)') {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+            }
+            else {
+                if (computedStyle.transform === 'matrix(1, 0, 0, 1, 0, -220)') {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
             }
             });
         }
@@ -56,6 +73,7 @@ $(document).ready(function () {
 
         // same height p.name
         setEqualHeightForSection('section.featured-card', 'p.name');
+        setEqualHeightForSection('section.featured-card', 'p.price');
 
         // check screen width
         var slice = 0;
@@ -84,11 +102,11 @@ $(document).ready(function () {
         // load more product
         $("section.featured-card button#view-more").click(function() {
             checkWindowWidth();
-            var hiddenElements = $(".col-xl-3.col-lg-4.col-md-6.col-sm-12:hidden");
+            var hiddenElements = $(".col-xl-3.col-lg-4.col-md-6.col-6:hidden");
             if (hiddenElements.length > 0) {
                 hiddenElements.slice(0, slice).slideDown();
             }
-            if ($(".col-xl-3.col-lg-4.col-md-6.col-sm-12:hidden").length === 0) {
+            if ($(".col-xl-3.col-lg-4.col-md-6.col-6:hidden").length === 0) {
                 $("section.featured-card button#view-more").hide();
             }
         });

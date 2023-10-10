@@ -102,6 +102,7 @@ $homeUrl = get_home_url();
                             'post_status'      => 'publish',
                             'order'            => 'DESC',
                         );
+                        global $product;
                         $counter = 1;
                         $productLoop = new WP_Query($args);
                         if ($productLoop->have_posts()):
@@ -121,19 +122,25 @@ $homeUrl = get_home_url();
                                         $price = $product->get_price_html();
                                     }
                                 } ?>
-                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" <?php echo $counter>8 ? "style='display:none'" : "" ?>>
-                                <div class="content" id="product<?php echo $product_id?>id">
-                                    <img loading="lazy" src="<?php echo $featured_image_url; ?>" alt="<?php echo get_the_title(); ?>" class="cards">
-                                    <img loading="lazy" src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" class="wishlist d-none d-md-block">
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-6" <?php echo $counter>8 ? "style='display:none'" : "" ?>>
+                                <div class="content <?php echo $product->get_stock_status() === 'outofstock' ? "outofstock" : "" ?>" id="product<?php echo $product_id?>id">
+                                    <div class="product-image">
+                                        <img loading="lazy" src="<?php echo $featured_image_url; ?>" alt="<?php echo get_the_title(); ?>" class="cards">
+                                        <?php 
+                                        if ($product->get_stock_status() === 'outofstock') { ?>
+                                            <p class="outOfStock text-uppercase">Out of stock</p>
+                                        <?php } ?>
+                                    </div>
+                                    <img src='<?php echo $imgPath; ?>wishlist-blue.png' onmouseover="this.src='<?php echo $imgPath; ?>wishlist-white.png';" onmouseout="this.src='<?php echo $imgPath; ?>wishlist-blue.png';" class="wishlist d-none d-md-block"/>
                                     <div class="add-to-wishlist">
-                                        <?php //echo do_shortcode('[wishlist]')?>
+                                        <?php echo do_shortcode('[yith_wcwl_add_to_wishlist]')?>
                                     </div>
                                     <div class="content-container">
                                         <p class="name"><?php echo get_the_title(); ?></p>
-                                        <p class="price"><?php echo $price; ?></p>
+                                        <p class="price <?php echo $product->is_on_sale() ? "sale" : "" ?>"><?php echo $product->is_on_sale() ? $price." (ON SALE)" : $price; ?></p>
                                         <div class="group-button">
                                             <a href="<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                            <a href="<?php echo esc_url(wc_get_cart_url()); ?>?add-to-cart=<?php echo esc_attr($product_id); ?>" class="blue-btn text-white" id="add-to-cart">Add to Cart</a>
+                                            
                                         </div>
                                         <div class="group-button-mobile d-block d-md-none">
                                             <img loading="lazy" src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
@@ -158,7 +165,7 @@ $homeUrl = get_home_url();
 <section class="we-want-the-best overflow-hidden p-0">
     <div class="container-fluid">
         <div class="row align-items-center">
-            <div class="col-xl-7 col-lg-9 ps-0">
+            <div class=" col-xl-7 col-lg-8 col-md-12 ps-0">
                 <div class="content">
                     <div class="content-container">
                         <h2 class="text-uppercase text-white">we want the best for you</h2>
@@ -171,13 +178,15 @@ $homeUrl = get_home_url();
                     </div>
                 </div>
             </div>
-            <div class="col-xl-5 col-lg-12">
+            <div class="col-xl-5 col-lg-4 col-md-12">
+               <div class="carouseel-container">
                 <div class="carousel">
-                    <img loading="lazy" src="<?php echo $imgPath; ?>fleshblood.png" class="carousel-diamon left active">
-                    <img loading="lazy" src="<?php echo $imgPath; ?>carletviolet.png" class="carousel-diamon right">
-                    <img loading="lazy" src="<?php echo $imgPath; ?>yo-hi-uh.png" class="carousel-diamon top">
-                    <img loading="lazy" src="<?php echo $imgPath; ?>magic.png" class="carousel-diamon bottom">
-                </div>
+                        <img loading="lazy" src="<?php echo $imgPath; ?>fleshblood.png" class="carousel-diamon left active">
+                        <img loading="lazy" src="<?php echo $imgPath; ?>carletviolet.png" class="carousel-diamon right">
+                        <img loading="lazy" src="<?php echo $imgPath; ?>yo-hi-uh.png" class="carousel-diamon top">
+                        <img loading="lazy" src="<?php echo $imgPath; ?>magic.png" class="carousel-diamon bottom">
+                    </div>
+               </div>
             </div>
         </div>
     </div>
@@ -224,7 +233,9 @@ $homeUrl = get_home_url();
                                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                                     <a href="<?php echo the_permalink();?>" target="_blank" rel="noopener noreferrer">
                                         <div class="content">
-                                            <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($blog_id, 'medium'); ?>" alt="<?php echo get_the_title(); ?>" class="feature-img">
+                                            <div class="article-image">
+                                                <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($blog_id, 'medium'); ?>" alt="<?php echo get_the_title(); ?>" class="feature-img">
+                                            </div>
                                             <p class="date"><?php echo get_the_date(); ?></p>
                                             <h3><?php echo get_the_title(); ?></h3>
                                             <p class="description"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
@@ -244,7 +255,9 @@ $homeUrl = get_home_url();
                                         <a href="<?php echo the_permalink();?>" target="_blank" rel="noopener noreferrer">
                                             <div class="content d-flex">
                                                 <div class="image-container">
-                                                    <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($blog_id, 'medium'); ?>" alt="<?php echo get_the_title(); ?>" class="feature-img">
+                                                    <div class="article-image">
+                                                        <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($blog_id, 'medium'); ?>" alt="<?php echo get_the_title(); ?>" class="feature-img">
+                                                    </div>
                                                 </div>
                                                 <div class="content">
                                                     <p class="date"><?php echo get_the_date(); ?></p>
