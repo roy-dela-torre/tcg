@@ -33,9 +33,9 @@
                 </div>
             </form>
             <div class="group-button">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png" alt="">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png" alt="">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/user.png" alt="">
+              <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-cart.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png';" onClick="window.open('<?php echo get_home_url(); ?>/cart/');"/>
+              <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-wishlist.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png';" onClick="window.open('<?php echo get_home_url(); ?>/wishlist/');"/>
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/user.png" alt="" onClick="window.open('<?php echo get_home_url(); ?>/my-account/');">
             </div>
           </div>
           <a href="http://" target="_blank" rel="noopener noreferrer" class="sale-with-us">sell with us</a>

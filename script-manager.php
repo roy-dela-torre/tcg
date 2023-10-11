@@ -7,8 +7,8 @@ $(document).ready(function () {
     
     <?php if(is_front_page()):?>
         const bannerSection = $('section.banner');
-        const bannerImgPaths = ["banner1.jpg", "banner2.jpg","banner3.jpg", "banner4.jpg", "banner5.jpg","banner6.jpg"];
-        const cardPath = ["banner-pokemon.png","banner-yugioh.png", "banner-magic.png","banner-digimon.png", "banner-onepiece.png","banner-uprising.png"];
+        const bannerImgPaths = ["banner4digimon.jpg","banner5onepiece.jpg","banner6uprising.jpg","banner1pokemon.jpg","banner2yugioh.jpg",  "banner3magic.jpg"];
+        const cardPath = ["banner-digimon.png","banner-onepiece.png","banner-uprising.png","banner-pokemon.png","banner-yugioh.png", "banner-magic.png"];
         const diamondImg = ["diamond2.png","diamond3.png","diamond4.png","diamond1.png","diamond2.png","diamond3.png","diamond4.png"]
         let currentImageIndex = 0;
         let rotationDegree = 0;
@@ -51,11 +51,22 @@ $(document).ready(function () {
                 }
             }
             else if (windowWidth < 1200) {
-                if (computedStyle.transform === 'matrix(1, 0, 0, 1, 0, -170)') {
+                if (windowWidth < 575) {
+                    if (computedStyle.transform === 'matrix(1, 0, 0, 1, 0, -160)') {
+                        $(this).addClass('active');
+                    } 
+                    else {
+                        $(this).removeClass('active');
+                    }
+                    console.log('mobile')
+                }
+                else if (computedStyle.transform === 'matrix(1, 0, 0, 1, 0, -170)') {
                     $(this).addClass('active');
-                } else {
+                } 
+                else {
                     $(this).removeClass('active');
                 }
+                
             }
             else {
                 if (computedStyle.transform === 'matrix(1, 0, 0, 1, 0, -220)') {
@@ -113,6 +124,33 @@ $(document).ready(function () {
         // first section margin top
         var navHeight = $(".narbar.fixed-top").height()
 	    $('section:first').css('margin-top', navHeight);
+
+        $('img.wishlist').on('click', function() {
+            var contentId = $(this).closest('.content').attr('id');
+            
+            // Construct the selector for the add_to_wishlist button based on the contentId
+            var buttonSelector = 'section.featured-card .content#' + contentId + ' a.add_to_wishlist.single_add_to_wishlist.button.alt';
+            
+            // You can now use the buttonSelector to perform actions on the matching button
+            $(buttonSelector).click(); // Replace this with your desired action
+        });
+
+        $('section.featured-card button.navbar-toggler').click(function() {
+            // Get the current background image URL
+            var currentImage = $('section.featured-card span.navbar-toggler-icon').css('background-image');
+            
+            // Define the URLs for the two background images
+            var image1 = 'url("<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/filter.png")';
+            var image2 = 'url("<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/close-btn.png")';
+
+            // Toggle between the two images
+            if (currentImage === image1) {
+                $('section.featured-card span.navbar-toggler-icon').css('background-image', image2);
+            } else {
+                $('section.featured-card span.navbar-toggler-icon').css('background-image', image1);
+            }
+        });
+
 
     <?php endif; ?>
     function setEqualHeightForSection(sectionSelector, secondSelector) {

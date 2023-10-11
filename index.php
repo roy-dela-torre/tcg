@@ -15,7 +15,7 @@ $homeUrl = get_home_url();
                 </div>
                 <div class="col-lg-5 col-md-12">
                     <div class="image-container">
-                        <img loading="lazy" src="<?php echo $imgPath; ?>banner-uprising.png" alt="" class="animate__fadeIn">
+                        <img loading="lazy" src="<?php echo $imgPath; ?>banner-magic.png" alt="" class="animate__fadeIn">
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@ $homeUrl = get_home_url();
 <section class="featured-card">
     <nav class="navbar navbar-expand-xxl bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand d-block d-xxl-none" href="#">Acrtive button</a>
+            <a class="navbar-brand d-block d-xxl-none" href="#">Categories:</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -121,7 +121,9 @@ $homeUrl = get_home_url();
                                     else {
                                         $price = $product->get_price_html();
                                     }
-                                } ?>
+                                } 
+                                $in_wishlist = YITH_WCWL()->is_product_in_wishlist( $product_id );
+                                $img_src = $in_wishlist ? 'wishlist-white.png' : 'wishlist-blue.png'; ?>
                             <div class="col-xl-3 col-lg-4 col-md-6 col-6" <?php echo $counter>8 ? "style='display:none'" : "" ?>>
                                 <div class="content <?php echo $product->get_stock_status() === 'outofstock' ? "outofstock" : "" ?>" id="product<?php echo $product_id?>id">
                                     <div class="product-image">
@@ -132,7 +134,7 @@ $homeUrl = get_home_url();
                                         <?php } ?>
                                     </div>
                                     <img src='<?php echo $imgPath; ?>wishlist-blue.png' onmouseover="this.src='<?php echo $imgPath; ?>wishlist-white.png';" onmouseout="this.src='<?php echo $imgPath; ?>wishlist-blue.png';" class="wishlist d-none d-md-block"/>
-                                    <div class="add-to-wishlist">
+                                    <div class="add-to-wishlist w-100">
                                         <?php echo do_shortcode('[yith_wcwl_add_to_wishlist]')?>
                                     </div>
                                     <div class="content-container">
@@ -140,13 +142,13 @@ $homeUrl = get_home_url();
                                         <p class="price <?php echo $product->is_on_sale() ? "sale" : "" ?>"><?php echo $product->is_on_sale() ? $price." (ON SALE)" : $price; ?></p>
                                         <div class="group-button">
                                             <a href="<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer" class="blue-btn text-white">View</a>
-                                            
+                                            <a href="<?php echo $product->get_stock_status() === 'outofstock' ? 'javascript:void(0);' : esc_url(wc_get_cart_url() . '?add-to-cart=' . esc_attr($product_id)); ?>" class="blue-btn text-white" id="add-to-cart" <?php echo $product->get_stock_status() === 'outofstock' ? 'disabled' : ''; ?>>Add to Cart</a>
                                         </div>
                                         <div class="group-button-mobile d-block d-md-none">
                                             <img loading="lazy" src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
                                             <img loading="lazy" src="<?php echo $imgPath; ?>view.png" alt="">
-                                            <a href="?add-to-cart<?php echo $product_id;?>"> 
-                                                <img loading="lazy" src="<?php echo $imgPath; ?>cart-blue.png" alt="">
+                                            <a href="<?php echo $product->get_stock_status() === 'outofstock' ? 'javascript:void(0);' : esc_url(wc_get_cart_url() . '?add-to-cart=' . esc_attr($product_id)); ?>"> 
+                                                <img loading="lazy" src="<?php echo $imgPath; ?><?php echo $product->get_stock_status() === 'outofstock' ? 'cart-disable.png' : 'cart-blue.png'; ?>" alt="">
                                             </a> 
                                         </div>
                                     </div>
@@ -237,7 +239,7 @@ $homeUrl = get_home_url();
                                                 <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($blog_id, 'medium'); ?>" alt="<?php echo get_the_title(); ?>" class="feature-img">
                                             </div>
                                             <p class="date"><?php echo get_the_date(); ?></p>
-                                            <h3><?php echo get_the_title(); ?></h3>
+                                            <h5><?php echo get_the_title(); ?></h5>
                                             <p class="description"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
                                             <button class="read-more">read more <img loading="lazy" src="<?php echo $imgPath; ?>read-more-left-arrow.png" alt=""></button>
                                         </div>
@@ -261,7 +263,7 @@ $homeUrl = get_home_url();
                                                 </div>
                                                 <div class="content">
                                                     <p class="date"><?php echo get_the_date(); ?></p>
-                                                    <h3><?php echo get_the_title(); ?></h3>
+                                                    <h5><?php echo get_the_title(); ?></h5>
                                                     <p class="description"><?php echo wp_trim_words(get_the_excerpt(), 10); ?></p>
                                                     <button class="read-more">read more <img loading="lazy" src="<?php echo $imgPath; ?>read-more-left-arrow.png" alt=""></button>
                                                 </div>
@@ -282,7 +284,7 @@ $homeUrl = get_home_url();
     <div class="container-fluid">
         <div class="wrapper">
             <div class="row">
-                <div class="col-xxl-8 col-xl-9 col-lg-12">
+                <div class="col-xxl-8 col-xl-9 col-lg-12 p-md-0">
                     <div class="content">
                         <div class="content-container">
                             <h2 class="text-uppercase text-white">Have A Question?</h2>
