@@ -101,6 +101,9 @@ section.featured-card li a{
     font-weight: 700;
     padding: 15px;
 }
+section.featured-card li a:hover,section.featured-card button.btn.btn-secondary.dropdown-toggle:hover{
+    color: #00CBFF !important;
+}
 
 
 section.featured-card .navbar-toggler:focus{
@@ -306,6 +309,9 @@ section.we-want-the-best .content li{
 section.we-want-the-best .content li img{
     margin-right: 20px;
 }
+section.we-want-the-best .content li p{
+    margin-bottom: 0;
+}
 section.we-want-the-best.overflow-hidden ul{
     display: flex;
     flex-direction: column;
@@ -446,7 +452,7 @@ section.article p.date{
 
 
 section.have-question{
-    background: url('../../../assets/img/homepage/have-question-bg.jpg')no-repeat 0px center/cover
+    background: url('../../../assets/img/homepage/have-question-bg.jpg')no-repeat -130px center/cover
 }
 section.have-question .content{
     background: url('../../../assets/img/homepage/have-quiestion-bg.png')no-repeat center center/100% 771px;;
@@ -456,11 +462,14 @@ section.have-question .content{
     align-items: center;
     justify-content: center;
 }
-section.have-question form.wpcf7-form.init p{
+section.have-question form p{
     display: flex;
     flex-direction: column;
     gap: 20px 0;
     margin-bottom: 0;
+}
+section.have-question form.wpcf7-form.invalid .wpcf7-response-output{
+    margin-top: 0;
 }
 section.have-question input:not([type="submit"]),section.have-question textarea{
     border-radius: 5px;

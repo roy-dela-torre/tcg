@@ -6,11 +6,11 @@ $homeUrl = get_home_url();
     <div class="container-fluid">
         <div class="wrapper">
             <div class="row align-items-center">
-                <div class="col-lg-7 col-md-12">
+                <div class="col-lg-7 col-md-12 px-md-0">
                     <div class="content">
-                        <h1 class="text-uppercase text-white">Porem ipsum dolor sit amet consectetur Siti lora</h1>
+                        <div class="text-uppercase text-white" id="header"><h1>Porem ipsum dolor sit amet consectetur Siti lora</h1></div>
                         <p class="text-white">Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                        <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-uppercase">shop now</a>
+                        <a href="/shop/" target="_blank" rel="noopener noreferrer" class="blue-btn text-uppercase">shop now</a>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-12">
@@ -26,64 +26,70 @@ $homeUrl = get_home_url();
 <section class="featured-card">
     <nav class="navbar navbar-expand-xxl bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand d-block d-xxl-none" href="#">Categories:</a>
+            <a class="navbar-brand d-block d-xxl-none">featured cards</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link text-uppercase text-center active" href="#">featured cards</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase text-center" href="#">flesh and blood</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase text-center" href="#">PokÉmon</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase text-center" href="#">Yu-gi-oh!</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase text-center" href="#">magic</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase text-center" href="#">digimon</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase text-center" href="#">one piece</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase text-center" href="#">cardfight!! vanguard</a>
-                </li>
-                <div class="dropdown d-flex justify-content-center">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">More
+                <div class="categories d-flex d-block d-sm-none">
+                    <span>Categories:</span>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon" style="background-image: url(&quot;http://localhost/tcg/wp-content/themes/tcg/assets/img/homepage/close-btn.png&quot;);"></span>
                     </button>
-                    <ul class="dropdown-menu row">
-                        <div class="col-md col-sm-6">
-                            <li><a class="dropdown-item  text-uppercase" href="#">BAKUGAN TCG</a></li>
-                            <li><a class="dropdown-item  text-uppercase" href="#">WORLD OF WARCRAFT TCG</a></li>
-                            <li><a class="dropdown-item  text-uppercase" href="#">DISNEY LORCANA</a></li>
-                            <li><a class="dropdown-item  text-uppercase" href="#">DRagon ball super ccg</a></li>
-                            <li><a class="dropdown-item  text-uppercase" href="#">DRagon ball Z tcg</a></li>
-                        </div>
-                        <div class="col-md col-sm-6">
-                            <li><a class="dropdown-item  text-uppercase" href="#">dice master</a></li>
-                            <li><a class="dropdown-item  text-uppercase" href="#">dragoborne</a></li>
-                            <li><a class="dropdown-item  text-uppercase" href="#">meta x TCG</a></li>
-                            <li><a class="dropdown-item  text-uppercase" href="#">bakugan tcg</a></li>
-                            <li><a class="dropdown-item  text-uppercase" href="#">duel master</a></li>
-                        </div>
-                        <div class="col-md col-sm-6">
-                            <li><a class="dropdown-item  text-uppercase" href="#">final fantasy</a></li>
-                            <li><a class="dropdown-item  text-uppercase" href="#">zombie world order</a></li>
-                            <li><a class="dropdown-item  text-uppercase" href="#">metazoo</a></li>
-                            <li><a class="dropdown-item  text-uppercase" href="#">star wars: destiny</a></li>
-                            <li><a class="dropdown-item  text-uppercase" href="#">future card buddyfight</a></li>
-                        </div>
-                    </ul>
                 </div>
-            </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link text-uppercase text-center active" href="#">featured cards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase text-center" href="#">flesh and blood</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase text-center" href="#">PokÉmon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase text-center" href="#">Yu-gi-oh!</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase text-center" href="#">magic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase text-center" href="#">digimon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase text-center" href="#">one piece</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase text-center" href="#">cardfight!! vanguard</a>
+                    </li>
+                    <div class="dropdown d-flex justify-content-center">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">More
+                        </button>
+                        <ul class="dropdown-menu row">
+                            <div class="col-md col-sm-6">
+                                <li><a class="dropdown-item  text-uppercase" href="#">BAKUGAN TCG</a></li>
+                                <li><a class="dropdown-item  text-uppercase" href="#">WORLD OF WARCRAFT TCG</a></li>
+                                <li><a class="dropdown-item  text-uppercase" href="#">DISNEY LORCANA</a></li>
+                                <li><a class="dropdown-item  text-uppercase" href="#">DRagon ball super ccg</a></li>
+                                <li><a class="dropdown-item  text-uppercase" href="#">DRagon ball Z tcg</a></li>
+                            </div>
+                            <div class="col-md col-sm-6">
+                                <li><a class="dropdown-item  text-uppercase" href="#">dice master</a></li>
+                                <li><a class="dropdown-item  text-uppercase" href="#">dragoborne</a></li>
+                                <li><a class="dropdown-item  text-uppercase" href="#">meta x TCG</a></li>
+                                <li><a class="dropdown-item  text-uppercase" href="#">bakugan tcg</a></li>
+                                <li><a class="dropdown-item  text-uppercase" href="#">duel master</a></li>
+                            </div>
+                            <div class="col-md col-sm-6">
+                                <li><a class="dropdown-item  text-uppercase" href="#">final fantasy</a></li>
+                                <li><a class="dropdown-item  text-uppercase" href="#">zombie world order</a></li>
+                                <li><a class="dropdown-item  text-uppercase" href="#">metazoo</a></li>
+                                <li><a class="dropdown-item  text-uppercase" href="#">star wars: destiny</a></li>
+                                <li><a class="dropdown-item  text-uppercase" href="#">future card buddyfight</a></li>
+                            </div>
+                        </ul>
+                    </div>
+                </ul>
             </div>
         </div>
     </nav>
@@ -145,8 +151,10 @@ $homeUrl = get_home_url();
                                             <a href="<?php echo $product->get_stock_status() === 'outofstock' ? 'javascript:void(0);' : esc_url(wc_get_cart_url() . '?add-to-cart=' . esc_attr($product_id)); ?>" class="blue-btn text-white" id="add-to-cart" <?php echo $product->get_stock_status() === 'outofstock' ? 'disabled' : ''; ?>>Add to Cart</a>
                                         </div>
                                         <div class="group-button-mobile d-block d-md-none">
-                                            <img loading="lazy" src="<?php echo $imgPath; ?>wishlist-blue.png" alt="">
-                                            <img loading="lazy" src="<?php echo $imgPath; ?>view.png" alt="">
+                                            <img loading="lazy" src="<?php echo $imgPath; ?>wishlist-blue.png" alt="" id="wishlist">
+                                            <a href="<?php echo the_permalink();?>" target="_blank" rel="noopener noreferrer">
+                                                <img loading="lazy" src="<?php echo $imgPath; ?>view.png" alt="" class="view">
+                                            </a>
                                             <a href="<?php echo $product->get_stock_status() === 'outofstock' ? 'javascript:void(0);' : esc_url(wc_get_cart_url() . '?add-to-cart=' . esc_attr($product_id)); ?>"> 
                                                 <img loading="lazy" src="<?php echo $imgPath; ?><?php echo $product->get_stock_status() === 'outofstock' ? 'cart-disable.png' : 'cart-blue.png'; ?>" alt="">
                                             </a> 
@@ -194,7 +202,7 @@ $homeUrl = get_home_url();
     </div>
 </section>
 
-<section class="about-us">
+<section class="about-us px-sm-0">
     <div class="container-fluid">
         <div class="row">
             <div class="col">
@@ -202,7 +210,7 @@ $homeUrl = get_home_url();
                     <img loading="lazy" src="<?php echo $imgPath; ?>about.png" alt="">
                 </div>
             </div>
-            <div class="col-lg-9 col-md-12">
+            <div class="col-lg-9 col-md-12 px-sm-0">
                 <div class="content">
                     <div class="content-container">
                         <h2 class="text-uppercase text-white">about tcg.ph</h2>
@@ -284,7 +292,7 @@ $homeUrl = get_home_url();
     <div class="container-fluid">
         <div class="wrapper">
             <div class="row">
-                <div class="col-xxl-8 col-xl-9 col-lg-12 p-md-0">
+                <div class="col-xxl-8 col-xl-9 col-lg-12 px-sm-0">
                     <div class="content">
                         <div class="content-container">
                             <h2 class="text-uppercase text-white">Have A Question?</h2>

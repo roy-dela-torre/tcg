@@ -10,18 +10,26 @@ $(document).ready(function () {
         const bannerImgPaths = ["banner4digimon.jpg","banner5onepiece.jpg","banner6uprising.jpg","banner1pokemon.jpg","banner2yugioh.jpg",  "banner3magic.jpg"];
         const cardPath = ["banner-digimon.png","banner-onepiece.png","banner-uprising.png","banner-pokemon.png","banner-yugioh.png", "banner-magic.png"];
         const diamondImg = ["diamond2.png","diamond3.png","diamond4.png","diamond1.png","diamond2.png","diamond3.png","diamond4.png"]
+        const bannerHeader = [`
+        <h2 class="text-uppercase text-white">Porem ipsasdasum dolor sit amet consectetur Siti lora</h2>`,
+        `<h2 class="text-uppercase text-white">Porem ipsum doasdlor sit amet consectetur Siti lora</h2>`,
+        `<h2 class="text-uppercase text-white">Porem ipsum dolor sasdasdit amet consectetur Siti lora</h2>`,
+        `<h2 class="text-uppercase text-white">Porem ipsum dolor sit amasdet consectetur Siti lora</h2>`,
+        `<h2 class="text-uppercase text-white">Porem ipsum doloasdr sit asdamet consectetur Siti lora</h2>`,
+        `<h2 class="text-uppercase text-white">Porem ipsum dolor sit amet consectetur Siti lora</h2>`]
         let currentImageIndex = 0;
         let rotationDegree = 0;
         function changeBackgroundImage() {
             bannerSection.fadeTo(1000, 1, function () {
-                rotationDegree -= 90;
+                rotationDegree -= 90;   
                 $('section.banner .image-container').toggleClass('rotate');
                 $('section.banner .image-container img').attr('src', '<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/' + cardPath[currentImageIndex]);
                 $('section.we-want-the-best .diamond img').attr('src', '<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/' + diamondImg[currentImageIndex]);
+                $('section.banner #header').html(bannerHeader[currentImageIndex])
                 $('section.we-want-the-best .diamond img').css('transform', `rotate(${rotationDegree}deg)`);
                 bannerSection.css('background-image', 'url("<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/' + bannerImgPaths[currentImageIndex] + '")');
                 currentImageIndex = (currentImageIndex + 1) % bannerImgPaths.length;
-                if (currentImageIndex === 0) {
+                if (currentImageIndex === 6) {
                     rotationDegree = 0; // Reset the rotation degree when reaching the last image
                 }
                 bannerSection.fadeTo(1000, 1);
@@ -92,19 +100,15 @@ $(document).ready(function () {
             var windowWidth = $(window).width();
             if(windowWidth <= 767){
                 slice = 1
-                console.log(slice)
             } 
             else if (windowWidth <= 991) {
                 slice = 2
-                console.log(slice)
             }
             else if(windowWidth <= 1200){
                 slice = 3
-                console.log(slice)
             }
             else{
                 slice = 4
-                console.log(slice)
             }
         }
         $(window).resize(function() {
@@ -121,20 +125,16 @@ $(document).ready(function () {
                 $("section.featured-card button#view-more").hide();
             }
         });
+
         // first section margin top
         var navHeight = $(".narbar.fixed-top").height()
 	    $('section:first').css('margin-top', navHeight);
 
-        $('img.wishlist').on('click', function() {
+        $('img.wishlist,img#wishlist').on('click', function() {
             var contentId = $(this).closest('.content').attr('id');
-            
-            // Construct the selector for the add_to_wishlist button based on the contentId
             var buttonSelector = 'section.featured-card .content#' + contentId + ' a.add_to_wishlist.single_add_to_wishlist.button.alt';
-            
-            // You can now use the buttonSelector to perform actions on the matching button
-            $(buttonSelector).click(); // Replace this with your desired action
+            $(buttonSelector).click(); 
         });
-
         $('section.featured-card button.navbar-toggler').click(function() {
             // Get the current background image URL
             var currentImage = $('section.featured-card span.navbar-toggler-icon').css('background-image');
@@ -150,6 +150,20 @@ $(document).ready(function () {
                 $('section.featured-card span.navbar-toggler-icon').css('background-image', image1);
             }
         });
+        $('input.wpcf7-form-control.wpcf7-submit.has-spinner').click(function(){
+            setTimeout(() => {
+                console.log('asdsad');
+                var content = $('section.have-question .content');
+                var isInvalid = $('div#wpcf7-f15-o1 form').hasClass('invalid');
+
+                var backgroundImageUrl = isInvalid ? 'url(' + '<?php echo get_stylesheet_directory_uri(); ?>' + '/assets/img/homepage/have-quiestion-bg.png) no-repeat center center/100% 900px'
+                                                    : 'url(' + '<?php echo get_stylesheet_directory_uri(); ?>' + '/assets/img/homepage/have-quiestion-bg.png) no-repeat center center/100% 771px';
+
+                content.css('background', backgroundImageUrl);
+                content.css('min-height', isInvalid ? '900px' : '771px');
+            }, 2000);
+        })
+
 
 
     <?php endif; ?>

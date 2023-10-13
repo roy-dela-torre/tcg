@@ -66,6 +66,9 @@
     section.have-question .row{
         flex-direction: column-reverse;
     }
+    section.banner .image-container{
+        width: 100%;
+    }
 }
 @media (max-width:767px) {
     section.featured-card nav.navbar.navbar-expand-xxl.bg-light{
@@ -122,7 +125,7 @@
         max-height: 360px;
     }
     section.about-us .content{
-        background: url('../../../assets/img/homepage/we-want-the-best-bg-content.png')no-repeat center center/cover;
+        background: url('../../../assets/img/homepage/about-us-content-mobile-bg.png')no-repeat right center/cover;
     }
     section.have-question{
         padding: 50px 0;
@@ -138,6 +141,11 @@
     }
     section.have-question .contact-details{
         padding: 0 18px;
+    }
+    section.about-us .content-container{
+        width: 100%;
+        padding: 20px;
+        margin: 0;
     }
 }
 @media (max-width:575px) {
@@ -162,18 +170,19 @@
     }
     section.featured-card ul.dropdown-menu.row.show{
         flex-wrap: wrap;
-    }
-    section.featured-card ul.dropdown-menu.row.show{
+        left: 0;
         width: 100%;
     }
     section.featured-card nav.navbar.navbar-expand-xxl.bg-light{
         padding: 0;
     }
-    section.featured-card nav.navbar.navbar-expand-xxl.bg-light a{
-        padding: 15px 0;
+    section.featured-card nav.navbar.navbar-expand-xxl.bg-light a,section.featured-card button.btn.btn-secondary.dropdown-toggle{
+        padding: 20px 30px;
+        margin: 0;
     }
     section.featured-card button.navbar-toggler{
         padding: 0;
+        border: none;
     }
     section.we-want-the-best .carousel-diamon{
         width: 300px;
@@ -206,6 +215,119 @@
     section.we-want-the-best .content-container{
         margin: 0 auto 0 30px;
     }
+    section.article .row>:last-child>div .content.d-flex{
+        flex-direction: column;
+    }
+    section.article .row>:last-child .image-container{
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    section.article .row>:last-child .image-container,section.article .row>:not(:last-child) img{
+        max-height: 247px;
+    }
+    .px-sm-0{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    section.about-us .content *{
+        text-align: center !important;
+    }
+    section.about-us .content-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+    }
+    section.about-us .content{
+        min-height: auto;
+        padding: 50px 0;
+    }
+    section.banner img{
+        min-height: 270px;
+    }
+    section.about-us img{
+        width: fit-content;
+        height: auto;
+    }
+    section.about-us .content{
+        position: relative;
+        top: -52px;
+    }
+    section.about-us .image-container{
+        margin-bottom: 0;
+    }
+    section.featured-card nav.navbar.navbar-expand-xxl.bg-light{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        left: 0;
+    }
+    section.featured-card nav.navbar.navbar-expand-xxl.bg-light>div{
+        flex-direction: row-reverse;
+        justify-content: start;
+    }
+    section.featured-card button.navbar-toggler{
+        margin-right: 30px;
+    }
+    div#navbarNav{
+        position: fixed;
+        bottom: 0;
+        background-color: #212121;
+        max-height: 423px;
+        left: 0;
+        width: 100%;
+        overflow-y: scroll;
+    }
+    section.featured-card nav.navbar.navbar-expand-xxl.bg-light:hover{
+        background-color: #00CBFF !important;
+    }
+    section.featured-card ul.navbar-nav{
+        align-items: start;
+    }
+    section.featured-card .categories.d-flex{
+        justify-content: space-between;
+        gap: 0 10px;
+        align-items: center;
+        padding: 20px 30px;
+        background: #000;
+    }
+    section.featured-card .categories.d-flex span{
+        width: 24px;
+        height: 24px;
+    }
+    section.featured-card .categories.d-flex button{
+        padding: 0;
+    }
+    section.featured-card .categories.d-flex>span{
+        color: #FFF;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 25px; /* 156.25% */
+        text-transform: uppercase;
+    }
+    section.featured-card li.active a{
+        border: none;
+    }
+    section.featured-card .dropdown.d-flex.justify-content-center{
+        justify-content: start !important;
+    }
+    .narbar .group-button{
+        margin-right: 0;
+    }
+    section.banner .row{
+        gap: 0;
+    }
+    section.featured-card h2,section.article h2{
+        margin-bottom: 20px;
+    }
+    section.article .row>:last-child>div{
+        gap: 20px 0;
+    }
+    section.have-question .row{
+        gap: 30px 0;
+    }
 }
 @media (max-width:420px) {
     section.featured-card .group-box .row>div{
@@ -218,5 +340,8 @@
         min-height: auto;
         width: 100%;
         max-width: 100%;
+    }
+    section.we-want-the-best .carousel{
+        right: -45%;
     }
 }

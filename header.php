@@ -19,12 +19,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <?php wp_nav_menu(array('Primary Menu' => 'Primary','menu_class' => 'navMenu navbar-nav me-auto mb-2 mb-lg-0','container' => false,));?>
-          <div class="group">
+          <div class="group d-none d-sm-flex">
             <form class="d-flex m-0" role="search">
                 <div class="input-group d-flex">
                     <form role="search" method="get" class="d-flex searchform" role="search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
                       <div class="form-outline">
-                        <input class="form-control me-2 mb-0 p-0" type="search" placeholder="Search Here..." aria-label="Search" value="<?php echo get_search_query(); ?>" name="s" id="s">
+                        <input class="form-control me-2 mb-0 p-0" type="search" placeholder="Search..." aria-label="Search" value="<?php echo get_search_query(); ?>" name="s" id="s">
                       </div>
                       <button type="submit" class="btn btn-primary p-0">
                           <i class="fa-solid fa-magnifying-glass"></i>
@@ -35,11 +35,30 @@
             <div class="group-button">
               <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-cart.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png';" onClick="window.open('<?php echo get_home_url(); ?>/cart/');"/>
               <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-wishlist.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png';" onClick="window.open('<?php echo get_home_url(); ?>/wishlist/');"/>
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/user.png" alt="" onClick="window.open('<?php echo get_home_url(); ?>/my-account/');">
+              <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/user.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-person.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/user.png';" onClick="window.open('<?php echo get_home_url(); ?>/my-account/');">
             </div>
           </div>
           <a href="http://" target="_blank" rel="noopener noreferrer" class="sale-with-us">sell with us</a>
       </div>
+      <div class="group d-flex d-sm-none">
+            <form class="d-flex m-0" role="search">
+                <div class="input-group d-flex">
+                    <form role="search" method="get" class="d-flex searchform" role="search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                      <div class="form-outline">
+                        <input class="form-control me-2 mb-0 p-0" type="search" placeholder="Search..." aria-label="Search" value="<?php echo get_search_query(); ?>" name="s" id="s">
+                      </div>
+                      <button type="submit" class="btn btn-primary p-0">
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                      </button>
+                    </form>
+                </div>
+            </form>
+            <div class="group-button">
+              <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-cart.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png';" onClick="window.open('<?php echo get_home_url(); ?>/cart/');"/>
+              <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-wishlist.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png';" onClick="window.open('<?php echo get_home_url(); ?>/wishlist/');"/>
+              <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/user.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-person.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/user.png';" onClick="window.open('<?php echo get_home_url(); ?>/my-account/');">
+            </div>
+        </div>
     </div>
   </nav>
 </div>

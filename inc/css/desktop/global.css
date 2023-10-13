@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Open+Sans:wght@700&family=Roboto+Condensed:wght@700&family=Roboto:wght@300;700&display=swap');
+/* @import url('../../../assets/fonts/my-fonts.css'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Open+Sans:wght@300;700&family=Roboto+Condensed:wght@700&family=Roboto:wght@300;700&display=swap');
 /* font-family: 'Inter', sans-serif;
 font-family: 'Open Sans', sans-serif;
 font-family: 'Roboto', sans-serif;
@@ -14,33 +15,33 @@ section h1{
 section h2{
     font-family: 'Inter', sans-serif;
     font-size: 50px;
-    font-style: 60px;
+    font-style: normal;
     font-weight: 700;
-    line-height: normal;
+    line-height: 60px;
     text-transform: uppercase;
 }
 section h3{
     font-family: 'Inter', sans-serif;
     font-size: 40px;
-    font-style: 48px;
+    font-style: normal;
     font-weight: 700;
-    line-height: normal;
+    line-height: 48px;
     text-transform: uppercase;
 }
 section h4{
     font-family: 'Inter', sans-serif;
     font-size: 30px;
-    font-style: 36px;
+    font-style: normal;
     font-weight: 700;
-    line-height: normal;
+    line-height: 36px;
     text-transform: uppercase;
 }
 section h5{
     font-family: 'Inter', sans-serif;
     font-size: 20px;
-    font-style: 24px;
+    font-style: normal;
     font-weight: 700;
-    line-height: normal;
+    line-height: 24px;
     text-transform: uppercase;
 }
 section a{
