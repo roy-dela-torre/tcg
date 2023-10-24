@@ -62,7 +62,7 @@
 }
 @media (max-width:575px) {
     footer .content.d-flex.flex-column{
-        align-items: center;
+        align-items: start;
     }
     .narbar .group{
         margin: 0;

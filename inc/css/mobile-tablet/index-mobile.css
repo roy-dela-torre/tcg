@@ -49,6 +49,7 @@
     section.we-want-the-best .content{
         fill: var(--26004-d, #26004D);
         filter: drop-shadow(15px 15px 15px rgba(126, 0, 255, 0.40));
+        background-color: #26004c;
         background-image: none;
         width: 97%;
     }
@@ -56,8 +57,8 @@
         padding-bottom: 70px!important;
     }
     section.we-want-the-best .carousel-diamon,section.we-want-the-best .carousel{
-        width: 275px;
-        height: 275px;
+        width: 315px;
+        height: 315px;
     }
     section.we-want-the-best .content-container{
         width:90%;
@@ -69,22 +70,34 @@
     section.banner .image-container{
         width: 100%;
     }
+    section.featured-card nav.navbar.navbar-expand-xxl.bg-light{
+        left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0; 
+    }
+    section.banner{
+        max-height: unset;
+    }
 }
 @media (max-width:767px) {
     section.featured-card nav.navbar.navbar-expand-xxl.bg-light{
-        width: 75%;
+        width: 50%;
+        padding: 0;
         right: 5%;
+        top: -31px;
     }
     section.banner{
         padding: 70px 20px;
     }
     section.featured-card .content{
         flex-direction: column;
+        align-items: end;
+        gap: 0 24px;
     }
     section.featured-card .group-button-mobile{
         display: flex !important;
         align-items: center;
-        max-width: 170px;
+        max-width: 160px;
         justify-content: space-between;
         margin: 35px 0 20px;
     }
@@ -102,10 +115,6 @@
     section.featured-card img.cards{
         min-height: auto;
     }
-    section.featured-card .content{
-        align-items: end;
-        gap: 0 24px;
-    }
     section.featured-card .content-container{
         width: 100%;
         max-width: 100%;
@@ -115,9 +124,7 @@
     section.featured-card nav.navbar.navbar-expand-xxl.bg-light a,section.featured-card button.btn.btn-secondary.dropdown-toggle{
         padding: 20px 12px;
     }
-    section.featured-card nav.navbar.navbar-expand-xxl.bg-light{
-        top: -31px;
-    }
+ 
     section.we-want-the-best .content-container{
         width: 85%;
     }
@@ -126,6 +133,9 @@
     }
     section.about-us .content{
         background: url('../../../assets/img/homepage/about-us-content-mobile-bg.png')no-repeat right center/cover;
+        background-position: right;
+        position: relative;
+        top: -120px;
     }
     section.have-question{
         padding: 50px 0;
@@ -146,24 +156,37 @@
         width: 100%;
         padding: 20px;
         margin: 0;
+        max-width: 90%;
+    }   
+    section.we-want-the-best .left {
+        transform: translate(-170px, 0);
+    }
+    section.we-want-the-best .right {
+        transform: translate(170px,0);
+    }
+    section.we-want-the-best .top {
+        transform: translate(0,-170px);
+    }
+    section.we-want-the-best .bottom {
+        transform: translate(0,170px);
+    } 
+    section.featured-card h2{
+        display: none;
     }
 }
 @media (max-width:575px) {
-    section.featured-card img.cards{
-        width: 100%;
-        min-height: auto;
-        max-width: 80%;
-    }
     section.featured-card{
         padding-top: 87px;
+        z-index: 4;
     }
     section.featured-card img.cards{
-        max-width: 126px;
-        min-height: auto;
+        min-width: 126px;
+        min-height: auto; 
+        margin-bottom: 0;
     }
     section.featured-card .content{
         align-items: center;
-        flex-direction: column;
+        flex-direction: row;
     }
     section.featured-card .group-button-mobile{
         margin: 10px 0;
@@ -173,9 +196,7 @@
         left: 0;
         width: 100%;
     }
-    section.featured-card nav.navbar.navbar-expand-xxl.bg-light{
-        padding: 0;
-    }
+ 
     section.featured-card nav.navbar.navbar-expand-xxl.bg-light a,section.featured-card button.btn.btn-secondary.dropdown-toggle{
         padding: 20px 30px;
         margin: 0;
@@ -188,21 +209,9 @@
         width: 300px;
         height: 300px;
     }
-    section.we-want-the-best .left {
-        transform: translate(-160px, 0);
-    }
-    section.we-want-the-best .right {
-        transform: translate(160px,0);
-    }
-    section.we-want-the-best .top {
-        transform: translate(0,-160px);
-    }
-    section.we-want-the-best .bottom {
-        transform: translate(0,160px);
-    }
     section.we-want-the-best .carouseel-container{
         width: 100%;
-        height: 170px;
+        height: 160px;
     }
     section.we-want-the-best .carousel{
         width: 100%;
@@ -210,7 +219,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        right: -55%;
+        right: -55%; 
     }
     section.we-want-the-best .content-container{
         margin: 0 auto 0 30px;
@@ -240,27 +249,31 @@
         margin-right: 20px;
     }
     section.about-us .content{
-        min-height: auto;
+        min-height: 450px;
         padding: 50px 0;
+        position: relative;
+        top: -60px;
+        background-position: bottom;
     }
     section.banner img{
-        min-height: 270px;
+        max-height: 258px;
+        max-width: 180px;
+        object-fit: contain;
     }
     section.about-us img{
         width: fit-content;
         height: auto;
     }
-    section.about-us .content{
-        position: relative;
-        top: -52px;
+    section.about-us{
+        max-height: 903px;
     }
     section.about-us .image-container{
         margin-bottom: 0;
     }
     section.featured-card nav.navbar.navbar-expand-xxl.bg-light{
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        left: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 313px;
     }
     section.featured-card nav.navbar.navbar-expand-xxl.bg-light>div{
         flex-direction: row-reverse;
@@ -327,6 +340,31 @@
     }
     section.have-question .row{
         gap: 30px 0;
+    }
+    section.about-us{
+        max-height: 951px;
+    }
+    section.banner .image-container{
+        max-height: 260px;
+        margin-bottom: 30px;
+    }
+    .add-to-wishlist.w-100{
+        display: none;
+    }
+    section.featured-card nav.navbar.navbar-expand-xxl.bg-light a.navbar-brand.d-block.d-xxl-none{
+        padding: 20px 12px !important; 
+    }
+    section.we-want-the-best .left {
+        transform: translate(-160px, 0);
+    }
+    section.we-want-the-best .right {
+        transform: translate(160px,0);
+    }
+    section.we-want-the-best .top {
+        transform: translate(0,-160px);
+    }
+    section.we-want-the-best .bottom {
+        transform: translate(0,160px);
     }
 }
 @media (max-width:420px) {
