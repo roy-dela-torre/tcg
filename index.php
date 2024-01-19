@@ -2,14 +2,55 @@
 $imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
 $homeUrl = get_home_url();
 ?>
+<style>
+    /* ajax loading spinner */
+
+.featured-card #overlay {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+    left: 0;
+}
+
+.featured-card .cv-spinner {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.featured-card .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px #ddd solid;
+    border-top: 4px #2e93e6 solid;
+    border-radius: 50%;
+    animation: sp-anime 0.8s infinite linear;
+}
+
+@keyframes sp-anime {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.featured-card .is-hide {
+    display: none;
+}
+
+</style>
 <section class="banner">
     <div class="container-fluid">
         <div class="wrapper">
             <div class="row align-items-center">
                 <div class="col-lg-7 col-md-12 px-md-0">
                     <div class="content">
-                        <div class="text-uppercase text-white" id="header"><h1>Porem ipsum dolor sit amet consectetur Siti lora</h1></div>
-                        <p class="text-white">Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                        <div class="text-uppercase text-white" id="header"><h1>Command the Elements</h1></div>
+                        <p class="text-white">Immerse yourself in the enchanting world of Magic the Gathering with our diverse collection of cards. Whether you're a planeswalker or a collector, find the cards that will empower your decks and elevate your gameplay to new heights.</p>
                         <a href="/shop/" target="_blank" rel="noopener noreferrer" class="blue-btn text-uppercase">shop now</a>
                     </div>
                 </div>
@@ -39,53 +80,53 @@ $homeUrl = get_home_url();
                 </div>
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link text-uppercase text-center active" href="#">featured cards</a>
+                        <a class="nav-link text-uppercase text-center active" data-value="">featured cards</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase text-center" href="#">flesh and blood</a>
+                        <a class="nav-link text-uppercase text-center" data-value="">flesh and blood</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase text-center" href="#">PokÉmon</a>
+                        <a class="nav-link text-uppercase text-center" data-value="">PokÉmon</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase text-center" href="#">Yu-gi-oh!</a>
+                        <a class="nav-link text-uppercase text-center" data-value="">Yu-gi-oh!</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase text-center" href="#">magic</a>
+                        <a class="nav-link text-uppercase text-center" data-value="">magic</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase text-center" href="#">digimon</a>
+                        <a class="nav-link text-uppercase text-center" data-value="">digimon</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase text-center" href="#">one piece</a>
+                        <a class="nav-link text-uppercase text-center" data-value="">one piece</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase text-center" href="#">cardfight!! vanguard</a>
+                        <a class="nav-link text-uppercase text-center" data-value="">cardfight!! vanguard</a>
                     </li>
                     <div class="dropdown d-flex justify-content-center">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">More
                         </button>
                         <ul class="dropdown-menu row">
                             <div class="col-md col-sm-6">
-                                <li><a class="dropdown-item  text-uppercase" href="#">BAKUGAN TCG</a></li>
-                                <li><a class="dropdown-item  text-uppercase" href="#">WORLD OF WARCRAFT TCG</a></li>
-                                <li><a class="dropdown-item  text-uppercase" href="#">DISNEY LORCANA</a></li>
-                                <li><a class="dropdown-item  text-uppercase" href="#">DRagon ball super ccg</a></li>
-                                <li><a class="dropdown-item  text-uppercase" href="#">DRagon ball Z tcg</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">BAKUGAN TCG</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">WORLD OF WARCRAFT TCG</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">DISNEY LORCANA</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">DRagon ball super ccg</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">DRagon ball Z tcg</a></li>
                             </div>
                             <div class="col-md col-sm-6">
-                                <li><a class="dropdown-item  text-uppercase" href="#">dice master</a></li>
-                                <li><a class="dropdown-item  text-uppercase" href="#">dragoborne</a></li>
-                                <li><a class="dropdown-item  text-uppercase" href="#">meta x TCG</a></li>
-                                <li><a class="dropdown-item  text-uppercase" href="#">bakugan tcg</a></li>
-                                <li><a class="dropdown-item  text-uppercase" href="#">duel master</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">dice master</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">dragoborne</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">meta x TCG</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">bakugan tcg</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">duel master</a></li>
                             </div>
                             <div class="col-md col-sm-6">
-                                <li><a class="dropdown-item  text-uppercase" href="#">final fantasy</a></li>
-                                <li><a class="dropdown-item  text-uppercase" href="#">zombie world order</a></li>
-                                <li><a class="dropdown-item  text-uppercase" href="#">metazoo</a></li>
-                                <li><a class="dropdown-item  text-uppercase" href="#">star wars: destiny</a></li>
-                                <li><a class="dropdown-item  text-uppercase" href="#">future card buddyfight</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">final fantasy</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">zombie world order</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">metazoo</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">star wars: destiny</a></li>
+                                <li><a class="dropdown-item  text-uppercase" data-value="">future card buddyfight</a></li>
                             </div>
                         </ul>
                     </div>
@@ -100,6 +141,11 @@ $homeUrl = get_home_url();
                     <h2 class="text-center text-uppercase">featured cards</h2>
                 </div>
                 <div class="group-box p-0">
+                    <div id="overlay">
+                        <div class="cv-spinner">
+                            <span class="spinner"></span>
+                        </div>
+                    </div>
                     <div class="row">
                         <?php
                         $args = array(
@@ -130,7 +176,7 @@ $homeUrl = get_home_url();
                                 } 
                                 $in_wishlist = YITH_WCWL()->is_product_in_wishlist( $product_id );
                                 $img_src = $in_wishlist ? 'wishlist-white.png' : 'wishlist-blue.png'; ?>
-                            <div class="col-xl-3 col-lg-4 col-md-6 col-6" <?php echo $counter>8 ? "style='display:none'" : "" ?>>
+                            <div class="col-xl-3 col-lg-4 col-sm-6 col-12" <?php echo $counter>8 ? "style='display:none'" : "" ?>>
                                 <div class="content <?php echo $product->get_stock_status() === 'outofstock' ? "outofstock" : "" ?>" id="product<?php echo $product_id?>id">
                                     <div class="product-image">
                                         <img loading="lazy" src="<?php echo $featured_image_url; ?>" alt="<?php echo get_the_title(); ?>" class="cards">
@@ -178,12 +224,12 @@ $homeUrl = get_home_url();
             <div class=" col-xl-7 col-lg-8 col-md-12 ps-0">
                 <div class="content">
                     <div class="content-container">
-                        <h2 class="text-uppercase text-white">we want the best for you</h2>
+                        <h2 class="text-uppercase text-white">We're Committed to Your Satisfaction</h2>
                         <ul class="ps-0">
-                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>card.png" alt=""><p><b>Korem ipsum</b>: Dolor sit amet consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p></li>
-                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>like.png" alt=""><p><b>Korem ipsum</b>: Dolor sit amet consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p></li>
-                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>award.png" alt=""><p><b>Korem ipsum</b>: Dolor sit amet consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p></li>
-                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>person.png" alt=""><p><b>Korem ipsum</b>: Dolor sit amet consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p></li>
+                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>card.png" alt=""><p>Expand your card collection with confidence, knowing you'll find the most sought-after cards from your favorite games right here.</li>
+                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>like.png" alt=""><p>Our customers love us for a reason! Join the ranks of satisfied collectors who've given us the thumbs up for our quality and service</li>
+                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>award.png" alt=""><p>Rest easy knowing that all our cards are guaranteed authentic, assuring the legitimacy of your cherished collectibles. </p></li>
+                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>person.png" alt=""><p>Our dedicated customer service team is here to assist you every step of the way, ensuring your experience with us is nothing short of exceptional.</p></li>
                         </ul>
                     </div>
                 </div>
@@ -213,8 +259,8 @@ $homeUrl = get_home_url();
             <div class="col-lg-9 col-md-12 px-sm-0">
                 <div class="content">
                     <div class="content-container">
-                        <h2 class="text-uppercase text-white">about tcg.ph</h2>
-                        <p class="text-white">Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                        <h2 class="text-uppercase text-white">about <a href="<?php echo get_home_url(); ?>" target="_blank" rel="noopener noreferrer">TCG.PH</a></h2>
+                        <p class="text-white">TCG.PH, founded by a passionate card collector, is your go-to platform for enthusiasts, created by one of your own. Discover a community-driven hub dedicated to your trading card game passions, where collectors come together to explore, trade, and celebrate the world of TCGs</p>
                         <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-uppercase">Learn more</a>
                     </div>
                 </div>
@@ -295,8 +341,8 @@ $homeUrl = get_home_url();
                 <div class="col-xxl-8 col-xl-9 col-lg-12 px-sm-0">
                     <div class="content">
                         <div class="content-container">
-                            <h2 class="text-uppercase text-white">Have A Question?</h2>
-                            <p class="text-white">Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. </p>
+                            <h2 class="text-uppercase text-white">Have a Question?</h2>
+                            <p class="text-white">Whether you're seeking information on our card selection or need assistance with your collection, feel free to reach out. Our dedicated support team is centered on providing you with the answers and guidance you need.</p>
                             <?php echo do_shortcode('[contact-form-7 id="40b3e57" title="Contact form 1"]')?>
                         </div>
                     </div>
@@ -306,7 +352,7 @@ $homeUrl = get_home_url();
                         <h4 class="text-white text-uppercase">contact details:</h4>
                         <a href="tel:63+ 092123456789"><img loading="lazy" src="<?php echo $imgPath; ?>telephone.png" alt=""> 63+ 092123456789</a>
                         <a href="mailto:loremipsum@gmail.com"><img loading="lazy" src="<?php echo $imgPath; ?>email.png" alt="">loremipsum@gmail.com</a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="<?php echo $imgPath; ?>fb.png" alt="">lorem ipsum</a>
+                        <a target="_blank" rel="noopener noreferrer"><img loading="lazy" src="<?php echo $imgPath; ?>fb.png" alt="">lorem ipsum</a>
                         <a href="http://" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="<?php echo $imgPath; ?>instagram.png" alt="">lorem ipsum</a>
                     </div>
                 </div>

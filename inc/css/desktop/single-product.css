@@ -1,0 +1,29 @@
+section.related-product ul#related-products>li{
+    float: none;
+    margin: 0;
+    padding: 0 12px;
+    width: 25%;
+}
+section.related-product .row{
+    gap: 24px 0;
+}
+section.related-product h2{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+@media (max-width:1366px) {
+    section.related-product ul#related-products>li{
+        width: 33.33%;
+    }
+}
+@media (max-width:991px) {
+    section.related-product ul#related-products>li{
+        width: 50%;
+    }
+}
+@media (max-width:767px) {
+    section.related-product ul#related-products>li{
+        width: 100%;
+    }
+}

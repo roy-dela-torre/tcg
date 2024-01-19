@@ -4,11 +4,7 @@
 <section class="wishlist">
     <div class="container-fluid">
         <div class="wrapper">
-            <div class="row">
-                <div class="content">
-                    <?php echo do_shortcode('[yith_wcwl_wishlist]')?>
-                </div>
-            </div>
+            <?php echo do_shortcode('[yith_wcwl_wishlist]')?>
         </div>
     </div>
 </section>

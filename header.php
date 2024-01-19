@@ -7,7 +7,7 @@
     <?php wp_head()?>
     <!-- <link rel="icon" href="<?php //echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/logo-icon.png" sizes="32x32" /> -->
 </head>
-<body <?php body_class(); ?>>
+<body >
 <div class="narbar fixed-top">
   <nav class="navbar navbar-expand-xxl bg-body-tertiary">
     <div class="container-fluid">
@@ -20,18 +20,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <?php wp_nav_menu(array('Primary Menu' => 'Primary','menu_class' => 'navMenu navbar-nav me-auto mb-2 mb-lg-0','container' => false,));?>
           <div class="group d-none d-sm-flex">
-            <form class="d-flex m-0" role="search">
+            <div class="d-flex m-0">
                 <div class="input-group d-flex">
-                    <form role="search" method="get" class="d-flex searchform" role="search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <form method="get" class="d-flex searchform" role="search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
                       <div class="form-outline">
-                        <input class="form-control me-2 mb-0 p-0" type="search" placeholder="Search..." aria-label="Search" value="<?php echo get_search_query(); ?>" name="s" id="s">
+                        <input class="form-control me-2 mb-0 p-0" type="search" placeholder="Search..." aria-label="Search" value="<?php echo get_search_query(); ?>" name="s" id="s" autocomplete="true">
                       </div>
                       <button type="submit" class="btn btn-primary p-0">
                           <i class="fa-solid fa-magnifying-glass"></i>
                       </button>
                     </form>
                 </div>
-            </form>
+            </div>
             <div class="group-button">
               <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-cart.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png';" onClick="window.open('<?php echo get_home_url(); ?>/cart/');"/>
               <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-wishlist.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png';" onClick="window.open('<?php echo get_home_url(); ?>/wishlist/');"/>

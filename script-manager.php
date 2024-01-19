@@ -6,38 +6,50 @@
 $(document).ready(function () {
     
     <?php if(is_front_page()):?>
+        setTimeout(() => {
+            $('li#menu-item-9').addClass('active') 
+        }, 1000);
         const bannerSection = $('section.banner');
-        const bannerImgPaths = ["banner4digimon.jpg","banner5onepiece.jpg","banner6uprising.jpg","banner1pokemon.jpg","banner2yugioh.jpg",  "banner3magic.jpg"];
-        const cardPath = ["banner-digimon.png","banner-onepiece.png","banner-uprising.png","banner-pokemon.png","banner-yugioh.png", "banner-magic.png"];
-        const diamondImg = ["diamond2.png","diamond3.png","diamond4.png","diamond1.png","diamond2.png","diamond3.png","diamond4.png"]
-        const bannerHeader = [`
-        <h2 class="text-uppercase text-white">Porem ipsasdasum dolor sit amet consectetur Siti lora</h2>`,
-        `<h2 class="text-uppercase text-white">Porem ipsum doasdlor sit amet consectetur Siti lora</h2>`,
-        `<h2 class="text-uppercase text-white">Porem ipsum dolor sasdasdit amet consectetur Siti lora</h2>`,
-        `<h2 class="text-uppercase text-white">Porem ipsum dolor sit amasdet consectetur Siti lora</h2>`,
-        `<h2 class="text-uppercase text-white">Porem ipsum doloasdr sit asdamet consectetur Siti lora</h2>`,
-        `<h2 class="text-uppercase text-white">Porem ipsum dolor sit amet consectetur Siti lora</h2>`]
+        const bannerImgPaths = ["banner4digimon.jpg", "banner5onepiece.jpg", "banner6uprising.jpg", "banner1pokemon.jpg", "banner2yugioh.jpg", "banner3magic.jpg"];
+        const cardPath = ["banner-digimon.png", "banner-onepiece.png", "banner-uprising.png", "banner-pokemon.png", "banner-yugioh.png", "banner-magic.png"];
+        const diamondImg = ["diamond2.png", "diamond3.png", "diamond4.png", "diamond1.png", "diamond2.png", "diamond3.png", "diamond4.png"];
+        const bannerHeader = [
+        '<h2 class="text-uppercase text-white">Digital Adventures Await</h2>',
+        '<h2 class="text-uppercase text-white">Set Sail for One Piece Treasures</h2>',
+        '<h2 class="text-uppercase text-white">Rathe Awaits</h2>',
+        '<h2 class="text-uppercase text-white">Catch \'Em All</h2>',
+        '<h2 class="text-uppercase text-white">Master the Duel</h2>',
+        '<h2 class="text-uppercase text-white">Command the Elements</h2>'
+        ];
+        const bannerP = ['Embark on a journey through the digital realm with our captivating assortment of Digimon cards. Whether you\'re a DigiDestined or a collector, explore and acquire the cards that will enhance your collection and lead you to digital victory.','Join the grand adventure of the Straw Hat Pirates with our One Piece trading cards. Whether you\'re a devoted fan or a collector, find the cards that will bring the world of One Piece to your fingertips, and uncover the power hidden within.','Step into the mystical realm of Rathe with our extraordinary selection of Flesh and Blood cards. Your journey begins here; find, trade, and acquire the cards that will make your collection legendary.','Embark on a Pokemon adventure like no other with our vast assortment of Pokemon cards. Whether you\'re a dedicated trainer or a collector, find the perfect cards to expand your collection and reignite your love for the game.','Enter the world of epic duels and strategy with our extensive selection of Yu-Gi-Oh cards. Whether you\'re a seasoned duelist or just starting your journey, discover the cards that will make your deck unbeatable and your victories legendary.','Immerse yourself in the enchanting world of Magic the Gathering with our diverse collection of cards. Whether you\'re a planeswalker or a collector, find the cards that will empower your decks and elevate your gameplay to new heights.']
+
         let currentImageIndex = 0;
         let rotationDegree = 0;
+
         function changeBackgroundImage() {
-            bannerSection.fadeTo(1000, 1, function () {
-                rotationDegree -= 90;   
-                $('section.banner .image-container').toggleClass('rotate');
-                $('section.banner .image-container img').attr('src', '<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/' + cardPath[currentImageIndex]);
-                $('section.we-want-the-best .diamond img').attr('src', '<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/' + diamondImg[currentImageIndex]);
-                $('section.banner #header').html(bannerHeader[currentImageIndex])
-                $('section.we-want-the-best .diamond img').css('transform', `rotate(${rotationDegree}deg)`);
-                bannerSection.css('background-image', 'url("<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/' + bannerImgPaths[currentImageIndex] + '")');
-                currentImageIndex = (currentImageIndex + 1) % bannerImgPaths.length;
-                if (currentImageIndex === 6) {
-                    rotationDegree = 0; // Reset the rotation degree when reaching the last image
-                }
-                bannerSection.fadeTo(1000, 1);
-            });
+        bannerSection.fadeTo(1000, 1, function () {
+            rotationDegree -= 90;
+            $('section.banner .image-container').toggleClass('rotate');
+            $('section.banner .image-container img').attr('src', '<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/' + cardPath[currentImageIndex]);
+            $('section.we-want-the-best .diamond img').attr('src', '<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/' + diamondImg[currentImageIndex]);
+            $('section.banner #header').html(bannerHeader[currentImageIndex])
+            $('section.banner p').text(bannerP[currentImageIndex])
+            $('section.we-want-the-best .diamond img').css('transform', `rotate(${rotationDegree}deg)`);
+            bannerSection.css('background-image', 'url("<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/' + bannerImgPaths[currentImageIndex] + '")');
+            currentImageIndex = (currentImageIndex + 1) % bannerImgPaths.length;
+            if (currentImageIndex === 6) {
+            rotationDegree = 0; // Reset the rotation degree when reaching the last image
+            }
+            bannerSection.fadeTo(1000, 1);
+            
+            // Schedule the next image change after 5 seconds (5000 milliseconds)
+            setTimeout(changeBackgroundImage, 5000);
+        });
         }
 
-        
-        setInterval(changeBackgroundImage, 5000); 
+        // Start the initial image change
+        setTimeout(changeBackgroundImage, 5000);
+
         function rotateImagesCounterClockwise() {
             $('section.we-want-the-best .carousel-item').removeClass('active');
             var topImageTransform = $('section.we-want-the-best .top').css('transform');
@@ -117,11 +129,11 @@ $(document).ready(function () {
         // load more product
         $("section.featured-card button#view-more").click(function() {
             checkWindowWidth();
-            var hiddenElements = $(".col-xl-3.col-lg-4.col-md-6.col-6:hidden");
+            var hiddenElements = $(".col-xl-3.col-lg-4.col-sm-6.col-12:hidden");
             if (hiddenElements.length > 0) {
                 hiddenElements.slice(0, slice).slideDown();
             }
-            if ($(".col-xl-3.col-lg-4.col-md-6.col-6:hidden").length === 0) {
+            if ($(".col-xl-3.col-lg-4.col-sm-6.col-12:hidden").length === 0) {
                 $("section.featured-card button#view-more").hide();
             }
         });
@@ -163,10 +175,51 @@ $(document).ready(function () {
                 content.css('min-height', isInvalid ? '900px' : '771px');
             }, 2000);
         })
+        $('section.featured-card li a').click(function() {
+            var clickedText = $(this).text();
+            $('a.navbar-brand.d-block.d-xxl-none, section.featured-card h2').text(clickedText);
+        });
 
+        $('nav.navbar ul.navbar-nav li.nav-item a').click(function() {
+            $('nav.navbar ul.navbar-nav li.nav-item').removeClass('active');
+            $(this).parent().addClass('active');
+        });
 
+        $('ul.navbar-nav li').each(function() {
+            $(this).find('a').attr('data-value',$(this).find('a').text())
+        });
+        $('ul.navbar-nav a').click(function() {
+            cardsFilter();
+        });
+        function cardsFilter(){
+            var selectedFilters = [];
+            $('ul.navbar-nav a').each(function() {
+                selectedFilters.push($(this).data("value"));
+            });
+            var filterbtn = selectedFilters.join(',');
+            $.ajax({
+                url: '<?php echo get_home_url(); ?>/cards-search/?cardsearch=' + filterbtn,
+                type: 'GET',
+                beforeSend: function(xhr) {
+                    $("#overlay").show();
+                },
+                complete: function() {
+                    $("#overlay").hide();
+                },
+                success: function(data) {
+                    $('.group-box.p-0').html(data);
+                    console.log(data);
+                }
+            });
 
+            return false;
+        }
+        
+        $('section.reviews section.related-product').remove();
+        var reviews = $('.reviews-content').html()
+        $('div#addreviewspopup .modal-body').html(reviews)
     <?php endif; ?>
+
     function setEqualHeightForSection(sectionSelector, secondSelector) {
         var elementsToResize = $(sectionSelector).find(secondSelector);
         var tallestHeight = 0;
@@ -178,5 +231,7 @@ $(document).ready(function () {
         });
         elementsToResize.css('height', tallestHeight);
     }
+
+    $('li#menu-item-9').removeClass('active')
 });
 </script>

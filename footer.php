@@ -61,6 +61,6 @@
         </div>
     </div>
 </footer>
-<?php include('script-manager.php')?>
+<!-- <?php //include('script-manager.php')?> -->
 <?php wp_footer()?>
 </html>

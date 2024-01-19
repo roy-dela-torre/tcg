@@ -84,3 +84,6 @@ function custom_login_form_shortcode() {
    }
 }
 add_shortcode('custom_login_form', 'custom_login_form_shortcode');
+
+
+add_filter( 'yith_wcwl_is_wishlist_responsive', '__return_false' );

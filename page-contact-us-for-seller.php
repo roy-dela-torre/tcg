@@ -1,31 +1,16 @@
-<?php get_header();
-/*Template Name: My Account*/
+<?php get_header(); 
 $imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
-if (is_user_logged_in()): ?>
-  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/css/my-account.css">
-  <section class="my-account">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="offset-xl-1 col-xl-10">
-          <div class="content">
-            <?php echo do_shortcode('[woocommerce_my_account]'); ?>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<?php else: ?>
-  <section class="login">
+?>
+<section class="contact-us-for-seller">
     <div class="container-fluid">
         <div class="wrapper">
             <div class="row">
                 <div class="col-xxl-8 col-xl-9 col-lg-12 px-sm-0">
                     <div class="content">
                         <div class="content-container">
-                            <h2 class="text-uppercase text-white">Welcome</h2>
-                            <p class="text-white">Log in your account</p>
-                            <?php echo do_shortcode('[custom_login_form]'); ?>
+                            <h2 class="text-uppercase text-white">Sell your cards</h2>
+                            <p class="text-white">Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. </p>
+                            <?php echo do_shortcode('[contact-form-7 id="9b04170" title="Contact us"]')?>
                         </div>
                     </div>
                 </div>
@@ -42,9 +27,4 @@ if (is_user_logged_in()): ?>
         </div>
     </div>
 </section>
-  <?php
-  // header('Location: ' . get_home_url() . '/register');
-endif; ?>
-<?php
-get_footer();
-?>
+<?php get_footer();?>

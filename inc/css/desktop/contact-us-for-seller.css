@@ -1,0 +1,101 @@
+section.contact-us-for-seller{
+    background: url('https://innovnational.com/tcg/wp-content/uploads/2023/10/have-question-bg-new.jpg')no-repeat center center/cover;
+}
+section.contact-us-for-seller .content{
+    background: url('../../../assets/img/homepage/have-quiestion-bg.png')no-repeat center center/100% 771px;;
+    max-width: 866px;
+    min-height: 771px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+section.contact-us-for-seller form p{
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    margin-bottom: 0;
+}
+section.contact-us-for-seller form.wpcf7-form.invalid .wpcf7-response-output{
+    margin-top: 0;
+}
+section.contact-us-for-seller input:not([type="submit"]),section.contact-us-for-seller textarea{
+    border-radius: 5px;
+    background: #FFF;
+    padding: 15px 20px;
+    width: 100%;
+    border: none;
+}
+section.contact-us-for-seller input:not([type="submit"])::placeholder,section.contact-us-for-seller textarea::placeholder{
+    color: #A5A5A5;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: capitalize;
+    border: none;
+}
+section.contact-us-for-seller textarea{
+    max-height: 83px;
+}
+section.contact-us-for-seller input[type="submit"]{
+    border-radius: 10px;
+    background: #00CBFF;
+    color: #FFF;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 30px;
+    width: 100%;
+    border: none;
+}
+section.contact-us-for-seller .content-container{
+    max-width: 613px;
+    margin: auto auto auto 100px;
+    display: flex;
+    flex-direction: column;
+}
+section.contact-us-for-seller .contact-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+    padding-bottom: 30px;
+    gap: 15px 0;
+}
+section.contact-us-for-seller .contact-details a{
+    display: flex;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    gap: 0 15px;
+}
+section.contact-us-for-seller .contact-details a img{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+section.contact-us-for-seller .screen-reader-response>ul{
+    display: none;
+}
+section.contact-us-for-seller span.wpcf7-form-control-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}
+section.contact-us-for-seller span.wpcf7-not-valid-tip,section.contact-us-for-seller .wpcf7-response-output{
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 10px;
+}

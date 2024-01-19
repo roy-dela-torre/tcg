@@ -22,6 +22,7 @@ get_header();
                     <h1>Create an Account</h1>
                     <?php echo do_shortcode('[registration_form]'); ?>
                     <p class="text-center">Already have an account? <a href="<?php echo get_home_url()?>/my-account/" rel="noopener noreferrer">Log in</a></p>
+                    <?php echo do_shortcode('[nextend_social_login_register_flow]')?>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 pe-md-0">

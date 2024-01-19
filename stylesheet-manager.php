@@ -11,4 +11,10 @@ $carouselPath = get_stylesheet_directory_uri().'/assets/carousel/'; ?>
     <link rel="stylesheet" href="<?php echo $carouselPath;?>owl.theme.default.min.css">
     <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/index.css">
     <link rel="stylesheet" media="screen and (max-width: 991px)" href="<?php echo $globalPath; ?>mobile-tablet/index-mobile.css">
+<?php }else if(is_page('contact-us')){ ?>
+    <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/contact-us.css">    
+<?php }else if(is_page('contact-us-for-seller')){ ?>
+    <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/contact-us-for-seller.css">    
+<?php }else if(is_page('my-account')){ ?>
+    <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/login.css">    
 <?php }?>

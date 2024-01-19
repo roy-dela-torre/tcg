@@ -280,6 +280,9 @@ footer div#interested-selling{
     max-width: 240px;
 }
 
+div#sidebar{
+    display: none;
+}
 
 @media (max-width:1600px) {
     section .wrapper,footer .wrapper{
