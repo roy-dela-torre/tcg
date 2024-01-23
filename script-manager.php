@@ -10,8 +10,8 @@ $(document).ready(function () {
             $('li#menu-item-9').addClass('active') 
         }, 1000);
         const bannerSection = $('section.banner');
-        const bannerImgPaths = ["banner4digimon.jpg", "banner5onepiece.jpg", "banner6uprising.jpg", "banner1pokemon.jpg", "banner2yugioh.jpg", "banner3magic.jpg"];
-        const cardPath = ["banner-digimon.png", "banner-onepiece.png", "banner-uprising.png", "banner-pokemon.png", "banner-yugioh.png", "banner-magic.png"];
+        const bannerImgPaths = ["banner2.jpg", "banner3.jpg", "banner4.jpg", "banner5.jpg", "banner6.jpg", "banner7.jpg"];
+        const cardPath = ["banner_right_image2.png", "banner_right_image3.png", "banner_right_image4.png", "banner_right_image5.png", "banner_right_imag6.png", "banner_right_image7.png"];
         const diamondImg = ["diamond2.png", "diamond3.png", "diamond4.png", "diamond1.png", "diamond2.png", "diamond3.png", "diamond4.png"];
         const bannerHeader = [
         '<h2 class="text-uppercase text-white">Digital Adventures Await</h2>',
@@ -138,10 +138,6 @@ $(document).ready(function () {
             }
         });
 
-        // first section margin top
-        var navHeight = $(".narbar.fixed-top").height()
-	    $('section:first').css('margin-top', navHeight);
-
         $('img.wishlist,img#wishlist').on('click', function() {
             var contentId = $(this).closest('.content').attr('id');
             var buttonSelector = 'section.featured-card .content#' + contentId + ' a.add_to_wishlist.single_add_to_wishlist.button.alt';
@@ -183,6 +179,7 @@ $(document).ready(function () {
         $('nav.navbar ul.navbar-nav li.nav-item a').click(function() {
             $('nav.navbar ul.navbar-nav li.nav-item').removeClass('active');
             $(this).parent().addClass('active');
+            $('section.featured-card #drop_down').removeClass('active')
         });
 
         $('ul.navbar-nav li').each(function() {
@@ -214,11 +211,16 @@ $(document).ready(function () {
 
             return false;
         }
-        
+        $('section.featured-card #drop_down').click(function(){
+            $(this).toggleClass('active')
+            $('section.featured-card li.nav-item').removeClass('active')
+        })
+    <?php elseif (function_exists('is_product') && is_product()): ?>
         $('section.reviews section.related-product').remove();
         var reviews = $('.reviews-content').html()
         $('div#addreviewspopup .modal-body').html(reviews)
     <?php endif; ?>
+
 
     function setEqualHeightForSection(sectionSelector, secondSelector) {
         var elementsToResize = $(sectionSelector).find(secondSelector);
@@ -233,5 +235,8 @@ $(document).ready(function () {
     }
 
     $('li#menu-item-9').removeClass('active')
+     // first section margin top
+     var navHeight = $(".narbar.fixed-top").height()
+	    $('section:first').css('margin-top', navHeight);
 });
 </script>

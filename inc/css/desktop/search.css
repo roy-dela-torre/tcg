@@ -1,0 +1,8 @@
+body{
+    background: url('../../../assets/img/search/body_bg.jpg')no-repeat center center/cover;
+}
+
+section.banner{
+    background: url('../../../assets/img/search/banner.png')no-repeat center center/cover;
+    background-position-x: 80px;
+}

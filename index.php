@@ -56,7 +56,7 @@ $homeUrl = get_home_url();
                 </div>
                 <div class="col-lg-5 col-md-12">
                     <div class="image-container">
-                        <img loading="lazy" src="<?php echo $imgPath; ?>banner-magic.png" alt="" class="animate__fadeIn">
+                        <img loading="lazy" src="<?php echo $imgPath; ?>banner_right_image1.png" alt="" class="animate__fadeIn">
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@ $homeUrl = get_home_url();
                     <li class="nav-item">
                         <a class="nav-link text-uppercase text-center" data-value="">cardfight!! vanguard</a>
                     </li>
-                    <div class="dropdown d-flex justify-content-center">
+                    <div class="dropdown d-flex justify-content-center" id="drop_down">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">More
                         </button>
                         <ul class="dropdown-menu row">
@@ -218,35 +218,7 @@ $homeUrl = get_home_url();
     </div>
 </section>
 
-<section class="we-want-the-best overflow-hidden p-0">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class=" col-xl-7 col-lg-8 col-md-12 ps-0">
-                <div class="content">
-                    <div class="content-container">
-                        <h2 class="text-uppercase text-white">We're Committed to Your Satisfaction</h2>
-                        <ul class="ps-0">
-                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>card.png" alt=""><p>Expand your card collection with confidence, knowing you'll find the most sought-after cards from your favorite games right here.</li>
-                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>like.png" alt=""><p>Our customers love us for a reason! Join the ranks of satisfied collectors who've given us the thumbs up for our quality and service</li>
-                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>award.png" alt=""><p>Rest easy knowing that all our cards are guaranteed authentic, assuring the legitimacy of your cherished collectibles. </p></li>
-                            <li class="text-white"><img loading="lazy" src="<?php echo $imgPath; ?>person.png" alt=""><p>Our dedicated customer service team is here to assist you every step of the way, ensuring your experience with us is nothing short of exceptional.</p></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-5 col-lg-4 col-md-12">
-               <div class="carouseel-container">
-                <div class="carousel">
-                        <img loading="lazy" src="<?php echo $imgPath; ?>fleshblood.png" class="carousel-diamon left active">
-                        <img loading="lazy" src="<?php echo $imgPath; ?>carletviolet.png" class="carousel-diamon right">
-                        <img loading="lazy" src="<?php echo $imgPath; ?>yo-hi-uh.png" class="carousel-diamon top">
-                        <img loading="lazy" src="<?php echo $imgPath; ?>magic.png" class="carousel-diamon bottom">
-                    </div>
-               </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?php get_template_part('template_section/section','carousel')?>
 
 <section class="about-us px-sm-0">
     <div class="container-fluid">
@@ -270,69 +242,7 @@ $homeUrl = get_home_url();
 </section>
 
 
-<section class="article">
-    <div class="container-fluid">
-        <div class="wrapper">
-            <div class="row">
-                <div class="header">
-                    <h2 class="text-center text-uppercase">articles</h2>
-                </div>
-                <div class="articles">
-                    <div class="row">
-                        <?php $firstBlog = array('post_type' => 'post','posts_per_page' => 2,'post_status' => 'publish','order' => 'DESC');
-                        $results = new WP_Query($firstBlog);
-                        $excluded_posts = array();
-                        if ($results->have_posts()) :
-                            while ($results->have_posts()) : $results->the_post();
-                                $blog_id = get_the_ID();
-                                $excluded_posts[] = $blog_id; ?>
-                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                    <a href="<?php echo the_permalink();?>" target="_blank" rel="noopener noreferrer">
-                                        <div class="content">
-                                            <div class="article-image">
-                                                <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($blog_id, 'medium'); ?>" alt="<?php echo get_the_title(); ?>" class="feature-img">
-                                            </div>
-                                            <p class="date"><?php echo get_the_date(); ?></p>
-                                            <h5><?php echo get_the_title(); ?></h5>
-                                            <p class="description"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
-                                            <button class="read-more">read more <img loading="lazy" src="<?php echo $imgPath; ?>read-more-left-arrow.png" alt=""></button>
-                                        </div>
-                                    </a>
-                                </div>
-                            <?php endwhile;
-                        endif; ?>
-                        <div class="col-xl-6">
-                            <div class="d-flex flex-column">
-                            <?php $remainingBlogs = array('post_type' => 'post','posts_per_page' => 2,'post_status' => 'publish','order' => 'DESC','post__not_in' => $excluded_posts);
-                            $results = new WP_Query($remainingBlogs);
-                            if ($results->have_posts()) :
-                                while ($results->have_posts()) : $results->the_post();
-                                    $blog_id = get_the_ID(); ?>
-                                        <a href="<?php echo the_permalink();?>" target="_blank" rel="noopener noreferrer">
-                                            <div class="content d-flex">
-                                                <div class="image-container">
-                                                    <div class="article-image">
-                                                        <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($blog_id, 'medium'); ?>" alt="<?php echo get_the_title(); ?>" class="feature-img">
-                                                    </div>
-                                                </div>
-                                                <div class="content">
-                                                    <p class="date"><?php echo get_the_date(); ?></p>
-                                                    <h5><?php echo get_the_title(); ?></h5>
-                                                    <p class="description"><?php echo wp_trim_words(get_the_excerpt(), 10); ?></p>
-                                                    <button class="read-more">read more <img loading="lazy" src="<?php echo $imgPath; ?>read-more-left-arrow.png" alt=""></button>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    <?php endwhile;
-                                endif; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?php get_template_part('template_section/section','article')?>
 
 <section class="have-question">
     <div class="container-fluid">

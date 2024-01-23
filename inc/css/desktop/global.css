@@ -189,6 +189,10 @@ section img{
 .fa-magnifying-glass:before{
     content: url('../../../assets/img/homepage/search.png') !important;
 }
+.form-control:focus{
+    box-shadow: none;
+    border: none;
+}
 
 
 footer{

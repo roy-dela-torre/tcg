@@ -16,5 +16,7 @@ $carouselPath = get_stylesheet_directory_uri().'/assets/carousel/'; ?>
 <?php }else if(is_page('contact-us-for-seller')){ ?>
     <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/contact-us-for-seller.css">    
 <?php }else if(is_page('my-account')){ ?>
+<?php }else if(is_page('search')){ ?>
+    <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/search.css"> 
     <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/login.css">    
 <?php }?>

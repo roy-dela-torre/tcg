@@ -3,9 +3,15 @@ get_header();
 global $wp_query;
 $s = $_GET['s'];
 ?>
+<section class="banner">
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="textt-center text-white">Search Results for: "<?php echo $s;?>"</h1>
+        </div>
+    </div>
+</section>
 <section class="searchResults" id="four-o-four">
     <div class="container">
-        <h1>Search Results for: "<?php echo $s;?>"</h1>
         <hr>
         <div class="row">
             <?php

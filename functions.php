@@ -87,3 +87,21 @@ add_shortcode('custom_login_form', 'custom_login_form_shortcode');
 
 
 add_filter( 'yith_wcwl_is_wishlist_responsive', '__return_false' );
+
+
+
+// Define a shortcode for WooCommerce breadcrumbs
+function custom_woocommerce_breadcrumbs_shortcode() {
+    ob_start(); // Start output buffering
+
+    // Check if the WooCommerce breadcrumb function exists
+    if ( function_exists('woocommerce_breadcrumb') ) {
+        // Output WooCommerce breadcrumbs
+        woocommerce_breadcrumb();
+    }
+
+    return ob_get_clean(); // Return the buffered content
+}
+
+// Register the shortcode
+add_shortcode('custom_breadcrumbs', 'custom_woocommerce_breadcrumbs_shortcode');

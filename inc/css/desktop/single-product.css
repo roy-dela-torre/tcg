@@ -11,6 +11,9 @@ section.related-product h2{
     text-align: center;
     margin-bottom: 50px;
 }
+section.reviews section.related-product{
+    display: none;
+}
 
 @media (max-width:1366px) {
     section.related-product ul#related-products>li{
