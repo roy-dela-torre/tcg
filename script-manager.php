@@ -9,9 +9,10 @@ $(document).ready(function () {
         setTimeout(() => {
             $('li#menu-item-9').addClass('active') 
         }, 1000);
+
         const bannerSection = $('section.banner');
-        const bannerImgPaths = ["banner2.jpg", "banner3.jpg", "banner4.jpg", "banner5.jpg", "banner6.jpg", "banner7.jpg"];
-        const cardPath = ["banner_right_image2.png", "banner_right_image3.png", "banner_right_image4.png", "banner_right_image5.png", "banner_right_imag6.png", "banner_right_image7.png"];
+        const bannerImgPaths = ["banner2.jpg", "banner3.jpg", "banner4.jpg", "banner5.jpg", "banner6.jpg", "banner1.jpg"];
+        const cardPath = ["banner_right_image2.png", "banner_right_image3.png", "banner_right_image4.png", "banner_right_image5.png", "banner_right_image6.png", "banner_right_image1.png"];
         const diamondImg = ["diamond2.png", "diamond3.png", "diamond4.png", "diamond1.png", "diamond2.png", "diamond3.png", "diamond4.png"];
         const bannerHeader = [
         '<h2 class="text-uppercase text-white">Digital Adventures Await</h2>',
@@ -144,14 +145,9 @@ $(document).ready(function () {
             $(buttonSelector).click(); 
         });
         $('section.featured-card button.navbar-toggler').click(function() {
-            // Get the current background image URL
             var currentImage = $('section.featured-card span.navbar-toggler-icon').css('background-image');
-            
-            // Define the URLs for the two background images
             var image1 = 'url("<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/filter.png")';
             var image2 = 'url("<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/close-btn.png")';
-
-            // Toggle between the two images
             if (currentImage === image1) {
                 $('section.featured-card span.navbar-toggler-icon').css('background-image', image2);
             } else {
@@ -215,6 +211,19 @@ $(document).ready(function () {
             $(this).toggleClass('active')
             $('section.featured-card li.nav-item').removeClass('active')
         })
+        $('section.featured-card .row>div').each(function(){
+            $(this).find('img.wishlist').click(function(){
+                $('.wishlist_modal_btn').click();
+                var contentContainer = $(this).closest('.content');
+                var product_name = contentContainer.find('.content-container p.name').text();
+                var product_price = contentContainer.find('.content-container p.price').text();
+                var product_image = contentContainer.find('.product-image img.cards').attr('src');
+                $('.product_added_to_wislist img').attr('src', product_image);
+                $('.product_added_to_wislist p.product_name').text(product_name);
+                $('.product_added_to_wislist p.price').text(product_price);
+            });
+        });
+
     <?php elseif (function_exists('is_product') && is_product()): ?>
         $('section.reviews section.related-product').remove();
         var reviews = $('.reviews-content').html()

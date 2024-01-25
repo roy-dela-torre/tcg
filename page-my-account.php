@@ -1,7 +1,7 @@
 <?php get_header();
 /*Template Name: My Account*/
 $imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
-if (is_user_logged_in()): ?>
+if (!is_user_logged_in()): ?>
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/css/my-account.css">
   <section class="my-account">
     <div class="container-fluid">
