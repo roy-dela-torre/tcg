@@ -15,14 +15,22 @@ $(document).ready(function () {
         const cardPath = ["banner_right_image2.png", "banner_right_image3.png", "banner_right_image4.png", "banner_right_image5.png", "banner_right_image6.png", "banner_right_image1.png"];
         const diamondImg = ["diamond2.png", "diamond3.png", "diamond4.png", "diamond1.png", "diamond2.png", "diamond3.png", "diamond4.png"];
         const bannerHeader = [
+        '<h2 class="text-uppercase text-white">Catch \'Em All</h2>',
+        '<h2 class="text-uppercase text-white">Master the Duel</h2>',
+        '<h2 class="text-uppercase text-white">Command the Elements</h2>',
         '<h2 class="text-uppercase text-white">Digital Adventures Await</h2>',
         '<h2 class="text-uppercase text-white">Set Sail for One Piece Treasures</h2>',
         '<h2 class="text-uppercase text-white">Rathe Awaits</h2>',
-        '<h2 class="text-uppercase text-white">Catch \'Em All</h2>',
-        '<h2 class="text-uppercase text-white">Master the Duel</h2>',
-        '<h2 class="text-uppercase text-white">Command the Elements</h2>'
         ];
-        const bannerP = ['Embark on a journey through the digital realm with our captivating assortment of Digimon cards. Whether you\'re a DigiDestined or a collector, explore and acquire the cards that will enhance your collection and lead you to digital victory.','Join the grand adventure of the Straw Hat Pirates with our One Piece trading cards. Whether you\'re a devoted fan or a collector, find the cards that will bring the world of One Piece to your fingertips, and uncover the power hidden within.','Step into the mystical realm of Rathe with our extraordinary selection of Flesh and Blood cards. Your journey begins here; find, trade, and acquire the cards that will make your collection legendary.','Embark on a Pokemon adventure like no other with our vast assortment of Pokemon cards. Whether you\'re a dedicated trainer or a collector, find the perfect cards to expand your collection and reignite your love for the game.','Enter the world of epic duels and strategy with our extensive selection of Yu-Gi-Oh cards. Whether you\'re a seasoned duelist or just starting your journey, discover the cards that will make your deck unbeatable and your victories legendary.','Immerse yourself in the enchanting world of Magic the Gathering with our diverse collection of cards. Whether you\'re a planeswalker or a collector, find the cards that will empower your decks and elevate your gameplay to new heights.']
+        const bannerP = ['Embark on a Pokemon adventure like no other with our vast assortment of Pokemon cards. Whether you\'re a dedicated trainer or a collector, find the perfect cards to expand your collection and reignite your love for the game.',
+        'Enter the world of epic duels and strategy with our extensive selection of Yu-Gi-Oh cards. Whether you\'re a seasoned duelist or just starting your journey, discover the cards that will make your deck unbeatable and your victories legendary.',
+        
+        
+        
+        'Immerse yourself in the enchanting world of Magic the Gathering with our diverse collection of cards. Whether you\'re a planeswalker or a collector, find the cards that will empower your decks and elevate your gameplay to new heights.',
+        'Embark on a journey through the digital realm with our captivating assortment of Digimon cards. Whether you\'re a DigiDestined or a collector, explore and acquire the cards that will enhance your collection and lead you to digital victory.',
+        'Join the grand adventure of the Straw Hat Pirates with our One Piece trading cards. Whether you\'re a devoted fan or a collector, find the cards that will bring the world of One Piece to your fingertips, and uncover the power hidden within.',
+        'Step into the mystical realm of Rathe with our extraordinary selection of Flesh and Blood cards. Your journey begins here; find, trade, and acquire the cards that will make your collection legendary.']
 
         let currentImageIndex = 0;
         let rotationDegree = 0;
@@ -228,6 +236,28 @@ $(document).ready(function () {
         $('section.reviews section.related-product').remove();
         var reviews = $('.reviews-content').html()
         $('div#addreviewspopup .modal-body').html(reviews)
+    <?php elseif (is_checkout()): ?>
+        $('.product-list').append($('form.checkout_coupon.woocommerce-form-coupon').html())
+        $('.order_summary button.button').click(function(){
+            $('form.checkout_coupon.woocommerce-form-coupon input#coupon_code').val($('.order_summary input#coupon_code').val())
+            setTimeout(() => {
+                $('form.checkout_coupon.woocommerce-form-coupon button').click()
+            }, 1500);
+            
+        })
+    <?php elseif (is_cart()): ?>
+         $('.cart_totals').each(function(){ 
+            $(this).find('button.button[name="apply_coupon"]').click(function(){
+                var coupon_value = $('.cart_totals #coupon_code ').val()
+                console.log(coupon_value)
+                $('form.woocommerce-cart-form input#coupon_code').val(coupon_value)
+                $('form.woocommerce-cart-form button.button').prop('disabled', false);
+                setTimeout(() => {
+                    $('form.woocommerce-cart-form button.button').click()
+                }, 2000);
+    
+            })
+        })
     <?php endif; ?>
 
 
@@ -245,7 +275,11 @@ $(document).ready(function () {
 
     $('li#menu-item-9').removeClass('active')
      // first section margin top
-     var navHeight = $(".narbar.fixed-top").height()
-	    $('section:first').css('margin-top', navHeight);
+    var navHeight = $(".narbar.fixed-top").height()
+    $('section:first').css('margin-top', navHeight);
+
+ 
+
+   
 });
 </script>

@@ -49,8 +49,8 @@ $homeUrl = get_home_url();
             <div class="row align-items-center">
                 <div class="col-lg-7 col-md-12 px-md-0">
                     <div class="content">
-                        <div class="text-uppercase text-white" id="header"><h1>Command the Elements</h1></div>
-                        <p class="text-white">Immerse yourself in the enchanting world of Magic the Gathering with our diverse collection of cards. Whether you're a planeswalker or a collector, find the cards that will empower your decks and elevate your gameplay to new heights.</p>
+                        <div class="text-uppercase text-white" id="header"><h1>Rathe Awaits</h1></div>
+                        <p class="text-white">Step into the mystical realm of Rathe with our extraordinary selection of Flesh and Blood cards. Your journey begins here; find, trade, and acquire the cards that will make your collection legendary.</p>
                         <a href="/shop/" target="_blank" rel="noopener noreferrer" class="blue-btn text-uppercase">shop now</a>
                     </div>
                 </div>
@@ -218,7 +218,7 @@ $homeUrl = get_home_url();
     </div>
 </section>
 
-<?php get_template_part('template_section/section','carousel')?>
+<?php get_template_part('section_template/section','carousel')?>
 
 <section class="about-us px-sm-0">
     <div class="container-fluid">
@@ -231,7 +231,7 @@ $homeUrl = get_home_url();
             <div class="col-lg-9 col-md-12 px-sm-0">
                 <div class="content">
                     <div class="content-container">
-                        <h2 class="text-uppercase text-white">about <a href="<?php echo get_home_url(); ?>" target="_blank" rel="noopener noreferrer">TCG.PH</a></h2>
+                        <h2 class="text-uppercase text-white">about <a href="<?php echo get_home_url(); ?>" target="_blank" rel="noopener noreferrer" style="display: inline-block;font-size:unset">TCG.PH</a></h2>
                         <p class="text-white">TCG.PH, founded by a passionate card collector, is your go-to platform for enthusiasts, created by one of your own. Discover a community-driven hub dedicated to your trading card game passions, where collectors come together to explore, trade, and celebrate the world of TCGs</p>
                         <a href="http://" target="_blank" rel="noopener noreferrer" class="blue-btn text-uppercase">Learn more</a>
                     </div>
@@ -242,7 +242,7 @@ $homeUrl = get_home_url();
 </section>
 
 
-<?php get_template_part('template_section/section','article')?>
+<?php get_template_part('section_template/section','article')?>
 
 <section class="have-question">
     <div class="container-fluid">
@@ -274,7 +274,7 @@ $homeUrl = get_home_url();
 
 <!-- Wishlist modal -->
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary wishlist_modal_btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="visibility: hidden;"></button>
+<button type="button" class="btn btn-primary wishlist_modal_btn d-none" data-bs-toggle="modal" data-bs-target="#exampleModal" style="visibility: hidden;"></button>
 
 <!-- Modal -->
 <div class="product_added_to_wislist">

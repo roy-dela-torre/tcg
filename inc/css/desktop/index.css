@@ -27,7 +27,7 @@ section.banner .image-container.rotate img {
 }
 
 section.banner img {
-    min-height: 676px;
+    height: 676px;
 }
 
 section.banner a {

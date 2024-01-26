@@ -50,9 +50,14 @@
               </button>
             </form>
             <div class="group-button">
-              <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-cart.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png';" onClick="window.open('<?php echo get_home_url(); ?>/cart/');"/>
-              <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-wishlist.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png';" onClick="window.open('<?php echo get_home_url(); ?>/wishlist/');"/>
-              <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/user.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-person.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/user.png';" onClick="window.open('<?php echo get_home_url(); ?>/my-account/');">
+              <a href="<?php echo get_home_url(); ?>/cart/" target="_blank" rel="noopener noreferrer">
+                <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-cart.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/cart.png';"/>
+              </a>
+              <a href="<?php echo get_home_url(); ?>/wishlist/" target="_blank" rel="noopener noreferrer">
+                <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-wishlist.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/wishlist.png';"/></a>
+              <a href="<?php echo get_home_url(); ?>/my-account/" target="_blank" rel="noopener noreferrer">
+                <img src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/user.png' onmouseover="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/blue-person.png';" onmouseout="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/user.png';">
+              </a>
             </div>
         </div>
     </div>

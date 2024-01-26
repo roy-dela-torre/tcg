@@ -90,18 +90,79 @@ add_filter( 'yith_wcwl_is_wishlist_responsive', '__return_false' );
 
 
 
-// Define a shortcode for WooCommerce breadcrumbs
-function custom_woocommerce_breadcrumbs_shortcode() {
-    ob_start(); // Start output buffering
+/* Add Plus and Minus Button for Quantity Input */
+add_action('woocommerce_before_quantity_input_field', 'custom_display_quantity_minus');
+add_action('woocommerce_after_quantity_input_field', 'custom_display_quantity_plus');
 
-    // Check if the WooCommerce breadcrumb function exists
-    if ( function_exists('woocommerce_breadcrumb') ) {
-        // Output WooCommerce breadcrumbs
-        woocommerce_breadcrumb();
-    }
-
-    return ob_get_clean(); // Return the buffered content
+function custom_display_quantity_minus() {
+    echo '<button type="button" class="minus">-</button>';
 }
 
-// Register the shortcode
-add_shortcode('custom_breadcrumbs', 'custom_woocommerce_breadcrumbs_shortcode');
+function custom_display_quantity_plus() {
+    echo '<button type="button" class="plus">+</button>';
+}
+
+/* Trigger update quantity script */
+add_action('wp_footer', 'custom_add_cart_quantity_plus_minus');
+
+function custom_add_cart_quantity_plus_minus() {
+    if (!is_product() && !is_cart()) return;
+
+    wc_enqueue_js("
+      jQuery(document).on('click', 'button.plus, button.minus', function() {
+
+         var qty = jQuery(this).parent('.quantity').find('.qty');
+         var val = parseFloat(qty.val());
+         var max = parseFloat(qty.attr('max'));
+         var min = parseFloat(qty.attr('min'));
+         var step = parseFloat(qty.attr('step'));
+
+         if (jQuery(this).is('.plus')) {
+            if (max && (max <= val)) {
+               qty.val(max).change();
+            } else {
+               qty.val(val + step).change();
+            }
+         } else {
+            if (min && (min >= val)) {
+               qty.val(min).change();
+            } else if (val > 1) {
+               qty.val(val - step).change();
+            }
+         }
+
+      });
+    ");
+}
+
+/* Trigger cart update when quantity changes */
+add_action('wp_footer', 'cart_refresh_update_qty');
+
+function cart_refresh_update_qty()
+{
+    if (is_cart()) {
+        ?>
+        <script type="text/javascript">
+            let timeout;
+            jQuery('div.woocommerce').on('change', 'input.qty', function(){
+                if (timeout !== undefined) {
+                    clearTimeout(timeout);
+                }
+                timeout = setTimeout(function() {
+                    jQuery("[name='update_cart']").trigger("click"); // trigger cart update
+                }, 1000 ); // 1 second
+            });
+
+            jQuery('div.woocommerce').on('click', 'button.minus, button.plus', function(){
+                jQuery("[name='update_cart']").trigger("click");
+            });
+        </script>
+        <?php
+    }
+}
+
+
+
+
+remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+add_action('woocommerce_checkout_payment_hook', 'woocommerce_checkout_payment', 10 );
