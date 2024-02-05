@@ -4,5 +4,55 @@ body{
 
 section.banner{
     background: url('../../../assets/img/search/banner.png')no-repeat center center/cover;
-    background-position-x: 80px;
+    background-position-x: left;
+    padding: 158px;
+}
+
+section.searchResults img{
+    width: 100%;
+    max-width: 360px;
+    min-height: 360px;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+section.searchResults h3{
+    color: #FFF;
+    font-family: 'Inter',sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+section.searchResults button{
+    padding: 20px 30px;
+    border-radius: 10px;
+    background: #00CBFF;
+    color: #FFF;
+    font-family: "Roboto Condensed",sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    width: 100%;
+    display: block;
+}
+section.searchResults .content{
+    display: flex;
+    flex-direction: column;
+}
+section.searchResults .row{
+    gap: 24px 0;
+}
+
+@media (max-width:991px) {
+    section.searchResults img{
+        max-width: 100%;
+    }
 }
