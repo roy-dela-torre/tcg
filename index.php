@@ -218,7 +218,7 @@ $homeUrl = get_home_url();
     </div>
 </section>
 
-<?php get_template_part('section_template/section','carousel')?>
+<?php get_template_part('template_section/section','carousel')?>
 
 <section class="about-us px-sm-0">
     <div class="container-fluid">
@@ -242,7 +242,7 @@ $homeUrl = get_home_url();
 </section>
 
 
-<?php get_template_part('section_template/section','article')?>
+<?php get_template_part('template_section/section','article')?>
 
 <section class="have-question">
     <div class="container-fluid">

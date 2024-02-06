@@ -30,15 +30,15 @@ if ( ! empty( $breadcrumb ) ) {
 
 		if ( ! empty( $crumb[1] ) && sizeof( $breadcrumb ) !== $key + 1 ) {
 			echo '<a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a>';
-		} else {
-			echo esc_html( $crumb[0] );
-		}
+		} else { ?>
+			<p><?php echo esc_html( $crumb[0] ); ?></p>
+		<?php }
 
 		echo $after;
 
-		if ( sizeof( $breadcrumb ) !== $key + 1 ) {
-			echo $delimiter;
-		}
+		if ( sizeof( $breadcrumb ) !== $key + 1 ) { ?>
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/featured_card/bread_crumb_arrow.png" alt="">
+		<?php }
 	}
 
 	echo $wrap_after;

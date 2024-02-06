@@ -258,6 +258,27 @@ $(document).ready(function () {
     
             })
         })
+    <?php elseif (is_page('feature-card')): ?>
+        $('ul#categories li input').click(function(){
+            var inputId =  $(this).attr('id')
+            console.log(inputId)
+            $('section.feature_card .group-box .row div').hide()
+            if($('ul#categories li input:checked').lenght > 0){
+                $('section.feature_card .group-box .row div').show()
+            }
+            else if($('section.feature_card .group-box .row div').hasClass(inputId)){
+                $('section.feature_card .group-box .row div',+inputId).show()
+            }
+            
+        })
+
+        $('.categories ul').each(function(){
+            $(this).find('h5').click(function(){
+                $('.categories ul').toggleClass('active')
+            })
+        })
+
+
     <?php endif; ?>
 
 
