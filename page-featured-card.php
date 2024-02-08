@@ -16,52 +16,105 @@ $imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
                 </div>
                 <div class="col-lg-3 col-md-12 mb-5">
                     <div class="filter">
-                        <div class="categories">
-                            <ul id="categories" class="active">
-                                <h5>Categories <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/featured_card/drop_down.png" alt=""></h5>
-                            <?php
-                            $product_categories = get_terms(array(
-                                'taxonomy'   => 'product_cat', // assuming 'product_cat' is the taxonomy for WooCommerce product categories
-                                'hide_empty' => false, // set to true if you want to hide empty categories
-                            ));
-                            //$first = true;
-                            if ($product_categories && !is_wp_error($product_categories)) {
-                                foreach ($product_categories as $category) {
-                                    if (esc_html($category->name) === "Uncategorized") {
-                                        continue; // Skip the "UNCATEGORIZED" category and move to the next iteration
-                                    }
-                                    
-                                    ?>
-                                    <li>
-                                    <input type="checkbox" name="" id="<?php echo str_replace(' ', '_', esc_html($category->name)); ?>" <?php //echo $first == true ? 'checked' : ''?>>
-                                    <?php echo esc_html($category->name); ?>
-                                        <!-- <a href="<?php //echo esc_url(get_term_link($category)); ?>"></a> -->
-                                    </li>
-                                    <?php
-                                    //$first = false;
-                                }
-                            } else {
-                                echo '<li>No product categories found</li>';
-                            }
-                            ?>
-
-                            </ul>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h5 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#categores" aria-expanded="true" aria-controls="categores">
+                                    Categories
+                                </button>
+                                </h5>
+                                <div id="categores" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body p-0">
+                                    <ul class="ps-0 mb-0">
+                                        <?php $product_categories = get_terms(array(
+                                            'taxonomy'   => 'product_cat', // assuming 'product_cat' is the taxonomy for WooCommerce product categories
+                                            'hide_empty' => false, // set to true if you want to hide empty categories
+                                        ));
+                                        if ($product_categories && !is_wp_error($product_categories)) {
+                                            foreach ($product_categories as $category) {
+                                                if (esc_html($category->name) === "Uncategorized") {
+                                                    continue; // Skip the "UNCATEGORIZED" category and move to the next iteration
+                                                } ?>
+                                                <li>
+                                                <input type="checkbox" name="" id="<?php echo str_replace(' ', '_', esc_html($category->name)); ?>" <?php //echo $first == true ? 'checked' : ''?>>
+                                                    <span class="name"> <?php echo esc_html($category->name); ?></span>
+                                                    <!-- <a href="<?php //echo esc_url(get_term_link($category)); ?>"></a> -->
+                                                </li>
+                                                <?php
+                                            }
+                                        } else {
+                                            echo '<li>No product categories found</li>';
+                                        } ?>
+                                    </ul>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h5 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sets" aria-expanded="false" aria-controls="sets">
+                                    sets
+                                </button>
+                                </h5>
+                                <div id="sets" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body p-0">
+                                        <ul class="ps-0 mb-0">
+                                        <?php $product_categories = get_terms(array(
+                                                'taxonomy'   => 'sets', // assuming 'product_cat' is the taxonomy for WooCommerce product categories
+                                                'hide_empty' => false, // set to true if you want to hide empty categories
+                                            ));
+                                            if ($product_categories && !is_wp_error($product_categories)) {
+                                                
+                                                foreach ($product_categories as $category) {
+                                                    if (esc_html($category->name) === "sets") {
+                                                        continue; // Skip the "UNCATEGORIZED" category and move to the next iteration
+                                                    } ?>
+                                                    <li>
+                                                    <input type="checkbox" name="" id="<?php echo str_replace(' ', '_', esc_html($category->name)); ?>" <?php //echo $first == true ? 'checked' : ''?>>
+                                                        <span class="name"> <?php echo esc_html($category->name); ?></span>
+                                                        <!-- <a href="<?php //echo esc_url(get_term_link($category)); ?>"></a> -->
+                                                    </li>
+                                                    <?php
+                                                }
+                                            } else {
+                                                echo '<li>No product categories found</li>';
+                                            } ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h5 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#product_type" aria-expanded="false" aria-controls="product_type">
+                                    Product type
+                                </button>
+                                </h5>
+                                <div id="product_type" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body p-0">
+                                    <ul class="ps-0 mb-0">
+                                    <?php $product_categories = get_terms(array(
+                                            'taxonomy'   => 'product_type', // assuming 'product_cat' is the taxonomy for WooCommerce product categories
+                                            'hide_empty' => false, // set to true if you want to hide empty categories
+                                        ));
+                                        if ($product_categories && !is_wp_error($product_categories)) {
+                                            foreach ($product_categories as $category) {
+                                                if (esc_html($category->name) === "product-type") {
+                                                    continue; // Skip the "UNCATEGORIZED" category and move to the next iteration
+                                                } ?>
+                                                <li>
+                                                <input type="checkbox" name="" id="<?php echo str_replace(' ', '_', esc_html($category->name)); ?>" <?php //echo $first == true ? 'checked' : ''?>>
+                                                    <span class="name"> <?php echo esc_html($category->name); ?></span>
+                                                    <!-- <a href="<?php //echo esc_url(get_term_link($category)); ?>"></a> -->
+                                                </li>
+                                                <?php
+                                            }
+                                        } else {
+                                            echo '<li>No product categories found</li>';
+                                        } ?>
+                                    </ul>
+                                </div>
+                                </div>
+                            </div>
                         </div>
-
-                        <!-- <div class="sets">
-                            <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </div>
-                        <div class="product_type">
-                            <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </div> -->
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-12">
@@ -102,15 +155,31 @@ $imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
                                             $price = $product->get_price_html();
                                         }
                                     }
+                                    $categories = array();
                                     $in_wishlist = YITH_WCWL()->is_product_in_wishlist( $product_id );
-                                    $categories = get_the_terms($product->get_id(), 'product_cat');
+                                    $product_cat_terms = get_the_terms($product_id, 'product_cat');
+                                    if ($product_cat_terms && !is_wp_error($product_cat_terms)) {
+                                        $categories = array_merge($categories, $product_cat_terms);
+                                    }
+                                    $sets_terms = get_the_terms($product_id, 'sets');
+                                    if ($sets_terms && !is_wp_error($sets_terms)) {
+                                        $categories = array_merge($categories, $sets_terms);
+                                    }
+                                    $product_type_terms = get_the_terms($product_id, 'product_type');
+                                    if ($product_type_terms && !is_wp_error($product_type_terms)) {
+                                        $categories = array_merge($categories, $product_type_terms);
+                                    }
+
                                     $img_src = $in_wishlist ? 'wishlist-white.png' : 'wishlist-blue.png'; ?>
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 <?php if ($categories && !is_wp_error($categories)) {
-                                        foreach ($categories as $category) {
-                                            echo str_replace(' ', '_', esc_html($category->name)).' ';
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 <?php 
+                                        if (!empty($categories)) {
+                                            foreach ($categories as $category) {
+                                                echo str_replace(' ', '_', esc_html($category->name)) . ' ';
+                                            }
                                         }
-                                    }?>"
-                                <?php //echo $counter>6 ? "style='display:none'" : "" ?> >
+                                    ?>">
+                                <?php //echo $counter>6 ? "style='display:none'" : "" ?>
                                     <div class="content <?php echo $product->get_stock_status() === 'outofstock' ? "outofstock" : "" ?>" id="product<?php echo $product_id?>id">
                                         <div class="product-image">
                                             <img loading="lazy" src="<?php echo $featured_image_url; ?>" alt="<?php echo get_the_title(); ?>" class="cards">
@@ -146,21 +215,7 @@ $imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
                             endif; wp_reset_postdata(); ?>
                         </div>
                     </div>
-                    <div class="paging">
-                        <nav class="pagination-container">
-                            <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/featured_card/prev.png" alt="">
-                            </button>
-
-                            <div id="pagination-numbers">
-
-                            </div>
-
-                            <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/featured_card/next.png" alt="">
-                            </button>
-                        </nav>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -168,95 +223,14 @@ $imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
 </section>
 <?php get_footer(); ?>
 <script>
-    $(document).ready(function() {
-        pagination()
-        function pagination(){
-            const paginationNumbers = $("#pagination-numbers");
-            const paginatedList = $(".group-box .row");
-            const listItems = paginatedList.find(".col-xl-4");
-            const nextButton = $("#next-button");
-            const prevButton = $("#prev-button");
-
-            const paginationLimit = 6;
-            const pageCount = Math.ceil(listItems.length / paginationLimit);
-            let currentPage = 1;
-
-            const disableButton = (button) => {
-                button.addClass("disabled");
-                button.attr("disabled", true);
-            };
-
-            const enableButton = (button) => {
-                button.removeClass("disabled");
-                button.removeAttr("disabled");
-            };
-
-            const handlePageButtonsStatus = () => {
-                if (currentPage === 1) {
-                    disableButton(prevButton);
-                } else {
-                    enableButton(prevButton);
-                }
-
-                if (pageCount === currentPage) {
-                    disableButton(nextButton);
-                } else {
-                    enableButton(nextButton);
-                }
-            };
-
-            const handleActivePageNumber = () => {
-                $(".pagination-number").removeClass("active").each(function() {
-                    const pageIndex = Number($(this).attr("page-index"));
-                    if (pageIndex === currentPage) {
-                        $(this).addClass("active");
-                    }
-                });
-            };
-
-            const appendPageNumber = (index) => {
-                const pageNumber = $("<button></button>").addClass("pagination-number").html(index).attr("page-index", index).attr("aria-label", "Page " + index);
-                paginationNumbers.append(pageNumber);
-            };
-
-            const getPaginationNumbers = () => {
-                for (let i = 1; i <= pageCount; i++) {
-                    appendPageNumber(i);
-                }
-            };
-
-            const setCurrentPage = (pageNum) => {
-                currentPage = pageNum;
-
-                handleActivePageNumber();
-                handlePageButtonsStatus();
-
-                const prevRange = (pageNum - 1) * paginationLimit;
-                const currRange = pageNum * paginationLimit;
-
-                listItems.addClass("hidden").slice(prevRange, currRange).removeClass("hidden");
-            };
-
-            $(window).on("load", function() {
-                getPaginationNumbers();
-                setCurrentPage(1);
-
-                prevButton.on("click", function() {
-                    setCurrentPage(currentPage - 1);
-                });
-
-                nextButton.on("click", function() {
-                    setCurrentPage(currentPage + 1);
-                });
-
-                $(document).on("click", ".pagination-number", function() {
-                    setCurrentPage(parseInt($(this).attr("page-index")));
-                });
-            });
+$(document).ready(function() {
+    $('#sets input, #product_type input,div#categores input').on('click', function() {
+        var selector = 'section.feature_card .group-box .' + $(this).attr('id');
+        $(selector).toggleClass('d-block').removeClass('d-none');
+        $('section.feature_card .group-box .col-xl-4').not(selector).toggleClass('d-none', true).removeClass('d-block');
+        if (!$('#sets input:checked').length && !$('#product_type input:checked' && !$('#categores input:checked')).length) {
+            $('section.feature_card .group-box .col-xl-4').removeClass('d-none');
         }
-        $('#categories li').click(function(){
-            pagination()
-        })
     });
-
+});
 </script>

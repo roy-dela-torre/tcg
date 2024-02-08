@@ -218,7 +218,7 @@ $homeUrl = get_home_url();
     </div>
 </section>
 
-<?php get_template_part('template_section/section','carousel')?>
+<?php get_template_part('section_template/section','carousel')?>
 
 <section class="about-us px-sm-0">
     <div class="container-fluid">
@@ -242,7 +242,7 @@ $homeUrl = get_home_url();
 </section>
 
 
-<?php get_template_part('template_section/section','article')?>
+<?php get_template_part('section_template/section','article')?>
 
 <section class="have-question">
     <div class="container-fluid">
@@ -253,7 +253,7 @@ $homeUrl = get_home_url();
                         <div class="content-container">
                             <h2 class="text-uppercase text-white">Have a Question?</h2>
                             <p class="text-white">Whether you're seeking information on our card selection or need assistance with your collection, feel free to reach out. Our dedicated support team is centered on providing you with the answers and guidance you need.</p>
-                            <?php echo do_shortcode('[contact-form-7 id="40b3e57" title="Contact form 1"]')?>
+                            <?php echo do_shortcode('[contact-form-7 id="40b3e57" title="Contact Form Homepage"]')?>
                         </div>
                     </div>
                 </div>

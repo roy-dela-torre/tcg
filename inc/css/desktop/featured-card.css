@@ -1,3 +1,33 @@
+nav.woocommerce-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0 15px;
+    margin-bottom: 61px;
+}
+
+nav.woocommerce-breadcrumb p {
+    margin-bottom: 0;
+    color: var(--d-9-d-9-d-9, #212121);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+}
+
+nav.woocommerce-breadcrumb a {
+    color: #565656;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+}
+
 section.feature_card {
     background: url('../../../assets/img/homepage/feature-image.jpg')no-repeat center center/cover;
     position: relative;
@@ -62,7 +92,7 @@ section.feature_card .group-box a.blue-btn:hover {
 }
 
 section.feature_card .group-box .row {
-    gap: 24px 0;
+    gap: 50px 0;
 }
 
 section.feature_card .group-button {
@@ -144,43 +174,6 @@ section.feature_card .content.outofstock img.cards {
     filter: grayscale(100%);
 }
 
-section.feature_card li {
-    list-style: none;
-}
-
-section.feature_card ul {
-    padding: 0;
-    height: 74px;
-    margin-bottom: 0;
-}
-
-section.feature_card .categories {
-    border-radius: 10px !important;
-    -webkit-border-radius: 10px !important;
-    -moz-border-radius: 10px !important;
-    -ms-border-radius: 10px !important;
-    -o-border-radius: 10px !important;
-    background-color: #0E0E0E;
-    overflow: hidden;
-    height: fit-content;
-}
-
-section.feature_card ul.active {
-    height: 100%;
-}
-
-section.feature_card ul.active h5 {
-    background-color: #26004D;
-}
-
-section.feature_card ul h5 {
-    color: white;
-    padding: 25px 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 section.feature_card ul h5 img {
     transform: rotate(-180deg);
     -webkit-transform: rotate(-180deg);
@@ -201,6 +194,10 @@ section.feature_card ul li {
     display: flex;
     align-items: center;
     gap: 0 5px;
+    padding: 25px 50px;
+}
+
+section.feature_card ul li span {
     color: #FFF;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
@@ -208,7 +205,6 @@ section.feature_card ul li {
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
-    padding: 25px 50px;
 }
 
 
@@ -237,7 +233,7 @@ section.feature_card ul li input[type=checkbox]:checked {
     opacity: 1;
 }
 
-section.feature_card ul li input[type=checkbox]:before {
+section.feature_card ul li input[type=checkbox]:checked:before {
     content: '';
     position: absolute;
     right: 50%;
@@ -251,87 +247,67 @@ section.feature_card ul li input[type=checkbox]:before {
     z-index: 2;
 }
 
-nav.woocommerce-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 0 15px;
-    margin-bottom: 61px;
-}
 
-nav.woocommerce-breadcrumb p {
-    margin-bottom: 0;
-    color: var(--d-9-d-9-d-9, #212121);
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-decoration-line: underline;
-    text-transform: uppercase;
-}
-
-nav.woocommerce-breadcrumb a {
-    color: #565656;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration-line: underline;
-    text-transform: uppercase;
-}
-
-.hidden {
-    display: none;
-}
-
-.pagination-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pagination-number,
-.pagination-button {
+section.feature_card div#accordionExample {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
     border: none;
-    margin: 0.25rem 0.25rem;
-    cursor: pointer;
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: 5px;
-    background-color: #26004C;
+    background-color: #212121;
+}
+
+section.feature_card button.accordion-button.collapsed {
+    border: none;
+    background-color: #212121;
+}
+
+section.feature_card button.accordion-button {
+    padding: 25px 50px;
+    background: var(--26004-d, #26004D);
     color: #FFF;
-    font-family: 'Roboto',sans-serif;
-    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
+    box-shadow: none;
+    border: none;
 }
 
-.pagination-number:hover,
-.pagination-button:not(.disabled):hover {
-    background: #373737;
-}
-
-.pagination-number.active {
-    color: #fff;
-    background: #373737;
-}
-div#pagination-numbers{
-    display: flex;
-    align-items: center;
-    gap: 0 10px;
-}
-nav.pagination-container button#next-button,
-nav.pagination-container button#prev-button{
+section.feature_card .accordion-item {
     border: none;
     background-color: transparent;
 }
-nav.pagination-container{
-    max-width: calc(1140px + 24px);
-    margin: 0 0 0 auto;
+
+section.feature_card .accordion-button:focus {
+    box-shadow: none;
 }
+
+section.feature_card .accordion-button::after {
+    background-image: url('../../../assets/img/featured_card/drop_down.png');
+}
+
+section.feature_card .accordion-button:not(.collapsed)::after {
+    background-image: url('../../../assets/img/featured_card/drop_down.png');
+    transform: rotate(18deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+
+section.feature_card .accordion-item ul::-webkit-scrollbar {
+    display: none;
+}
+
+.add-to-wishlist.w-100 {
+    display: none;
+}
+
 
 @media (max-width:767px) {
     section.feature_card .content-container {
@@ -340,6 +316,7 @@ nav.pagination-container{
         display: flex;
         flex-direction: column;
     }
+
     section.feature_card .group-button-mobile {
         display: flex !important;
         align-items: center;
@@ -357,9 +334,11 @@ nav.pagination-container{
         height: 40px;
         object-fit: contain;
     }
+
     section.feature_card .group-button-mobile {
         margin: 10px 0;
     }
+
     section.feature_card .group-button {
         display: none;
     }
