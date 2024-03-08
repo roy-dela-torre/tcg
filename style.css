@@ -2,3 +2,29 @@
 .widefat * {
     word-wrap: normal !important;
 }
+ul.acf-checkbox-list.acf-bl::after,
+ul.acf-checkbox-list.acf-bl::after{
+    display: none;
+}
+ul.acf-checkbox-list.acf-bl{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul.acf-checkbox-list.acf-bl li{
+    width: 25%;
+}
+@media (max-width:1200px) {
+    ul.acf-checkbox-list.acf-bl li{
+        width: 33.33%;
+    }
+}
+@media (max-width:991px) {
+    ul.acf-checkbox-list.acf-bl li{
+        width: 50%;
+    }
+}
+@media (max-width:575px) {
+    ul.acf-checkbox-list.acf-bl li{
+        width: 100%;
+    }
+}

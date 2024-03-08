@@ -16,6 +16,7 @@ $carouselPath = get_stylesheet_directory_uri().'/assets/carousel/'; ?>
 <?php }else if(is_page('contact-us-for-seller')){ ?>
     <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/contact-us-for-seller.css">    
 <?php }else if(is_page('my-account')){ ?>
+    <!-- Note that the forgot pass is under my-account login css -->
     <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/login.css">    
 <?php }else if(is_page('signup')){ ?>
     <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/signup.css">    
@@ -23,10 +24,10 @@ $carouselPath = get_stylesheet_directory_uri().'/assets/carousel/'; ?>
     <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/thank-you.css">    
 <?php }else if(is_page('blog-single')){ ?>
     <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/blog-single.css">  
-<?php }else if(is_page('forgot-pass')){ ?>
-    <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/forgot-pass.css">    
+<?php }else if(is_page('faq')){ ?>
+    <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/faq.css">  
 <?php }else if(is_404()){ ?>
-    <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/404.css">    
+    <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/404.css">  
 <?php }else if(is_checkout()){ ?>
-    <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/checkout.css">  
+    <link rel="stylesheet" href="<?php echo $globalPath; ?>desktop/checkout.css">    
 <?php }?>

@@ -1,8 +1,8 @@
 section.contact-us{
-    background: url('https://innovnational.com/tcg/wp-content/uploads/2023/10/have-question-bg-new.jpg')no-repeat center center/cover;
+    background: url('../../../assets/img/contact-us/contact-us-content-bg.jpg')no-repeat right center/cover;
 }
 section.contact-us .content{
-    background: url('../../../assets/img/homepage/have-quiestion-bg.png')no-repeat center center/100% 771px;;
+    background: url('../../../assets/img/contact-us/contact-us-form-bg.png')no-repeat center center/100% 771px;;
     max-width: 866px;
     min-height: 771px;
     display: flex; 
@@ -59,6 +59,12 @@ section.contact-us .content-container{
     display: flex;
     flex-direction: column;
 }
+section.contact-us h1.text-uppercase.text-white{
+    margin-bottom: 20px;
+}
+section.contact-us .content-container p.text-white{
+    margin-bottom: 20px;
+}
 section.contact-us .contact-details{
     display: flex;
     flex-direction: column;
@@ -74,7 +80,7 @@ section.contact-us .contact-details a{
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    text-transform: uppercase;
+    text-transform: lowercase;
     gap: 0 15px;
 }
 section.contact-us .contact-details a img{
@@ -100,3 +106,57 @@ section.contact-us span.wpcf7-not-valid-tip,section.contact-us .wpcf7-response-o
     margin-bottom: 10px;
 }
 
+
+@media (max-width:991px) {
+
+
+    section.contact-us .content-container {
+        margin: auto auto auto 30px;
+    }
+
+    section.contact-us .content-container {
+        max-width: 75%;
+    }
+
+    
+    section.contact-us .row {
+        flex-direction: column-reverse;
+    }
+
+}
+
+@media (max-width:767px) {
+
+    section.contact-us {
+        padding: 50px 0;
+    }
+
+    section.contact-us .content {
+        background: url(https://innovnational.com/tcg/wp-content/themes/tcg/assets/img/homepage/have-quiestion-bg.png)no-repeat center center/cover;
+        max-width: 100%;
+        padding: 0 18px;
+    }
+
+    section.contact-us .content-container {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    section.contact-us .contact-details {
+        padding: 0 18px;
+    }
+
+}
+
+
+@media (max-width:575px) {
+
+    section.contact-us {
+        margin-top: 148px !important;    
+    }
+
+    section.contact-us .row {
+        gap: 30px 0;
+    }
+
+}

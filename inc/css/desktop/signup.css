@@ -1,0 +1,185 @@
+section.signup{
+    background: url('../../../assets/img/signup/signup-content-bg.jpg')no-repeat center center/cover;
+}
+section.signup .content{
+    background: url('../../../assets/img/signup/signup-form-bg.png')no-repeat center center/100% 971px;;
+    max-width: 866px;
+    min-height: 971px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+section.signup form p{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+section.signup .woocommerce-privacy-policy-text p {
+
+}
+
+section.signup .sub-header-text{ 
+    margin-bottom: 30px;
+}
+
+section.signup form p:last-child{
+    margin-bottom: 0;
+}
+
+section.signup .password-container {
+    position: relative;
+    margin-bottom: 35px !important;
+}
+
+section.signup .signup-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.signup .signup-link a {
+    color: #00CBFF;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+    padding-left: 10px;
+}
+
+section.signup #togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+section.signup form.wpcf7-form.invalid .wpcf7-response-output{
+    margin-top: 0;
+}
+section.signup input:not([type="submit"]),section.signup textarea{
+    border-radius: 5px;
+    background: #FFF;
+    padding: 15px 20px;
+    width: 100%;
+    border: none;
+}
+section.signup input:not([type="submit"])::placeholder,section.signup textarea::placeholder{
+    color: #A5A5A5;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: capitalize;
+    border: none;
+}
+section.signup textarea{
+    max-height: 83px;
+}
+section.signup button[type="submit"]{
+    border-radius: 10px;
+    background: #00CBFF;
+    color: #FFF;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 30px;
+    width: 100%;
+    border: none;
+    margin-bottom: 35px;
+}
+section.signup .content-container{
+    max-width: 613px;
+    margin: auto auto auto 100px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+section.signup .screen-reader-response>ul, section.signup .contact-details{
+    display: none;
+}
+section.signup span.wpcf7-form-control-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}
+section.signup span.wpcf7-not-valid-tip,section.signup .wpcf7-response-output{
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+section.signup p.signup-remember label{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+section.signup p.signup-remember input{
+    width: fit-content;
+}
+
+
+@media (max-width:991px) {
+
+    section.signup .content-container {
+        margin: auto auto auto 30px;
+    }
+
+    section.signup .content-container {
+        max-width: 75%;
+    }
+
+    section.signup .row {
+        flex-direction: column-reverse;
+    }
+ 
+}
+
+@media (max-width:767px) {
+
+    section.signup {
+        padding: 50px 0;
+    }
+
+    section.signup .content {
+        background: url(../../../assets/img/homepage/have-quiestion-bg.png)no-repeat center center/cover;
+        max-width: 100%;
+        padding: 0 18px;
+    }
+
+    section.signup .content-container {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    section.signup .contact-details {
+        padding: 0 18px;
+    }
+
+}
+
+@media (max-width:575px) {
+
+    section.signup .row {
+        gap: 30px 0;
+    }
+}
+
+@media (max-width:320px) {
+
+
+}
+

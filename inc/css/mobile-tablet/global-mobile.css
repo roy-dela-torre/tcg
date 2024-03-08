@@ -75,7 +75,12 @@
     .narbar .form-outline{
         width: 100%;
     }
+    .px-sm-0 {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
+
 @media (max-width:450px) {
     footer .wrapper>.row>div:not(.bottom):not(:first-child),footer .wrapper>.row>div:not(.bottom):not(:first-child)>div{
         width: 100%;

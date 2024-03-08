@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/section_tempalte/article.css">
+<?php
+$imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
+?>
 <section class="article">
     <div class="container-fluid">
         <div class="wrapper">

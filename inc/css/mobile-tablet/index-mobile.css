@@ -61,6 +61,10 @@
     section.banner {
         max-height: unset;
     }
+
+    section.have-question {
+        background-position-x: 100%;
+    }
 }
 
 @media (max-width:767px) {

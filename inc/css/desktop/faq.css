@@ -1,0 +1,86 @@
+
+/* LATEST ARTICLES */
+section.faq {
+    background: url('https://innovnational.com/tcg/wp-content/themes/tcg/assets/img/blogs/blogs-section-two-dark-bg.jpg')no-repeat center center/cover;
+}
+section.faq .header{
+    max-width: 926px;
+    margin: auto auto 35px auto;
+}
+section.faq .header h2{
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 70px; /* 116.667% */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+section.faq .header p{
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+section.faq .card{
+    margin: 15px 25px 15px 25px;
+    border: none;
+}
+
+section.faq .col-xl-6.col-md-12.d-flex.align-items-stretch{
+    padding: 0;
+}
+section.faq .card-header{
+    padding: 30px;
+    align-self: stretch;
+    background: #26004D;
+    border-radius: 10px 10px 0 0;
+}
+
+section.faq .card-header h2{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+section.faq .card-body{
+    flex-direction: column;
+    display: flex;
+    padding: 30px;
+    gap: 10px;
+    flex: 1 0 0;
+    align-self: stretch;
+    background: #EAEAEA;
+    border-radius: 0 0 10px 10px;
+
+}
+
+section.faq .card-body p{
+    color: var(--d-9-d-9-d-9, #212121);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+
+@media (max-width:1200px) {
+
+}
+@media (max-width:767px) {
+
+}
+
+@media (max-width:575px) {
+}

@@ -1,18 +1,95 @@
-section.related-product ul#related-products>li{
-    float: none;
-    margin: 0;
-    padding: 0 12px;
-    width: 25%;
+section.single_product .quantity button.minus{
+    padding: 20px 10px;
+    border-radius: 10px 0px 0px 10px;
+    background: #00CBFF;
 }
-section.related-product .row{
-    gap: 24px 0;
+section.single_product .quantity button.plus{
+    padding: 20px 10px;
+    border-radius: 0px 10px 10px 0px;
+    background: #00CBFF;
 }
-section.related-product h2{
-    text-align: center;
-    margin-bottom: 50px;
+section.single_product .quantity button{
+    border: none;
+    width: 40px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-section.reviews section.related-product{
-    display: none;
+section.single_product .quantity{
+    display: flex;
+    align-items: center;
+}
+section.single_product button.single_add_to_cart_button{
+    padding: 20px 40px;
+    border-radius: 10px;
+    background-color: #00CBFF !important;
+    color: #FFF;
+    font-family: "Roboto Condensed",sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+section.single_product form.cart{
+    display: flex;
+    align-items: center;
+    gap: 0 40px;
+    margin-top: 30px;
+    order: 1;
+}
+
+section.single_product form.cart img{
+    height: 62px;
+    object-fit: contain;
+}
+
+section.single_product .quantity .qty{
+    padding: 10px;
+    border: none;
+}
+
+section.single_product .quantity{
+    background-color: #F4F4F4;
+}
+section.single_product .product_info{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+section.single_product .product_info>div{
+    width: calc(50% - 7.5px);
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+}
+section.single_product .product_info>div p{
+    margin-bottom: 0;
+}
+ 
+section.single_product .product_info h4{ 
+    color: var(--d-9-d-9-d-9, #212121);
+    font-family: 'Inter',sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+section.single_product .summary.entry-summary{
+    display: flex;
+    flex-direction: column;
+}
+section.single_product .other_info{
+    margin-top: 30px;
+}
+
+section.single_product .product_meta,
+.woocommerce a.add_to_wishlist.button.alt{
+    display: none !important;
 }
 
 @media (max-width:1366px) {

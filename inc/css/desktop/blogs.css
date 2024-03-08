@@ -1,0 +1,279 @@
+/* LATEST ARTICLES */
+section.article {
+    background: url('https://innovnational.com/tcg/wp-content/themes/tcg/assets/img/homepage/article-bg.jpg')no-repeat center center/cover;
+}
+
+section.article h2 {
+    margin-bottom: 50px;
+    color: #26004C;
+}
+
+section.article img.feature-img {
+    border-radius: 10px;
+}
+
+section.article .row>:not(:last-child) .content {
+    max-width: 360px;
+}
+
+section.article .wrapper>.row {
+    justify-content: space-between;
+}
+
+section.article .row>:last-child .image-container {
+    max-width: 250px;
+    width: 40%;
+}
+
+section.article .row>:last-child .image-container img {
+    margin-bottom: 0;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    min-height: 191px;
+}
+
+section.article .row>:last-child .content {
+    gap: 0 30px;
+}
+
+section.article .row>:last-child>div {
+    gap: 50px 0;
+}
+
+section.article .row>:last-child .content .content {
+    max-width: 470px;
+    width: 60%;
+}
+
+section.article .row>:not(:last-child) img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 177px;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+
+section.article .row>:not(:last-child) img:hover,
+section.article .row>:last-child .image-container img:hover {
+    transition: .5s ease-in;
+    transform: scale(1.1);
+}
+
+section.article .article-image {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+section.article .articles>.row {
+    gap: 24px 0;
+}
+
+section.article button.read-more {
+    color: #0400C3;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    display: flex;
+    gap: 0 10px;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    width: 106px;
+    white-space: pre;
+    padding: 0;
+}
+
+section.article button.read-more:hover {
+    transition: .2s ease-in;
+    color: #8000FF;
+    gap: 0 15px;
+}
+
+section.article button.read-more img {
+    height: 16px;
+    width: 8px;
+    object-fit: contain;
+    margin-bottom: 0 !important;
+}
+
+
+/* LATEST ARTICLES */
+section.latest-media p.date {
+    color: #FFF;
+    font-family: "Roboto Condensed";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-top: 30px !important;
+}
+
+section.latest-media {
+    background: url('https://innovnational.com/tcg/wp-content/themes/tcg/assets/img/blogs/blogs-section-two-dark-bg.jpg')no-repeat center center/cover;
+}
+
+section.latest-media .header{
+    max-width: 924px;
+    margin: auto auto auto auto;
+}
+
+section.latest-media .header h2{
+    margin-bottom: 15px;
+}
+
+section.latest-media .feature-img img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    height: 250px;
+    margin-top: 60px;
+}
+
+section.latest-media .small-content{
+    display: flex;
+    width: 490px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+section.latest-media button.read-more{
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    display: flex;
+    gap: 0 10px;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    width: 106px;
+    white-space: pre;
+    padding: 0;
+}
+
+section.latest-media .paging {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto auto auto;
+    gap: 10px;
+}
+
+section.latest-media .paging .page-numbers{
+    border-radius: 5px;
+    border: 1px solid #00CBFF;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.latest-media .paging .next{
+    padding: 10px 0 !important;
+    margin-right: -10px !important;
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+section.latest-media .paging .prev{
+    padding: 10px 0 !important;
+    margin-left: -10px !important;
+    border-radius: 0 !important;
+    border: none !important;
+}
+ 
+section.latest-media .paging span.page-numbers.current{
+    color: var(--00-cbff, #00CBFF);
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+
+    border-radius: 5px;
+    background: #FFF;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+section.latest-media .paging a.page-numbers{
+    color: var(--00-cbff, #00CBFF);
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+section.latest-media .paging .page-numbers .current{
+    color: var(--00-cbff, #00CBFF);
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+@media (max-width:1200px) {
+    section.article .row>:not(:last-child) .content,section.article .row>:last-child .content .content{
+        max-width: 100%;
+        width: 100%;
+    }
+    section.article .row>:last-child .content{
+        align-items: center;
+    }
+    section.article .row>:last-child .image-container{
+        max-width: 250px;
+    }
+}
+@media (max-width:767px) {
+    section.article .row>:not(:last-child) img{
+        max-height: 360px;
+    }
+}
+
+@media (max-width:575px) {
+    section.article .row>:last-child>div .content.d-flex{
+        flex-direction: column;
+    }
+    section.article .row>:last-child .image-container{
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    section.article .row>:last-child .image-container,section.article .row>:not(:last-child) img{
+        max-height: 247px;
+    }
+    section.article h2{
+        margin-bottom: 20px;
+    }
+    section.article .row>:last-child>div{
+        gap: 20px 0;
+    }
+}

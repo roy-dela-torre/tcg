@@ -1,6 +1,8 @@
-<?php
-get_header(); ?>
-
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/css/desktop/blog-single.css">
+<?php get_header();
+$imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
+$homeUrl = get_home_url();
+?>
 <style>
 	blockquote{
 		padding-left: 30px;
@@ -18,105 +20,100 @@ $theTitle = "";
 while (have_posts()) : the_post();
 
 // GATHER DATA (DEFAULT VALUE FROM WORDPRESS)
-
   $blog_id = get_the_ID();
   $blog_title = get_the_title();
   $blog_link = get_permalink();
   $blog_content = get_the_content();
   $blog_date = get_the_date();
 
-
   $singlePosts[] = $post->ID;
 ?>
-    <section class="blogSingle">
-        <div class="container-fluid">
-            <div class="wrapper">
-                <div class="row">
-                <h1><?php echo $blog_title;?></h1>
-                <p class="date text-center"><?php echo get_the_date('m/d/Y'); ?></p>
-                <div class="image-container" style="margin-bottom:50px">
+
+<section class="blog-single">   
+    <div class="container-fluid">
+        <div class="wrapper">
+            <div class="row">
+
+            <div class="col-lg-8 col-md-12">
+            <div class="header">
+                    <h1><?php echo $blog_title;?></h1>
+                </div>
+
+                <div class="featureImage">
                     <?php echo get_the_post_thumbnail(); ?>
-                </div>
-                <div class="col-md-10">
-                    <div class="content-container">
-                        <?php echo the_content(); ?>
                     </div>
+                <div id="content-left" class="single-content">
+                    <?php echo the_content(); ?>
                 </div>
-                </div>
-                <div class="col-md-10 m-auto">
-                    <div class="d-flex soc-med col-md-11">
-                        <span>Share on</span>
-                        <a href="https://www.facebook.com/sharer.php?u=<?php echo get_home_url().get_post_field('post_name', get_the_ID()); ?>" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/blog-single/Facebook.png" alt=""></a>
-                        <!-- <a href="https://www.instagram.com/share?url=<?php echo get_home_url().get_post_field('post_name', get_the_ID()); ?>" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/blog-single/Instagram.png" alt=""></a> -->
-                        <a href="https://twitter.com/share?url=<?php echo get_home_url().get_post_field('post_name', get_the_ID()); ?>" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/blog-single/Twitter.png" alt=""></a>
+                <div class="share">
+                    <h5>Share it on:</h5>
+                    <div class="soc-med-icons">
+                        <a href="https://www.facebook.com/sharer.php?u=<?php echo get_home_url().get_post_field('post_name', get_the_ID()); ?>" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/blogs/icons/facebook.png" alt=""></a>
+                        
+                        <a href="https://twitter.com/share?url=<?php echo get_home_url().get_post_field('post_name', get_the_ID()); ?>" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/blogs/icons/xtwitter.png" alt=""></a>
+
+                        <a href="https://www.linkedIn.com/share?url=<?php echo get_home_url().get_post_field('post_name', get_the_ID()); ?>" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/blogs/icons/linkedIn.png" alt=""></a>
+
+                        <a href="https://www.external-link.com/sharer.php?u=<?php echo get_home_url().get_post_field('post_name', get_the_ID()); ?>" target="_blank" rel="noopener noreferrer"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/blogs/icons/external.png" alt=""></a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <?php
-        endwhile;
-    ?>
 
-<section class="moreBlogs">
-        <div class="container-fluid">
-            <div class="wrapper">
-                <div class="col-md-12">
-                    <h2 class="text-center red">MORE BLOGS</h2>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-12 blogs-main row p-0">
-                    <?php
-                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                        $custom_args = array(
-                          'paged'            => $paged,
-                          'post_type'        => 'post', //  post_type
-                          'post__not_in' =>   array($blog_id),
-                          'posts_per_page'   => 3,
-                          'post_status' 	   => 'publish',
-                        'order' => 'DESC',
-                         
-                        );
-                        $results = new WP_QUERY($custom_args);
-                    ?>
-                                    <?php if ($results->have_posts()) : ?>
-                              <?php while ($results->have_posts()) : $results->the_post();
-                                 $blog_id = get_the_ID();
-                              ?>
-
-                                  <?php
-                                      // GATHER DATA (DEFAULT VALUE FROM WORDPRESS)
-                                      $blog_title = get_the_title();
-                                      $blog_link = get_permalink();
-                                      $excerpt = get_the_excerpt();
-                                      $blog_content = substr($excerpt, 0, 70);
-                                      $blog_date = get_the_date();
-                                      if (has_post_thumbnail()) {
-                                          $blog_img = get_the_post_thumbnail_url($blog_id, 'full');
-                                      } else {
-                                          $blog_img = '';
-                                      }
-                                  ?>
-                    <div class="col-lg-4 col-md-6 d-flex">
-                        <div class="content-container" style="cursor:pointer;" onClick="window.open('<?php echo $blog_link; ?>','_blank')">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+            <div class="col-lg-4 col-md-12">
+                        <div class="blogs-shop-now">
                             <div class="content">
-                                <h3><?php substr(the_title(),11)?></h3>
-                                <p class="date"><?php echo get_the_date('m/d/Y'); ?></p>
-                                <p><?php echo wp_trim_words(get_the_excerpt(),20);?></p>
-                                <a href="<?php echo get_permalink();?>" target="_blank" rel="noopener noreferrer" class="read-more">Read More</a>
+                                <h4>Gear Up for Card Adventures</h4>
+                                <p class="text-white">It's time to level up your collection with cards from Flesh & Blood, Magic the Gathering, Pokemon, and more. </p>
+                                <a href="<?php echo get_home_url(); ?>/shop/" target="_blank" rel="noopener noreferrer"
+                                    class="blue-btn text-uppercase">Shop Now</a>
                             </div>
                         </div>
+                        <div class="articles-container">
+                            <h5 class="similar-articles-header">Similar Articles</h5>
+                            <?php
+                            $blogsPost = array('post_type' => 'post', 'order' => 'rand', 'posts_per_page' => 3, );
+                            $blogsLoop = new WP_Query($blogsPost);
+                            if ($blogsLoop->have_posts()):
+                                while ($blogsLoop->have_posts()):
+                                    $blogsLoop->the_post();
+                                    if (has_post_thumbnail()) {
+                                        $blogsImg = get_the_post_thumbnail_url($blogs_id, 'medium');
+                                    } else {
+                                        $blogsImg = '';
+                                    }
+                                    ?>
+                                    <!-- <a href="<?php echo the_permalink(); ?>" target="_blank" rel="noopener noreferrer"> -->
+                                        <div class="content">
+                                           
+                                            <div class="similar-images-container">
+                                                <img src="<?php echo $blogsImg; ?>" alt="<?php echo the_title(); ?>">
+                                            </div>
+                                            <div class="similar-articles-content">
+                                                <div class="articles-date"><span><?php echo date('M j, Y', strtotime(get_the_date())); ?></span></div>
+                                                <div class="articles-title"><h5><?php echo wp_trim_words(get_the_title(), 3); ?></h5></div>
+                                                <div class="articles-text"><p><?php echo wp_trim_words(get_the_excerpt(), 8); ?></p></div>
+                                                <div class="read-more-content">
+                                                    <a href="<?php echo get_permalink();?>" target="_blank" rel="noopener noreferrer" class="read-more ">Read More </a><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/blogs/single/blog-read-more-vector-img.png" style="height: 16px;padding-left:10px" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- </a> -->
+                                <?php endwhile;
+                            endif; ?>
+                        </div>
                     </div>
-                    <?php endwhile; ?>
-                    <?php endif;?>       
-                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<?php
+    endwhile;
+?>
+
 <?php
 get_footer();?>
-<script>
+<!-- <script>
 $(document).ready(function() {
     var h3Elements = $('section.moreBlogs h3');
     var tallestHeight = 0;
@@ -128,4 +125,4 @@ $(document).ready(function() {
     });
     $('section.moreBlogs h3').css('height',tallestHeight)
 });
-</script>
+</script> -->

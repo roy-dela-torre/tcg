@@ -1,54 +1,184 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Checkbox</title>
-    <style>
-        /* Hide the default checkbox */
-        input[type="checkbox"] {
-            display: none;
-        }
-
-        /* Style the custom checkbox container */
-        .custom-checkbox {
-            display: inline-block;
-            position: relative;
-            width: 21px;
-            height: 21px;
-            cursor: pointer;
-        }
-
-        /* Style the SVG rectangle */
-        .custom-checkbox svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Style the checkmark (hidden by default) */
-        .custom-checkbox .checkmark {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: none;
-        }
-
-        /* Show the checkmark when the checkbox is checked */
-        input[type="checkbox"]:checked + .custom-checkbox .checkmark {
-            display: block;
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-
-<label class="custom-checkbox">
-    <input type="checkbox">
-    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0.75" y="0.75" width="19.5" height="19.5" rx="2.25" stroke="white" stroke-width="1.5"/>
-    </svg>
-    <div class="checkmark"></div>
-</label>
-
+    <section>
+        <div class="data-container">
+          <ul class="data-container__list">
+            <li>
+              <a href="Element" target="_blank" title="Element">
+                  <img src="//placehold.it/350x250/fff" />
+              </a>
+            </li>
+            
+                  <li>
+              <a href="Element" target="_blank" title="Element">
+                  <img src="//placehold.it/350x250/fff" />
+              </a>
+            </li>
+            
+                  <li>
+              <a href="Element" target="_blank" title="Element">
+                  <img src="//placehold.it/350x250/fff" />
+              </a>
+            </li>
+            
+                  <li>
+              <a href="Element" target="_blank" title="Element">
+                  <img src="//placehold.it/350x250/fff" />
+              </a>
+            </li>
+            
+                  <li>
+              <a href="Element" target="_blank" title="Element">
+                  <img src="//placehold.it/350x250/fff" />
+              </a>
+            </li>
+            
+                  <li>
+              <a href="Element" target="_blank" title="Element">
+                  <img src="//placehold.it/350x250/fff" />
+              </a>
+            </li>
+            
+                  <li>
+              <a href="Element" target="_blank" title="Element">
+                  <img src="//placehold.it/350x250/fff" />
+              </a>
+            </li>
+            
+                  <li>
+              <a href="Element" target="_blank" title="Element">
+                  <img src="//placehold.it/350x250/fff" />
+              </a>
+            </li>
+            
+                  <li>
+              <a href="Element" target="_blank" title="Element">
+                  <img src="//placehold.it/350x250/fff" />
+              </a>
+            </li>
+            
+                  <li>
+              <a href="Element" target="_blank" title="Element">
+                  <img src="//placehold.it/350x250/fff" />
+              </a>
+            </li>
+      
+      
+          </ul>
+        </div>
+      
+        <div class="pagination-container"></div>
+      </section>
+      <style>
+        .data-container {
+            display: inline-block;
+          }
+          
+          .data-container__list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+          
+            & li {
+              position: relative;
+              float: left;
+              width: 200px;
+              margin: 10px;
+              border: 1px solid black;
+          
+              & a {
+                display: block;
+                color: #fff;
+                font: 300 13px "Lato", sans-serif;
+                position: relative;
+                height: 143px;
+          
+                &:after {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  padding: 5px;
+                  content: attr(https) attr(href);
+                  background: rgba(0, 0, 0, 0.8);
+                }
+                &[https]:before {
+                  position: absolute;
+                  bottom: 0;
+                  right: 0;
+                  z-index: 1;
+                  padding: 5px;
+                  font-size: 10px;
+                  font-weight: 700;
+                  content: "https";
+                  color: gold;
+                  display: inline-block;
+                }
+                &:hover:before {
+                  color: white;
+                  position: absolute;
+                  bottom: 25px;
+                  font-size: 13px;
+                  font-weight: 300;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  padding: 5px;
+                  content: attr(title);
+                  background: rgba(0, 0, 0, 0.4);
+                  white-space: pre;
+                }
+                img {
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+          }
+          
+          .pagination-container {
+            padding: 10px;
+          }
+          
+      </style>
 </body>
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        function renderHtml(data) {
+            let html = '<ul class="data-container__list">';
+          
+            data.forEach(function(element) {
+              html += "<li>" + element.innerHTML + "</li>";
+            });
+          
+            html += "</ul>";
+            return html;
+          }
+          
+          $(".pagination-container").pagination({
+            dataSource: function(done) {
+              let result = [];
+              let reviews = document.querySelectorAll(".data-container__list > li");
+          
+              reviews.forEach(function(element) {
+                result.push(element);
+              });
+          
+              done(result);
+            },
+            pageSize: 4,
+            callback: function(data, pagination) {
+              let html = renderHtml(data);
+              document.querySelector(".data-container").innerHTML = html;
+            }
+          });
+    })
+</script>

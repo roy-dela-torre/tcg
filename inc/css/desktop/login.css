@@ -1,23 +1,101 @@
 section.login{
-    background: url('https://innovnational.com/tcg/wp-content/uploads/2023/10/have-question-bg-new.jpg')no-repeat center center/cover;
+    background: url('../../../assets/img/login/login-content-bg.jpg')no-repeat center center/cover;
 }
 section.login .content{
-    background: url('../../../assets/img/homepage/have-quiestion-bg.png')no-repeat center center/100% 771px;;
+    background: url('../../../assets/img/login/login-form-bg.png')no-repeat center center/100% 771px;;
     max-width: 866px;
     min-height: 771px;
     display: flex; 
     align-items: center;
     justify-content: center;
 }
-section.login form p{
+
+section.login form .email-container input{
     display: flex;
     flex-direction: column;
-    gap: 20px 0;
-    margin-bottom: 0;
+    margin-bottom: 20px;
 }
+
+section.login .woocommerce p.text-white,
+section.login .woocommerce form.woocommerce-ResetPassword.lost_reset_password p:first-child{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+
+/* Woocomerce - forgot password used the login.css */
+section.login .woocommerce form p{
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px; /* 168.75% */
+}
+
+
+section.login .woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register{border: none !important;}
+
+section.login .login-remember, section.login .forgot-password, section.login .signup-link, section.login .login-link{
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+section.login .login-remember label input{
+    margin-right: 10px;
+}
+
+section.login .login-remember-forgot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 35px;
+}
+
+section.login .forgot-password a {
+    font-size: 18px !important;
+    font-weight: 300 !important;
+    text-transform: none !important;
+}
+
+section.login .password-container {
+    position: relative;
+}
+
+section.login #togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+section.login .signup-link, section.login .login-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.login .signup-link a , section.login .login-link a{
+    color: #00CBFF;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+    padding-left: 10px;
+}
+
 section.login form.wpcf7-form.invalid .wpcf7-response-output{
     margin-top: 0;
 }
+
+
+
 section.login input:not([type="submit"]),section.login textarea{
     border-radius: 5px;
     background: #FFF;
@@ -38,7 +116,7 @@ section.login input:not([type="submit"])::placeholder,section.login textarea::pl
 section.login textarea{
     max-height: 83px;
 }
-section.login input[type="submit"]{
+section.login button[type="submit"]{
     border-radius: 10px;
     background: #00CBFF;
     color: #FFF;
@@ -49,9 +127,10 @@ section.login input[type="submit"]{
     line-height: normal;
     text-transform: uppercase;
     text-align: center;
-    padding: 20px 30px;
+    /* padding: 20px 30px; */
     width: 100%;
     border: none;
+    margin-bottom: 35px;
 }
 section.login .content-container{
     max-width: 613px;
@@ -60,29 +139,7 @@ section.login .content-container{
     flex-direction: column;
     width: 100%;
 }
-section.login .contact-details{
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    height: 100%;
-    padding-bottom: 30px;
-    gap: 15px 0;
-}
-section.login .contact-details a{
-    display: flex;
-    color: #FFF;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    text-transform: uppercase;
-    gap: 0 15px;
-}
-section.login .contact-details a img{
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-}
+
 section.login .screen-reader-response>ul{
     display: none;
 }
@@ -100,9 +157,7 @@ section.login span.wpcf7-not-valid-tip,section.login .wpcf7-response-output{
     line-height: normal;
     margin-bottom: 10px;
 }
-section.login p.login-remember{
-    margin: 10px 0;
-}
+
 section.login p.login-remember label{
     display: flex;
     align-items: center;
@@ -111,3 +166,62 @@ section.login p.login-remember label{
 section.login p.login-remember input{
     width: fit-content;
 }
+
+
+@media (max-width:991px) {
+
+    section.login .content-container {
+        margin: auto auto auto 30px;
+    }
+
+    section.login .content-container {
+        max-width: 75%;
+    }
+
+    section.login .row {
+        flex-direction: column-reverse;
+    }
+ 
+}
+
+@media (max-width:767px) {
+
+    section.login {
+        padding: 50px 0;
+    }
+
+    section.login .content {
+        background: url(../../../assets/img/homepage/have-quiestion-bg.png)no-repeat center center/cover;
+        max-width: 100%;
+        padding: 0 18px;
+    }
+
+    section.login .content-container {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    section.login .contact-details {
+        padding: 0 18px;
+    }
+
+}
+
+@media (max-width:575px) {
+
+    section.login .row {
+        gap: 30px 0;
+    }
+}
+
+@media (max-width:320px) {
+    section.login .login-remember-forgot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0 35px;
+    }
+
+}
+

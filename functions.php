@@ -95,11 +95,19 @@ add_action('woocommerce_before_quantity_input_field', 'custom_display_quantity_m
 add_action('woocommerce_after_quantity_input_field', 'custom_display_quantity_plus');
 
 function custom_display_quantity_minus() {
-    echo '<button type="button" class="minus">-</button>';
+    echo '<button type="button" class="minus">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+            <path d="M15.5 10.4997C15.5 10.7581 15.4305 11.0059 15.3067 11.1886C15.1829 11.3713 15.015 11.474 14.84 11.474H5.16C4.98496 11.474 4.81708 11.3713 4.69331 11.1886C4.56954 11.0059 4.5 10.7581 4.5 10.4997C4.5 10.2413 4.56954 9.99348 4.69331 9.81076C4.81708 9.62804 4.98496 9.52539 5.16 9.52539H14.84C15.015 9.52539 15.1829 9.62804 15.3067 9.81076C15.4305 9.99348 15.5 10.2413 15.5 10.4997Z" fill="white"/>
+        </svg>
+    </button>';
 }
 
 function custom_display_quantity_plus() {
-    echo '<button type="button" class="plus">+</button>';
+    echo '<button type="button" class="plus">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+            <path d="M14.9993 11.3307H10.8327V15.4974C10.8327 15.7184 10.7449 15.9304 10.5886 16.0866C10.4323 16.2429 10.2204 16.3307 9.99935 16.3307C9.77834 16.3307 9.56637 16.2429 9.41009 16.0866C9.25381 15.9304 9.16602 15.7184 9.16602 15.4974V11.3307H4.99935C4.77834 11.3307 4.56637 11.2429 4.41009 11.0867C4.25381 10.9304 4.16602 10.7184 4.16602 10.4974C4.16602 10.2764 4.25381 10.0644 4.41009 9.90814C4.56637 9.75186 4.77834 9.66406 4.99935 9.66406H9.16602V5.4974C9.16602 5.27638 9.25381 5.06442 9.41009 4.90814C9.56637 4.75186 9.77834 4.66406 9.99935 4.66406C10.2204 4.66406 10.4323 4.75186 10.5886 4.90814C10.7449 5.06442 10.8327 5.27638 10.8327 5.4974V9.66406H14.9993C15.2204 9.66406 15.4323 9.75186 15.5886 9.90814C15.7449 10.0644 15.8327 10.2764 15.8327 10.4974C15.8327 10.7184 15.7449 10.9304 15.5886 11.0867C15.4323 11.2429 15.2204 11.3307 14.9993 11.3307Z" fill="white"/>
+        </svg>
+    </button>';
 }
 
 /* Trigger update quantity script */
@@ -169,181 +177,6 @@ add_action('woocommerce_checkout_payment_hook', 'woocommerce_checkout_payment', 
 
 // Product Menu 
 
-function register_sets_taxonomy() {
-    $labels = array(
-        'name'                       => _x( 'Sets', 'taxonomy general name', 'textdomain' ),
-        'singular_name'              => _x( 'Set', 'taxonomy singular name', 'textdomain' ),
-        'search_items'               => __( 'Search Sets', 'textdomain' ),
-        'all_items'                  => __( 'All Sets', 'textdomain' ),
-        'parent_item'                => __( 'Parent Set', 'textdomain' ),
-        'edit_item'                  => __( 'Edit Set', 'textdomain' ),
-        'update_item'                => __( 'Update Set', 'textdomain' ),
-        'add_new_item'               => __( 'Add New Set', 'textdomain' ),
-        'new_item_name'              => __( 'New Set Name', 'textdomain' ),
-        'menu_name'                  => __( 'Sets', 'textdomain' ),
-    );
-
-    $args = array(
-        'hierarchical'          => true,
-        'labels'                => $labels,
-        'show_ui'               => true,
-        'show_admin_column'     => true,
-        'query_var'             => true,
-        'rewrite'               => array( 'slug' => 'sets' ),
-        'default_term'          => 'sets',
-    );
-
-    register_taxonomy( 'sets', 'product', $args );
-}
-add_action( 'init', 'register_sets_taxonomy' );
-
-
-function register_card_type_taxonomy() {
-    $labels = array(
-        'name'                       => _x( 'Product Types', 'taxonomy general name', 'textdomain' ),
-        'singular_name'              => _x( 'Product Type', 'taxonomy singular name', 'textdomain' ),
-        'search_items'               => __( 'Search Product Types', 'textdomain' ),
-        'all_items'                  => __( 'All Product Types', 'textdomain' ),
-        'parent_item'                => __( 'Parent Product Type', 'textdomain' ),
-        'edit_item'                  => __( 'Edit Product Type', 'textdomain' ),
-        'update_item'                => __( 'Update Product Type', 'textdomain' ),
-        'add_new_item'               => __( 'Add New Product Type', 'textdomain' ),
-        'new_item_name'              => __( 'New Product Type Name', 'textdomain' ),
-        'menu_name'                  => __( 'Card', 'textdomain' ),
-    );
-
-    $args = array(
-        'hierarchical'          => true,
-        'labels'                => $labels,
-        'show_ui'               => true,
-        'show_admin_column'     => true,
-        'query_var'             => true,
-        'rewrite'               => array( 'slug' => 'card-type' ),
-        'default_term'          => 'card-type',
-    );
-
-    register_taxonomy( 'card_type', 'product', $args );
-}
-add_action( 'init', 'register_card_type_taxonomy' );
-
-
-
-
-function register_card_sub_type_taxonomy() {
-    $labels = array(
-        'name'                       => _x( 'Product Types', 'taxonomy general name', 'textdomain' ),
-        'singular_name'              => _x( 'Product Type', 'taxonomy singular name', 'textdomain' ),
-        'search_items'               => __( 'Search Product Types', 'textdomain' ),
-        'all_items'                  => __( 'All Product Types', 'textdomain' ),
-        'parent_item'                => __( 'Parent Product Type', 'textdomain' ),
-        'edit_item'                  => __( 'Edit Product Type', 'textdomain' ),
-        'update_item'                => __( 'Update Product Type', 'textdomain' ),
-        'add_new_item'               => __( 'Add New Product Type', 'textdomain' ),
-        'new_item_name'              => __( 'New Product Type Name', 'textdomain' ),
-        'menu_name'                  => __( 'Card Sub Type', 'textdomain' ),
-    );
-
-    $args = array(
-        'hierarchical'          => true,
-        'labels'                => $labels,
-        'show_ui'               => true,
-        'show_admin_column'     => true,
-        'query_var'             => true,
-        'rewrite'               => array( 'slug' => 'card-sub-type' ),
-        'default_term'          => 'card-sub-type',
-    );
-
-    register_taxonomy( 'card_sub_type', 'product', $args );
-}
-add_action( 'init', 'register_card_sub_type_taxonomy' );
-
-
-function register_Class_taxonomy() {
-    $labels = array(
-        'name'                       => _x( 'Product Types', 'taxonomy general name', 'textdomain' ),
-        'singular_name'              => _x( 'Product Type', 'taxonomy singular name', 'textdomain' ),
-        'search_items'               => __( 'Search Product Types', 'textdomain' ),
-        'all_items'                  => __( 'All Product Types', 'textdomain' ),
-        'parent_item'                => __( 'Parent Product Type', 'textdomain' ),
-        'edit_item'                  => __( 'Edit Product Type', 'textdomain' ),
-        'update_item'                => __( 'Update Product Type', 'textdomain' ),
-        'add_new_item'               => __( 'Add New Product Type', 'textdomain' ),
-        'new_item_name'              => __( 'New Product Type Name', 'textdomain' ),
-        'menu_name'                  => __( 'Class', 'textdomain' ),
-    );
-
-    $args = array(
-        'hierarchical'          => true,
-        'labels'                => $labels,
-        'show_ui'               => true,
-        'show_admin_column'     => true,
-        'query_var'             => true,
-        'rewrite'               => array( 'slug' => 'class' ),
-        'default_term'          => 'class',
-    );
-
-    register_taxonomy( 'Class', 'product', $args );
-}
-add_action( 'init', 'register_Class_taxonomy' );
-
-
-
-function register_Rarity_taxonomy() {
-    $labels = array(
-        'name'                       => _x( 'Product Types', 'taxonomy general name', 'textdomain' ),
-        'singular_name'              => _x( 'Product Type', 'taxonomy singular name', 'textdomain' ),
-        'search_items'               => __( 'Search Product Types', 'textdomain' ),
-        'all_items'                  => __( 'All Product Types', 'textdomain' ),
-        'parent_item'                => __( 'Parent Product Type', 'textdomain' ),
-        'edit_item'                  => __( 'Edit Product Type', 'textdomain' ),
-        'update_item'                => __( 'Update Product Type', 'textdomain' ),
-        'add_new_item'               => __( 'Add New Product Type', 'textdomain' ),
-        'new_item_name'              => __( 'New Product Type Name', 'textdomain' ),
-        'menu_name'                  => __( 'Rarity', 'textdomain' ),
-    );
-
-    $args = array(
-        'hierarchical'          => true,
-        'labels'                => $labels,
-        'show_ui'               => true,
-        'show_admin_column'     => true,
-        'query_var'             => true,
-        'rewrite'               => array( 'slug' => 'rarity' ),
-        'default_term'          => 'rarity',
-    );
-
-    register_taxonomy( 'Rarity', 'product', $args );
-}
-add_action( 'init', 'register_Rarity_taxonomy' );
-
-
-function register_foil_type_taxonomy() {
-    $labels = array(
-        'name'                       => _x( 'Product Types', 'taxonomy general name', 'textdomain' ),
-        'singular_name'              => _x( 'Product Type', 'taxonomy singular name', 'textdomain' ),
-        'search_items'               => __( 'Search Product Types', 'textdomain' ),
-        'all_items'                  => __( 'All Product Types', 'textdomain' ),
-        'parent_item'                => __( 'Parent Product Type', 'textdomain' ),
-        'edit_item'                  => __( 'Edit Product Type', 'textdomain' ),
-        'update_item'                => __( 'Update Product Type', 'textdomain' ),
-        'add_new_item'               => __( 'Add New Product Type', 'textdomain' ),
-        'new_item_name'              => __( 'New Product Type Name', 'textdomain' ),
-        'menu_name'                  => __( 'Foil Type', 'textdomain' ),
-    );
-
-    $args = array(
-        'hierarchical'          => true,
-        'labels'                => $labels,
-        'show_ui'               => true,
-        'show_admin_column'     => true,
-        'query_var'             => true,
-        'rewrite'               => array( 'slug' => 'foil-type' ),
-        'default_term'          => 'foil-type',
-    );
-
-    register_taxonomy( 'foil_type', 'product', $args );
-}
-add_action( 'init', 'register_foil_type_taxonomy' );
 
 
 

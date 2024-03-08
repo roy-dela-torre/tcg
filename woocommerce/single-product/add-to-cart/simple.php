@@ -48,6 +48,17 @@ if ( $product->is_in_stock() ) : ?>
 
 		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
 
+		<?php
+		$product_id = get_the_ID();
+		$in_wishlist = YITH_WCWL()->is_product_in_wishlist( $product_id );
+		$img_src = $in_wishlist ? 'wishlist-white.png' : 'wishlist-blue.png'; 
+		$imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
+		?>
+		<img src='<?php echo $imgPath; ?>wishlist-blue.png' onmouseover="this.src='<?php echo $imgPath; ?>wishlist-white.png';" onmouseout="this.src='<?php echo $imgPath; ?>wishlist-blue.png';" class="wishlist d-none d-md-block"/>
+		<div class="add-to-wishlist w-100 d-none">
+			<?php echo do_shortcode('[yith_wcwl_add_to_wishlist]')?>
+		</div>
+
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</form>
 

@@ -1,0 +1,77 @@
+section.forgot-pass{
+    background: url('../../../assets/img/forgot-pass/forgot-pass-content-bg.jpg')no-repeat center center/cover;
+}
+section.forgot-pass .content{
+    background: url('../../../assets/img/forgot-pass/forgot-pass-form-bg.png')no-repeat center center/100% 534px;
+    max-width: 866px;
+    min-height: 534px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+section.forgot-pass form p{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+section.forgot-pass .content-container{
+    max-width: 613px;
+    margin: auto auto auto 100px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+@media (max-width:991px) {
+
+    section.forgot-pass .content-container {
+        margin: auto auto auto 30px;
+    }
+
+    section.forgot-pass .content-container {
+        max-width: 75%;
+    }
+
+    section.forgot-pass .row {
+        flex-direction: column-reverse;
+    }
+ 
+}
+
+@media (max-width:767px) {
+
+    section.forgot-pass {
+        padding: 50px 0;
+    }
+
+    section.forgot-pass .content {
+        background: url(../../../assets/img/homepage/have-quiestion-bg.png)no-repeat center center/cover;
+        max-width: 100%;
+        padding: 0 18px;
+    }
+
+    section.forgot-pass .content-container {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    section.forgot-pass .contact-details {
+        padding: 0 18px;
+    }
+
+}
+
+@media (max-width:575px) {
+
+    section.forgot-pass .row {
+        gap: 30px 0;
+    }
+}
+
+@media (max-width:320px) {
+
+
+}
+

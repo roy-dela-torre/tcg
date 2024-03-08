@@ -28,33 +28,93 @@ $allowed_html = array(
 );
 ?>
 
-<p>
+
+<!-- MY ACCOUNT SHORT INFO -->
+<div class="_user">
+	
+<h3>
 	<?php
 	printf(
-		/* translators: 1: user display name 2: logout url */
-		wp_kses( __( 'Hello %1$s (not %1$s? <a href="%2$s">Log out</a>)', 'woocommerce' ), $allowed_html ),
-		'<strong>' . esc_html( $current_user->display_name ) . '</strong>',
-		esc_url( wc_logout_url() )
+		wp_kses( __( 'Hi %1$s'), $allowed_html ), esc_html( $current_user->display_name )
+	);
+	?>
+
+	<!-- DEFAULT CODE BELOW -->
+	<?php
+	//printf(
+	//	/* translators: 1: user display name 2: logout url */
+	//	wp_kses( __( 'Hello %1$s (not %1$s? <a href="%2$s">Log out</a>)', 'woocommerce' ), $allowed_html ),
+	//	'<strong>' . esc_html( $current_user->display_name ) . '</strong>',
+	//	esc_url( wc_logout_url() )
+	//);
+	?>
+</h3>
+
+<p class="user-text-info">
+<?php
+	$dashboard_desc = __( 'Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.', 'woocommerce' );
+	printf(
+		wp_kses( $dashboard_desc, $allowed_html )
 	);
 	?>
 </p>
 
-<p>
-	<?php
-	/* translators: 1: Orders URL 2: Address URL 3: Account URL. */
-	$dashboard_desc = __( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">billing address</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' );
+<h5>My Account</h5>
+<ul class="user-info">
+	<li>name:</li>
+	<li>email:</li>
+</ul>
+
+<h5>Shipping Address</h5>
+	<ul class="shipping">
+		<li>phone:</li>
+		<li>address:</li>
+		<li>town/city:</li>
+		<li>state:</li>
+		<li>postal/zip:</li>
+		<li>country/region:</li>
+	</ul>
+</div>
+
+<div class="aside-buttons">
+<?php
+	$dashboard_desc = __( '
+	<a href="%1$s">edit your account & password</a>
+	<a href="%2$s">edit billing address</a>', 'woocommerce' );
+
 	if ( wc_shipping_enabled() ) {
 		/* translators: 1: Orders URL 2: Addresses URL 3: Account URL. */
-		$dashboard_desc = __( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">shipping and billing addresses</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' );
+		$dashboard_desc = __( '
+		<a href="%1$s">edit your account & password</a>
+		<a href="%2$s">edit shipping address</a>', 'woocommerce' );
 	}
+
 	printf(
 		wp_kses( $dashboard_desc, $allowed_html ),
-		esc_url( wc_get_endpoint_url( 'orders' ) ),
-		esc_url( wc_get_endpoint_url( 'edit-address' ) ),
-		esc_url( wc_get_endpoint_url( 'edit-account' ) )
+		esc_url( wc_get_endpoint_url( 'edit-account' ) ),
+		esc_url( wc_get_endpoint_url( 'edit-address' ) )
 	);
 	?>
-</p>
+
+</div>
+
+
+<!-- <p> -->
+	<?php
+	/* translators: 1: Orders URL 2: Address URL 3: Account URL. */
+	// $dashboard_desc = __( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">billing address</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' );
+	//if ( wc_shipping_enabled() ) {
+		/* translators: 1: Orders URL 2: Addresses URL 3: Account URL. */
+	//	$dashboard_desc = __( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">shipping and billing addresses</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' );
+	//}
+	//printf(
+	//	wp_kses( $dashboard_desc, $allowed_html ),
+	//	esc_url( wc_get_endpoint_url( 'orders' ) ),
+	//	esc_url( wc_get_endpoint_url( 'edit-address' ) ),
+	//	esc_url( wc_get_endpoint_url( 'edit-account' ) )
+	//);
+	?>
+<!-- </p> -->
 
 <?php
 	/**

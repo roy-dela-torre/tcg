@@ -4,6 +4,40 @@
 font-family: 'Open Sans', sans-serif;
 font-family: 'Roboto', sans-serif;
 font-family: 'Roboto Condensed', sans-serif; */
+
+
+
+nav.woocommerce-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0 15px;
+    margin-bottom: 61px;
+}
+
+nav.woocommerce-breadcrumb p {
+    margin-bottom: 0;
+    color: var(--d-9-d-9-d-9, #212121);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+}
+
+nav.woocommerce-breadcrumb a {
+    color: #565656 !important;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+}
+
+
 section h1{
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 60px;
@@ -287,15 +321,16 @@ footer div#interested-selling{
 div#sidebar{
     display: none;
 }
-#yith-wcwl-popup-message{
-    display: none !important;
-}
 
-@media (max-width:1600px) {
-    section .wrapper,footer .wrapper{
-        padding: 0 5%;
+@media (max-width:1700px) {
+
+    section .wrapper,
+    footer .wrapper,
+    .custom-container {
+        padding: 0 2%;
     }
 }
+
 @media (max-width:1400px) {
     .narbar ul#menu-tcgnavmenu{
         width: 100%;
@@ -320,5 +355,9 @@ div#sidebar{
     }
     section,footer{
         padding: 70px 30px;
+    }
+            
+    section h1{
+        font-size: 50px;
     }
 }

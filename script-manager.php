@@ -232,10 +232,10 @@ $(document).ready(function () {
             });
         });
 
-    <?php elseif (function_exists('is_product') && is_product()): ?>
-        $('section.reviews section.related-product').remove();
-        var reviews = $('.reviews-content').html()
-        $('div#addreviewspopup .modal-body').html(reviews)
+    <?php //elseif (function_exists('is_product') && is_product()): ?>
+        // $('section.reviews section.related-product').remove();
+        // var reviews = $('.reviews-content').html()
+        // $('div#addreviewspopup .modal-body').html(reviews)
     <?php elseif (is_checkout()): ?>
         $('.product-list').append($('form.checkout_coupon.woocommerce-form-coupon').html())
         $('.order_summary button.button').click(function(){

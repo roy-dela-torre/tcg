@@ -281,6 +281,10 @@ section.feature_card .accordion-item {
     border: none;
     background-color: transparent;
 }
+section.feature_card .accordion-item ul{
+    max-height: 500px;
+    overflow-y: scroll;
+}
 
 section.feature_card .accordion-button:focus {
     box-shadow: none;
@@ -307,6 +311,58 @@ section.feature_card .accordion-item ul::-webkit-scrollbar {
 .add-to-wishlist.w-100 {
     display: none;
 }
+
+/* pagination css */
+
+nav.pagination-container {
+    display: flex;
+    justify-content: center;
+    gap: 0 10px;
+    align-items: center;
+}
+
+nav.pagination-container div#pagination-numbers {
+    display: flex;
+    gap: 0 10px;
+}
+
+nav.pagination-container div#pagination-numbers button.pagination-number {
+    padding: 10px;
+    border-radius: 5px;
+    background: #26004C;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-family: 'Roboto',sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+nav.pagination-container div#pagination-numbers button.pagination-number.active{
+    background-color: #373737;
+}
+
+nav.pagination-container>button {
+    border: none;
+}
+
+nav.pagination-container>button img{
+    width: 24px;
+    height: 24px;
+}
+
+
+nav.pagination-container>button[disabled="disabled"]{
+    display: none;
+}
+
+/* pagination end css */
 
 
 @media (max-width:767px) {
