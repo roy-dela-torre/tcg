@@ -2,32 +2,29 @@
 /*Template Name: Contact Us*/
 $imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
 ?>
-<section class="contact-us">
-    <div class="container-fluid">
-        <div class="wrapper">
-            <div class="row">
-                <div class="col-xxl-8 col-xl-9 col-lg-12 px-sm-0">
-                    <div class="content">
-                        <div class="content-container">
-                            <h1 class="text-uppercase text-white">Contact us</h1>
-                            <p class="text-white">Whether you have questions, need assistance, or want to share the latest triumphs in your card collection journey, we're here to listen and respond.</p>
-                            <p class="text-white">Your connection with us is essential, and we look forward to hearing from you soon.</p>
-                            <?php echo do_shortcode('[contact-form-7 id="43654f5" title="Contact Us"]')?>
-                  
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-12">
-                    <div class="contact-details">
-                        <h4 class="text-white text-uppercase">contact details:</h4>
-                        <a href="tel:63+ 092123456789"><img loading="lazy" src="<?php echo $imgPath; ?>telephone.png" alt=""> 63+ 092123456789</a>
-                        <a href="mailto:loremipsum@gmail.com"><img loading="lazy" src="<?php echo $imgPath; ?>email.png" alt="">loremipsum@gmail.com</a>
-                        <a target="_blank" rel="noopener noreferrer"><img loading="lazy" src="<?php echo $imgPath; ?>fb.png" alt="">lorem ipsum</a>
-                        <a href="http://" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="<?php echo $imgPath; ?>instagram.png" alt="">lorem ipsum</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- start contact us section -->
+<?php
+$section = "contact_us";
+$header = "Contact us";
+$p_content1 = "Whether you have questions, need assistance, or want to share the latest triumphs in your card collection journey, we're here to listen and respond.";
+$p_content2 = "Your connection with us is essential, and we look forward to hearing from you soon.";
+$bg = get_stylesheet_directory_uri().'/assets/img/homepage/have-question-bg-new.jpg';
+$form_short_code = '[contact-form-7 id="43654f5" title="Contact Us"]';
+$data = array(
+        'section' => $section,    
+        'header' => $header, 
+        'p_content' => $p_content, 
+        'form_short_code' => $form_short_code,
+        'bg' => $bg
+    );
+    // Load the template
+    ob_start();
+?>
+<?php echo wc_get_template('section_template/section.left_form.php', $data);?>
+<?php
+    $content = ob_get_clean();
+    // Output the content
+    echo $content;
+?>
+<!-- end contact us section -->
 <?php get_footer();?>

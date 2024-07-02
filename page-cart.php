@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php get_header(); 
+/*Template Name: Cart*/
+?>
 <section class="cart">
     <div class="container-fluid">
         <div class="wrapper">

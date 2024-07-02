@@ -1,0 +1,245 @@
+section.product_main .accordion-button::after {
+    background: url('../../../assets/img/featured_card/drop_down.png')no-repeat center center/contain;
+}
+
+section.product_main button.accordion-button {
+    color: hsl(0, 0%, 100%);
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 25px 50px;
+    background-color: #26004D;
+    box-shadow: none;
+}
+
+section.product_main .accordion-body li {
+    list-style: none;
+}
+
+section.product_main div#categories a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+section.product_main div#categories li {
+    gap: 0 15px;
+    padding: 25px 50px;
+}
+
+section.product_main div#categories li span {
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+section.product_main .accordion-body {
+    background-color: #212121;
+}
+
+section.product_main ul li input[type=checkbox] {
+    position: relative;
+    border-radius: 3px;
+    border: 1.5px solid #FFF;
+    background: none;
+    cursor: pointer;
+    line-height: 0;
+    margin: 0 .6em 0 0;
+    outline: 0;
+    padding: 0 !important;
+    vertical-align: text-top;
+    height: 21px;
+    width: 21px;
+    -webkit-appearance: none;
+}
+
+section.product_main ul li input[type=checkbox]:hover {
+    opacity: 1;
+}
+
+section.product_main ul li input[type=checkbox]:checked {
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+section.product_main ul li input[type=checkbox]:checked:before {
+    content: '';
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    width: 6px;
+    height: 12px;
+    border: solid #000000;
+    border-width: 0 2px 2px 0;
+    margin: -1px -1px 0 -1px;
+    transform: rotate(45deg) translate(-50%, -50%);
+    z-index: 2;
+}
+
+section.product_main form.woocommerce-ordering {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    margin-bottom: 50px;
+}
+
+section.product_main form.woocommerce-ordering strong {
+    color: var(--d-9-d-9-d-9, #212121);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+section.product_main p.woocommerce-result-count {
+    display: none;
+}
+
+section.product_main nav.woocommerce-breadcrumb {
+    margin-bottom: 50px;
+    padding-bottom: 14px;
+}
+
+section.product_main .product_content {
+    padding: 25px 20px;
+    background-color: white;
+}
+
+section.product_main .product_content img {
+    max-width: 230px;
+    margin: 0 auto;
+}
+
+section.product_main .product_image {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+section.product_main {
+    background: url('../../../assets/img/homepage/feature-image.jpg')no-repeat center center/cover;
+}
+
+section.product_main h3.title {
+    color: var(--d-9-d-9-d-9, #212121);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+section.product_main span.woocommerce-Price-amount.amount bdi {
+    color: var(--d-9-d-9-d-9, #212121);
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+section.product_main ul.products {
+    gap: 24px 0;
+    margin: 0;
+}
+
+section.product_main .group_button {
+    display: flex;
+    gap: 0 7px;
+}
+
+
+section.product_main .row {
+    gap: 50px 0;
+}
+
+section.product_main nav.woocommerce-pagination {
+    margin-top: 50px;
+}
+.woocommerce a.add_to_wishlist.button.alt {
+    color: unset !important;
+    background-color: #00CBFF !important;
+    border: none !important;
+    padding: 8.5px;
+    border-radius: 5px;
+}
+section.product_main nav.woocommerce-pagination ul li a {
+    padding: 10px;
+    border-radius: 5px;
+    background: #26004C;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    min-width: 40px !important;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+section.product_main ul.page-numbers {
+    display: flex;
+    gap: 0 10px;
+    justify-content: center;
+    border: none;
+}
+
+section.product_main span.page-numbers.current,
+section.product_main a.page-numbers:hover {
+    padding: 10px;
+    border-radius: 5px;
+    background: #373737 !important;
+    color: #FFF !important;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+section.product_main a.next.page-numbers,
+section.product_main a.prev.page-numbers {
+    background-color: transparent;
+    border: none;
+}
+
+section.product_main nav.woocommerce-pagination ul li {
+    border: none;
+    margin: 0;
+}
+
+section.product_main h1 {
+    color: #26004D;
+    margin-bottom: 50px;
+}
+
+.woocommerce .products ul::after,
+.woocommerce .products ul::before,
+.woocommerce ul.products::after,
+.woocommerce ul.products::before {
+    display: none;
+}

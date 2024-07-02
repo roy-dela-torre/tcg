@@ -87,8 +87,7 @@ section.single_product .other_info{
     margin-top: 30px;
 }
 
-section.single_product .product_meta,
-.woocommerce a.add_to_wishlist.button.alt{
+section.single_product .product_meta{
     display: none !important;
 }
 

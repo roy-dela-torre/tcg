@@ -140,90 +140,6 @@ section.featured-card {
     align-items: center;
     justify-content: center;
 }
-
-section.featured-card .content {
-    display: flex;
-    flex-direction: column;
-    padding: 26px 18px;
-    position: relative;
-    border-radius: 10px;
-    background: #FFF;
-    height: 100%;
-}
-
-section.featured-card .content:hover {
-    transition: .2s linear;
-    background: rgba(0, 0, 0, 0.10);
-    box-shadow: -30.43333px 30.43333px 30.43333px 0px rgba(185, 184, 184, 0.30) inset, 30.43333px -30.43333px 30.43333px 0px rgba(33, 33, 33, 0.15) inset;
-}
-
-section.featured-card .content .product-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: fit-content;
-    margin: 0 auto;
-}
-
-section.featured-card img.cards {
-    width: 100%;
-    min-height: 321px;
-    object-fit: contain;
-    max-width: 221px;
-    margin: 0 auto 17px auto;
-}
-
-section.featured-card img.wishlist {
-    width: 35px;
-    height: 35px;
-    object-fit: contain;
-    position: absolute;
-    right: 18px;
-    top: 26px;
-}
-
-a.add_to_wishlist.single_add_to_wishlist.button.alt {
-    display: none;
-}
-
-section.featured-card .group-box a {
-    border: 1px solid #00CBFF;
-}
-
-section.featured-card .group-box a.blue-btn:hover {
-    border: 1px solid #00CBFF;
-    color: #00CBFF !important;
-}
-
-section.featured-card .group-box .row {
-    gap: 24px 0;
-}
-
-section.featured-card .group-button {
-    width: 100%;
-    display: flex;
-    gap: 0 7px;
-}
-
-section.featured-card .group-button>a {
-    display: block;
-    width: 50%;
-    max-width: 100%;
-    padding: 15px 20px;
-    font-size: 15px;
-    text-align: center;
-}
-
-section.featured-card h2 {
-    margin-bottom: 50px;
-    color: #26004C;
-}
-
-section.featured-card .group-box {
-    margin-bottom: 33px;
-}
-
 section.featured-card button#view-more {
     width: fit-content;
     margin: 0 auto;
@@ -236,49 +152,16 @@ section.featured-card button#view-more {
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
+    margin-top: 33px;
 }
-
-section.featured-card p.price {
-    color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
+section.featured-card .row .group-box .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 0;
 }
-
-section.featured-card p.price.sale {
-    color: #C40000;
+section.featured-card h2{
+    margin-bottom: 50px;
 }
-
-section.featured-card p.price.sale ins {
-    text-decoration: none;
-}
-
-section.featured-card .content.outofstock a#add-to-cart {
-    background-color: #AAAAAA;
-    border: 1px solid #AAAAAA;
-    color: white !important;
-}
-
-section.featured-card .content.outofstock p.outOfStock {
-    color: #FFF;
-    text-align: center;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    padding: 10px 12px;
-    background: #161616;
-    width: 100%;
-    position: absolute;
-}
-
-section.featured-card .content.outofstock img.cards {
-    filter: grayscale(100%);
-}
-
 
 
 
@@ -436,125 +319,7 @@ section.article p.date {
 
 
 
-section.have-question {
-    background: url('../../../assets/img/homepage/have-question-bg-new.jpg')no-repeat center center/cover;
-}
 
-section.have-question .content {
-    background: url('../../../assets/img/homepage/have-quiestion-bg.png')no-repeat center center/100% 771px;
-    ;
-    max-width: 866px;
-    min-height: 771px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-section.have-question form p {
-    display: flex;
-    flex-direction: column;
-    gap: 20px 0;
-    margin-bottom: 0;
-}
-
-section.have-question form.wpcf7-form.invalid .wpcf7-response-output {
-    margin-top: 0;
-}
-
-section.have-question input:not([type="submit"]),
-section.have-question textarea {
-    border-radius: 5px;
-    background: #FFF;
-    padding: 15px 20px;
-    width: 100%;
-    border: none;
-}
-
-section.have-question input:not([type="submit"])::placeholder,
-section.have-question textarea::placeholder {
-    color: #A5A5A5;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    text-transform: capitalize;
-    border: none;
-}
-
-section.have-question textarea {
-    max-height: 83px;
-}
-
-section.have-question input[type="submit"] {
-    border-radius: 10px;
-    background: #00CBFF;
-    color: #FFF;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 20px 30px;
-    width: 100%;
-    border: none;
-}
-
-section.have-question .content-container {
-    max-width: 613px;
-    margin: auto auto auto 100px;
-    display: flex;
-    flex-direction: column;
-}
-
-section.have-question .contact-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    height: 100%;
-    padding-bottom: 30px;
-    gap: 15px 0;
-}
-
-section.have-question .contact-details a {
-    display: flex;
-    color: #FFF;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    text-transform: uppercase;
-    gap: 0 15px;
-}
-
-section.have-question .contact-details a img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-}
-
-section.have-question .screen-reader-response>ul {
-    display: none;
-}
-
-section.have-question span.wpcf7-form-control-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 10px 0;
-}
-
-section.have-question span.wpcf7-not-valid-tip,
-section.have-question .wpcf7-response-output {
-    color: #FFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    margin-bottom: 10px;
-}
 
 
 .product_added_to_wislist .modal.show .modal-dialog {

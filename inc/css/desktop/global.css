@@ -7,14 +7,14 @@ font-family: 'Roboto Condensed', sans-serif; */
 
 
 
-nav.woocommerce-breadcrumb {
+.woocommerce .woocommerce-breadcrumb {
     display: flex;
     align-items: center;
     gap: 0 15px;
-    margin-bottom: 61px;
+    margin-bottom: 50px !important;
 }
 
-nav.woocommerce-breadcrumb p {
+.woocommerce .woocommerce-breadcrumb p {
     margin-bottom: 0;
     color: var(--d-9-d-9-d-9, #212121);
     font-family: 'Roboto', sans-serif;
@@ -26,7 +26,7 @@ nav.woocommerce-breadcrumb p {
     text-transform: uppercase;
 }
 
-nav.woocommerce-breadcrumb a {
+.woocommerce .woocommerce-breadcrumb a {
     color: #565656 !important;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
@@ -114,6 +114,11 @@ section{
 }
 section img{
     max-width: 100%;
+}
+
+div#yith-wcwl-popup-message{
+    display: none !important;
+    visibility: hidden;
 }
 
 

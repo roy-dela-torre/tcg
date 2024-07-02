@@ -4,6 +4,47 @@ $imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
 
 ?>
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/inc/css/desktop/featured-card.css">
+<style>
+    /* ajax loading spinner */
+
+.feature_card #overlay {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+    left: 0;
+}
+
+.feature_card .cv-spinner {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature_card .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px #ddd solid;
+    border-top: 4px #2e93e6 solid;
+    border-radius: 50%;
+    animation: sp-anime 0.8s infinite linear;
+}
+
+@keyframes sp-anime {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.feature_card .is-hide {
+    display: none;
+}
+
+</style>
 <section class="feature_card">
     <div class="container-fluid">
         <div class="wrapper">
@@ -36,9 +77,8 @@ $imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
                                                         continue; // Skip the "UNCATEGORIZED" category and move to the next iteration
                                                     } ?>
                                                     <li>
-                                                        <input type="checkbox" name="" id="<?php echo str_replace(' ', '_', strtolower($category->name)); ?>">
+                                                        <input type="checkbox" name="" id="<?php echo str_replace(' ', '-', strtolower(esc_html($category->name))); ?>">
                                                             <span class="name"> <?php echo esc_html($category->name); ?></span>
-                                                            <!-- <a href="<?php //echo esc_url(get_term_link($category)); ?>"></a> -->
                                                         </li>
                                                     <?php
                                                 }
@@ -115,7 +155,7 @@ $imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
                             $curpage = $paged ? $paged : 1;
                             $args = array(
                                 'post_type'        => 'product',
-                                'posts_per_page'   =>-1,
+                                'posts_per_page'   => 6,
                                 'post_status'      => 'publish',
                                 'order'            => 'DESC',
                                 'paged'            => $paged,
@@ -185,12 +225,20 @@ $imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
                                     </div>
                                 <?php $counter +=1; endwhile;
                             endif; wp_reset_postdata(); ?>
+                            <div class="col-md-12">
+                                <div class="morepage text-center">
+                                    <div class="paging">
+                                        <?php
+                                        $totalPages = $productLoop->max_num_pages;
+                                        echo paginate_links(array(
+                                            'total' => $totalPages,
+                                            'mid_size' => 2
+                                        ));
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="paging">
-                        <div id="pagination-container"></div>
                     </div>
                 </div>
             </div>
@@ -198,51 +246,8 @@ $imgPath = get_stylesheet_directory_uri().'/assets/img/homepage/';
     </div>
 </section>
 <?php get_footer(); ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.4/jquery.simplePagination.min.js" integrity="sha512-J4OD+6Nca5l8HwpKlxiZZ5iF79e9sgRGSf0GxLsL1W55HHdg48AEiKCXqvQCNtA1NOMOVrw15DXnVuPpBm2mPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 $(document).ready(function() {
-
-    var checkedIDs = [];
-
-    function updateCheckedIDs() {
-        checkedIDs = [];
-        $('input[type=checkbox]').each(function() {
-            var id = this.id;
-            if ($(this).is(':checked')) {
-                checkedIDs.push(id);
-            }
-        });
-        updateDisplay(); // Update display after updating checkedIDs
-    }
-
-    $('input[type=checkbox]').change(function() {
-        updateCheckedIDs();
-        console.log(checkedIDs);
-
-    });
-
-    function updateDisplay() {
-        $('section.feature_card .group-box .row').each(function() {
-            var row = $(this);
-            if (checkedIDs.length === 0) {
-                row.children('.col-xl-4').slice(0, 6).show(); // Show all items if no checkbox is checked
-            } else {
-                row.children('.col-xl-4').hide(); // Hide all items initially
-                checkedIDs.forEach(function(id) {
-                    row.find('.' + id).slice(0, 6).show(); // Show items matching the checked IDs
-                });
-            }
-        });
-    }
-
-
-    $('div#accordionExample .accordion-item div#categores').each(function(){
-        $(this).find('input[type="checkbox"]').click(function(){
-            $(this).closest('ul').find('input[type="checkbox"]').not(this).prop('checked', false);
-        });
-    });
-
-    // Event listener for category checkboxes
     <?php foreach ($url_array as $url): ?>
         fetchData('<?php echo $url; ?>');
     <?php endforeach; ?>
@@ -262,68 +267,36 @@ $(document).ready(function() {
                     data += title + '\n' + value + '\n'; // Added a line break after each value
                 });
                 $('#result').html(data);
-                console.log(data);
             }
         });
     }
 
-
-    var items = $(".group-box .row .col-xl-4");
-    var numItems = items.length;
-    var perPage = 4;
-
-    items.slice(perPage).hide();
-
-    $('#pagination-container').pagination({
-        items: numItems,
-        itemsOnPage: perPage,
-        prevText: "&laquo;",
-        nextText: "&raquo;",
-        onPageClick: function (pageNumber) {
-            var showFrom = perPage * (pageNumber - 1);
-            var showTo = showFrom + perPage;
-            items.hide().slice(showFrom, showTo).show();
-        }
+    $('div#accordionExample input[type="checkbox"]').click(function() {
+        cardsFilter();
     });
 
-
-        // Add event listener to checkboxes in categories section using jQuery
-        $('input[type="checkbox"]').on('change', function() {
-        if (this.checked) {
-            // Get the category ID or any identifier from the checkbox
-            var categoryID = this.id; // Assuming the checkbox ID matches the category ID
-            // Send AJAX request to retrieve the corresponding group ID
-            $.ajax({
-                url: '/get-group-id.php',
-                type: 'GET',
-                data: { category: categoryID },
-                success: function(newGroupID) {
-                    // Update group ID dynamically based on the response
-                    reloadACFFields(newGroupID);
-                }
-            });
-        }
-    });
-
-    function reloadACFFields(newGroupID) {
-        // Fetch ACF fields using the updated group ID
-        var fields = acf.getFields({ key: newGroupID });
-
-        // Clear the existing accordion content
-        $('#accordionExample').empty();
-
-        // Render the updated ACF fields
-        fields.forEach(function(field) {
-            // Render each ACF field as per your existing code
-            var html = '<div class="accordion-item">';
-            // Render other accordion content based on the updated fields
-            // Modify this part according to your needs
-            html += '</div>';
-
-            $('#accordionExample').append(html);
+    function cardsFilter() {
+        var selectedFilters = [];
+        $('div#accordionExample input[type="checkbox"]:checked').each(function() {
+            selectedFilters.push($(this).attr('id')); // Change to get checkbox ID
+        });
+        var filterbtn = selectedFilters.join(',');
+        console.log('Selected filters: ' + filterbtn); // Check selected filters in console
+        // Make AJAX request with selected filters
+        $.ajax({
+            url: '<?php home_url( $_SERVER['REQUEST_URI'] ); ?>/tcg/featured-card-search/?featuredCardsearch=' + filterbtn,
+            type: 'GET',
+            beforeSend: function(xhr) {
+                $("#overlay").show();
+            },
+            complete: function() {
+                $("#overlay").hide();
+            },
+            success: function(data) {
+                $('.group-box').html(data);
+            }
         });
     }
-
 
 });
 </script>

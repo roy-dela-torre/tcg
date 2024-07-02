@@ -314,19 +314,20 @@ section.feature_card .accordion-item ul::-webkit-scrollbar {
 
 /* pagination css */
 
-nav.pagination-container {
+div#pagination-container {
     display: flex;
     justify-content: center;
     gap: 0 10px;
     align-items: center;
 }
 
-nav.pagination-container div#pagination-numbers {
+div#pagination-container div#pagination-numbers {
     display: flex;
     gap: 0 10px;
 }
 
-nav.pagination-container div#pagination-numbers button.pagination-number {
+div#pagination-container a,
+div#pagination-container span.current {
     padding: 10px;
     border-radius: 5px;
     background: #26004C;
@@ -344,21 +345,27 @@ nav.pagination-container div#pagination-numbers button.pagination-number {
     line-height: normal;
     text-transform: uppercase;
 }
-nav.pagination-container div#pagination-numbers button.pagination-number.active{
+div#pagination-container span.current{
     background-color: #373737;
 }
+div#pagination-container a.page-link.prev,
+div#pagination-container a.page-link.next,
+div#pagination-container span.current.prev,
+div#pagination-container span.current.next{
+    background-color: transparent !important;
+}
 
-nav.pagination-container>button {
+div#pagination-container>button {
     border: none;
 }
 
-nav.pagination-container>button img{
+div#pagination-container>button img{
     width: 24px;
     height: 24px;
 }
 
 
-nav.pagination-container>button[disabled="disabled"]{
+div#pagination-container>button[disabled="disabled"]{
     display: none;
 }
 

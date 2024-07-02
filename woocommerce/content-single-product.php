@@ -38,7 +38,7 @@ if ( post_password_required() ) {
 			<div class="bread_crumbs">
 				<?php woocommerce_breadcrumb(); ?>
 			</div>
-			<div class="col-lg-6 col-md-12">
+			<div class="col-lg-5 col-md-12">
 				<div class="product_gallery">
 					<?php
 					$columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
@@ -72,7 +72,7 @@ if ( post_password_required() ) {
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-6 col-md-12">
+			<div class="col-lg-7 col-md-12">
 				<div class="product_summary">
 					<div class="summary entry-summary">
 						<?php

@@ -184,3 +184,14 @@ function enqueue_custom_admin_css() {
     wp_enqueue_style( 'custom-admin-style', get_stylesheet_directory_uri() . '/style.css' );
 }
 add_action( 'admin_enqueue_scripts', 'enqueue_custom_admin_css' );
+
+
+add_filter('loop_shop_per_page', 'custom_shop_per_page', 20);
+
+function custom_shop_per_page($cols) {
+    return 6; // Change 8 to the desired number of products per page
+}
+
+
+
+    

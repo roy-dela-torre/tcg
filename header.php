@@ -3,12 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo wp_title(); ?></title>
-    <?php include 'stylesheet-manager.php';?>
     <?php wp_head()?>
+    <?php include 'stylesheet-manager.php';?>
     <!-- <link rel="icon" href="<?php //echo get_stylesheet_directory_uri(); ?>/assets/img/homepage/logo-icon.png" sizes="32x32" /> -->
 </head>
 <body <?php body_class(); ?>>
-<div class="narbar fixed-top">
+<div class="narbar sticky-top">
   <nav class="navbar navbar-expand-xxl bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand pt-0 pb-0" href="<?php echo get_home_url(); ?>">
